@@ -1,0 +1,142 @@
+{
+  "topic": "Social Platform Authentication Flows (X, Reddit, Discord, LinkedIn)",
+  "slug": "social-platform-auth-flows",
+  "generated": "2026-02-22T00:00:00Z",
+  "depth": "deep",
+  "totalSources": 35,
+  "note": "WebFetch was denied; sources are from training knowledge through May 2025 and codebase analysis",
+  "sources": [
+    {
+      "url": "https://developer.x.com/en/docs/authentication/overview",
+      "title": "X API Authentication Overview",
+      "qualityScore": 95,
+      "authority": 10,
+      "recency": 9,
+      "depth": 9,
+      "examples": 8,
+      "uniqueness": 7,
+      "keyInsights": ["OAuth 2.0 with PKCE for user context", "Bearer token for app-only", "Free tier has no read access"]
+    },
+    {
+      "url": "https://playwright.dev/docs/auth",
+      "title": "Playwright Authentication Guide",
+      "qualityScore": 92,
+      "authority": 10,
+      "recency": 9,
+      "depth": 9,
+      "examples": 9,
+      "uniqueness": 6,
+      "keyInsights": ["storageState captures cookies + localStorage", "Persistent browser profiles", "Auth setup projects"]
+    },
+    {
+      "url": "https://www.arkoselabs.com/",
+      "title": "Arkose Labs FunCAPTCHA",
+      "qualityScore": 80,
+      "authority": 9,
+      "recency": 8,
+      "depth": 7,
+      "examples": 5,
+      "uniqueness": 9,
+      "keyInsights": ["Silent enforcement mode", "Canvas/WebGL fingerprinting", "Used by X/Twitter for login"]
+    },
+    {
+      "url": "https://docs.hcaptcha.com/",
+      "title": "hCaptcha Documentation",
+      "qualityScore": 78,
+      "authority": 9,
+      "recency": 8,
+      "depth": 7,
+      "examples": 6,
+      "uniqueness": 7,
+      "keyInsights": ["Used by Discord and Reddit", "iframe-based integration", "Enterprise configurations"]
+    },
+    {
+      "url": "https://github.com/reddit-archive/reddit/wiki/OAuth2",
+      "title": "Reddit OAuth2 Documentation",
+      "qualityScore": 72,
+      "authority": 8,
+      "recency": 5,
+      "depth": 8,
+      "examples": 7,
+      "uniqueness": 6,
+      "keyInsights": ["OAuth2 for API access", "App types: web, installed, script", "Rate limits per OAuth client"]
+    },
+    {
+      "url": "https://discord.com/developers/docs/topics/oauth2",
+      "title": "Discord OAuth2 Documentation",
+      "qualityScore": 85,
+      "authority": 10,
+      "recency": 8,
+      "depth": 8,
+      "examples": 7,
+      "uniqueness": 6,
+      "keyInsights": ["Bot vs user tokens", "OAuth2 authorization code flow", "Scopes: identify, guilds, messages"]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/linkedin/shared/authentication/",
+      "title": "LinkedIn OAuth2 Authentication (Microsoft Docs)",
+      "qualityScore": 88,
+      "authority": 10,
+      "recency": 9,
+      "depth": 8,
+      "examples": 8,
+      "uniqueness": 6,
+      "keyInsights": ["3-legged OAuth2", "li_at cookie for web sessions", "JSESSIONID as CSRF token"]
+    },
+    {
+      "url": "https://engineering.salesforce.com/tls-fingerprinting-with-ja3-and-ja3s-247362855967/",
+      "title": "TLS Fingerprinting with JA3",
+      "qualityScore": 82,
+      "authority": 8,
+      "recency": 6,
+      "depth": 9,
+      "examples": 6,
+      "uniqueness": 9,
+      "keyInsights": ["TLS handshake fingerprinting", "Used by CDNs like Akamai", "Headless Chrome has different JA3"]
+    },
+    {
+      "url": "https://developers.cloudflare.com/bots/",
+      "title": "Cloudflare Bot Management",
+      "qualityScore": 80,
+      "authority": 9,
+      "recency": 8,
+      "depth": 7,
+      "examples": 5,
+      "uniqueness": 7,
+      "keyInsights": ["Used by Discord", "Challenge pages before content", "JavaScript challenge execution"]
+    },
+    {
+      "url": "/home/ubuntu/agent-sh/web-ctl/scripts/providers.json",
+      "title": "web-ctl Built-in Auth Providers",
+      "qualityScore": 90,
+      "authority": 10,
+      "recency": 10,
+      "depth": 6,
+      "examples": 10,
+      "uniqueness": 10,
+      "keyInsights": ["Current provider configs for X, Reddit, Discord, LinkedIn", "CAPTCHA selectors", "Success conditions"]
+    },
+    {
+      "url": "/home/ubuntu/agent-sh/web-ctl/scripts/auth-flow.js",
+      "title": "web-ctl Auth Flow Implementation",
+      "qualityScore": 90,
+      "authority": 10,
+      "recency": 10,
+      "depth": 8,
+      "examples": 10,
+      "uniqueness": 10,
+      "keyInsights": ["Human-in-the-loop browser handoff", "CAPTCHA detection loop", "VNC fallback for headless servers"]
+    },
+    {
+      "url": "/home/ubuntu/agent-sh/agent-knowledge/web-session-persistence-cli-agents.md",
+      "title": "Web Session Persistence Guide",
+      "qualityScore": 92,
+      "authority": 10,
+      "recency": 10,
+      "depth": 10,
+      "examples": 9,
+      "uniqueness": 8,
+      "keyInsights": ["Cookie jar formats", "OAuth flows for CLI", "Encrypted session storage", "X cookie details"]
+    }
+  ]
+}

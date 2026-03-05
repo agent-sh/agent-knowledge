@@ -1,0 +1,446 @@
+{
+  "topic": "Google and Microsoft Authentication Flows for Browser Automation Agents",
+  "slug": "google-microsoft-auth-flows",
+  "generated": "2026-02-22T00:00:00Z",
+  "depth": "deep",
+  "totalSources": 28,
+  "sources": [
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity-platform/v2-oauth2-auth-code-flow",
+      "title": "Microsoft identity platform OAuth 2.0 authorization code flow",
+      "qualityScore": 95,
+      "authority": 10,
+      "recency": 9,
+      "depth": 10,
+      "examples": 9,
+      "uniqueness": 7,
+      "keyInsights": [
+        "Tenant URL patterns: common, organizations, consumers, specific tenant ID",
+        "Token endpoint: POST /{tenant}/oauth2/v2.0/token",
+        "prompt parameter values: login, none, consent, select_account",
+        "PKCE required for SPAs, recommended for all"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-methods",
+      "title": "Microsoft Entra authentication methods",
+      "qualityScore": 92,
+      "authority": 10,
+      "recency": 9,
+      "depth": 9,
+      "examples": 7,
+      "uniqueness": 8,
+      "keyInsights": [
+        "Phishing-resistant methods: Windows Hello, FIDO2, passkeys, CBA",
+        "Passwordless: Authenticator app, QR code",
+        "MFA methods: push notifications, SMS, voice, TOTP, hardware tokens",
+        "Microsoft strongly recommends phishing-resistant over SMS/TOTP"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity/conditional-access/overview",
+      "title": "Microsoft Entra Conditional Access overview",
+      "qualityScore": 90,
+      "authority": 10,
+      "recency": 9,
+      "depth": 8,
+      "examples": 7,
+      "uniqueness": 8,
+      "keyInsights": [
+        "Evaluates signals after first-factor authentication",
+        "Signals: user, location, device, application, real-time risk",
+        "Decisions: block, require MFA, require compliance, require password change",
+        "Requires Entra ID P1 license"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-passwordless",
+      "title": "Microsoft Entra passwordless authentication",
+      "qualityScore": 88,
+      "authority": 10,
+      "recency": 9,
+      "depth": 8,
+      "examples": 6,
+      "uniqueness": 8,
+      "keyInsights": [
+        "7-step passkey sign-in flow",
+        "Synced passkeys 14x faster than password+MFA",
+        "95% success rate vs 30% with legacy methods",
+        "Device-bound vs synced passkeys distinction"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/entra/identity-platform/authentication-flows-app-scenarios",
+      "title": "Microsoft identity platform authentication flows",
+      "qualityScore": 85,
+      "authority": 10,
+      "recency": 8,
+      "depth": 8,
+      "examples": 6,
+      "uniqueness": 6,
+      "keyInsights": [
+        "Authorization code, implicit, device code, client credentials, OBO, ROPC flows",
+        "Auth code + PKCE is the recommended modern flow",
+        "Device code flow for browserless apps"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/active-directory-b2c/user-flow-overview",
+      "title": "Azure AD B2C user flows and custom policies",
+      "qualityScore": 78,
+      "authority": 10,
+      "recency": 7,
+      "depth": 7,
+      "examples": 5,
+      "uniqueness": 8,
+      "keyInsights": [
+        "User flows: predefined configurable policies for sign-up/sign-in",
+        "Custom policies: fully customizable XML-based identity experiences",
+        "B2C end-of-sale for new customers as of May 2025",
+        "Custom HTML/CSS/JS for login pages - no standard selectors"
+      ]
+    },
+    {
+      "url": "https://support.google.com/accounts/answer/185839",
+      "title": "Google 2-Step Verification",
+      "qualityScore": 82,
+      "authority": 9,
+      "recency": 8,
+      "depth": 7,
+      "examples": 5,
+      "uniqueness": 6,
+      "keyInsights": [
+        "Methods: Google prompts, authenticator app, security keys, backup codes, SMS",
+        "Google prompts are the default for enrolled devices",
+        "Security keys provide strongest protection"
+      ]
+    },
+    {
+      "url": "https://developers.google.com/recaptcha/docs/display",
+      "title": "reCAPTCHA v2 display documentation",
+      "qualityScore": 80,
+      "authority": 9,
+      "recency": 7,
+      "depth": 8,
+      "examples": 7,
+      "uniqueness": 6,
+      "keyInsights": [
+        "div.g-recaptcha container with data-sitekey attribute",
+        "Iframe-based checkbox and challenge display",
+        "grecaptcha.render() API for programmatic rendering"
+      ]
+    },
+    {
+      "url": "https://developers.google.com/recaptcha/docs/v3",
+      "title": "reCAPTCHA v3 documentation",
+      "qualityScore": 80,
+      "authority": 9,
+      "recency": 7,
+      "depth": 8,
+      "examples": 7,
+      "uniqueness": 7,
+      "keyInsights": [
+        "Invisible - no user interaction required",
+        "Score-based (0.0 to 1.0)",
+        "grecaptcha-badge class for the badge element"
+      ]
+    },
+    {
+      "url": "https://developers.google.com/identity/protocols/oauth2",
+      "title": "Google OAuth 2.0 documentation",
+      "qualityScore": 85,
+      "authority": 9,
+      "recency": 8,
+      "depth": 8,
+      "examples": 7,
+      "uniqueness": 6,
+      "keyInsights": [
+        "Consent screen at /o/oauth2/v2/auth",
+        "Scope-based permission model",
+        "Redirect-based flow with authorization code"
+      ]
+    },
+    {
+      "url": "internal:web-ctl/scripts/providers.json",
+      "title": "web-ctl built-in auth providers",
+      "qualityScore": 90,
+      "authority": 10,
+      "recency": 10,
+      "depth": 7,
+      "examples": 10,
+      "uniqueness": 9,
+      "keyInsights": [
+        "Google: SAPISID cookie on .google.com for success detection",
+        "Microsoft: successUrl https://www.office.com",
+        "Google captchaSelectors: iframe[src*=recaptcha]",
+        "12 providers with structured auth configurations"
+      ]
+    },
+    {
+      "url": "internal:web-ctl/scripts/auth-flow.js",
+      "title": "web-ctl auth flow implementation",
+      "qualityScore": 88,
+      "authority": 10,
+      "recency": 10,
+      "depth": 8,
+      "examples": 9,
+      "uniqueness": 9,
+      "keyInsights": [
+        "CAPTCHA detection via iframe selectors and text patterns",
+        "Human-in-the-loop headed browser approach",
+        "VNC fallback for headless environments",
+        "Polling-based auth success detection"
+      ]
+    },
+    {
+      "url": "internal:web-ctl/scripts/auth-check.js",
+      "title": "web-ctl auth success checking",
+      "qualityScore": 88,
+      "authority": 10,
+      "recency": 10,
+      "depth": 7,
+      "examples": 9,
+      "uniqueness": 9,
+      "keyInsights": [
+        "Four detection methods: URL, selector, cookie, heuristic",
+        "Cookie matching with domain suffix check",
+        "URL-change heuristic excludes login/signin/auth/oauth/sso paths"
+      ]
+    },
+    {
+      "url": "community:playwright-google-login-patterns",
+      "title": "Playwright community knowledge on Google login automation",
+      "qualityScore": 75,
+      "authority": 6,
+      "recency": 8,
+      "depth": 8,
+      "examples": 9,
+      "uniqueness": 7,
+      "keyInsights": [
+        "input#identifierId for email, input[name=Passwd] for password",
+        "button#identifierNext and button#passwordNext for navigation",
+        "Google blocks navigator.webdriver=true browsers",
+        "Multi-step flow with URL path changes indicating step"
+      ]
+    },
+    {
+      "url": "community:microsoft-login-dom-selectors",
+      "title": "Community knowledge on Microsoft login page DOM",
+      "qualityScore": 72,
+      "authority": 6,
+      "recency": 8,
+      "depth": 8,
+      "examples": 8,
+      "uniqueness": 7,
+      "keyInsights": [
+        "input[name=loginfmt] for email, input[name=passwd]#i0118 for password",
+        "input#idSIButton9 for both Next and Sign-in buttons",
+        "KMSI (Keep Me Signed In) page blocks redirect if not handled",
+        "div.displaySign for passwordless number matching"
+      ]
+    },
+    {
+      "url": "community:google-2fa-url-patterns",
+      "title": "Community knowledge on Google 2FA URL routing",
+      "qualityScore": 70,
+      "authority": 5,
+      "recency": 7,
+      "depth": 8,
+      "examples": 7,
+      "uniqueness": 8,
+      "keyInsights": [
+        "URL path /challenge/ipp = phone prompt",
+        "URL path /challenge/totp = authenticator code",
+        "URL path /challenge/sms = SMS code",
+        "URL path /challenge/sk = security key"
+      ]
+    },
+    {
+      "url": "community:microsoft-cookie-analysis",
+      "title": "Community analysis of Microsoft auth cookies",
+      "qualityScore": 70,
+      "authority": 5,
+      "recency": 7,
+      "depth": 7,
+      "examples": 6,
+      "uniqueness": 8,
+      "keyInsights": [
+        "ESTSAUTH on login.microsoftonline.com confirms auth",
+        "ESTSAUTHPERSISTENT for KMSI=yes",
+        "FedAuth and rtFa for SharePoint",
+        "OIDCAuth for Office 365"
+      ]
+    },
+    {
+      "url": "community:google-cookie-auth-indicators",
+      "title": "Community analysis of Google auth cookies",
+      "qualityScore": 72,
+      "authority": 5,
+      "recency": 7,
+      "depth": 7,
+      "examples": 6,
+      "uniqueness": 7,
+      "keyInsights": [
+        "SAPISID is the most reliable single auth indicator",
+        "SID, HSID, SSID, APISID all set on .google.com",
+        "__Secure-1PSID and __Secure-3PSID are newer partitioned variants",
+        "NID is NOT an auth indicator (set for all visitors)"
+      ]
+    },
+    {
+      "url": "community:microsoft-hrd-api",
+      "title": "Microsoft Home Realm Discovery documentation",
+      "qualityScore": 68,
+      "authority": 6,
+      "recency": 7,
+      "depth": 7,
+      "examples": 6,
+      "uniqueness": 8,
+      "keyInsights": [
+        "GET /common/userrealm/<email>?api-version=2.1 returns account type",
+        "NameSpaceType: Managed vs Federated",
+        "AuthURL field provides federated IdP endpoint"
+      ]
+    },
+    {
+      "url": "community:google-workspace-sso-detection",
+      "title": "Community patterns for detecting Google Workspace SSO",
+      "qualityScore": 65,
+      "authority": 5,
+      "recency": 7,
+      "depth": 6,
+      "examples": 5,
+      "uniqueness": 7,
+      "keyInsights": [
+        "hd= parameter in URL indicates hosted domain",
+        "/o/saml2/initsso path indicates SAML SSO redirect",
+        "Workspace accounts may redirect to Okta/Azure AD/ADFS"
+      ]
+    },
+    {
+      "url": "community:recaptcha-enterprise-google-login",
+      "title": "reCAPTCHA Enterprise on Google login pages",
+      "qualityScore": 62,
+      "authority": 5,
+      "recency": 7,
+      "depth": 6,
+      "examples": 4,
+      "uniqueness": 7,
+      "keyInsights": [
+        "reCAPTCHA Enterprise is integrated directly into Google login JS",
+        "No public selectors or API for Google's own usage",
+        "Risk scoring includes browser fingerprint, behavior, IP reputation"
+      ]
+    },
+    {
+      "url": "community:microsoft-conditional-access-error-codes",
+      "title": "Microsoft conditional access AADSTS error codes",
+      "qualityScore": 68,
+      "authority": 6,
+      "recency": 7,
+      "depth": 7,
+      "examples": 6,
+      "uniqueness": 7,
+      "keyInsights": [
+        "AADSTS53003: blocked by conditional access",
+        "AADSTS50076: MFA required by policy",
+        "AADSTS530034: security defaults require MFA",
+        "Error codes appear in page content and URL fragments"
+      ]
+    },
+    {
+      "url": "community:google-antibot-detection-signals",
+      "title": "Google anti-bot detection analysis",
+      "qualityScore": 65,
+      "authority": 5,
+      "recency": 7,
+      "depth": 7,
+      "examples": 5,
+      "uniqueness": 8,
+      "keyInsights": [
+        "navigator.webdriver flag is primary headless detection",
+        "Missing window.chrome object triggers bot detection",
+        "Datacenter IP ranges flagged vs residential",
+        "Input timing analysis detects non-human typing speed"
+      ]
+    },
+    {
+      "url": "community:microsoft-passwordless-default-2025",
+      "title": "Microsoft passwordless-first rollout",
+      "qualityScore": 68,
+      "authority": 6,
+      "recency": 9,
+      "depth": 6,
+      "examples": 5,
+      "uniqueness": 8,
+      "keyInsights": [
+        "New accounts default to passwordless since 2024",
+        "div.displaySign shows 2-digit number for Authenticator matching",
+        "Use your password instead link available as fallback",
+        "div#idDiv_SAOTCS_Proofs container for passwordless options"
+      ]
+    },
+    {
+      "url": "community:azure-ad-b2c-custom-pages",
+      "title": "Azure AD B2C custom page patterns",
+      "qualityScore": 60,
+      "authority": 5,
+      "recency": 6,
+      "depth": 6,
+      "examples": 5,
+      "uniqueness": 7,
+      "keyInsights": [
+        "Fully customizable HTML/CSS/JS login pages",
+        "No standard selectors across B2C tenants",
+        "{tenant}.b2clogin.com URL pattern",
+        "End-of-sale for new customers May 2025"
+      ]
+    },
+    {
+      "url": "community:microsoft-account-picker-selectors",
+      "title": "Microsoft account picker DOM analysis",
+      "qualityScore": 62,
+      "authority": 5,
+      "recency": 7,
+      "depth": 6,
+      "examples": 6,
+      "uniqueness": 6,
+      "keyInsights": [
+        "div.table-row for each account tile",
+        "div#otherTile for 'Use another account'",
+        "prompt=select_account forces account picker"
+      ]
+    },
+    {
+      "url": "community:google-account-chooser-selectors",
+      "title": "Google account chooser DOM analysis",
+      "qualityScore": 62,
+      "authority": 5,
+      "recency": 7,
+      "depth": 6,
+      "examples": 6,
+      "uniqueness": 6,
+      "keyInsights": [
+        "div[data-identifier] for each account tile",
+        "data-identifier attribute contains email address",
+        "data-screenindex attribute on container"
+      ]
+    },
+    {
+      "url": "internal:agent-knowledge/web-session-persistence-cli-agents.md",
+      "title": "Web Session Persistence for CLI Agents (companion guide)",
+      "qualityScore": 90,
+      "authority": 10,
+      "recency": 10,
+      "depth": 9,
+      "examples": 9,
+      "uniqueness": 5,
+      "keyInsights": [
+        "Cookie jar formats (Netscape, SQLite, JSON)",
+        "OAuth 2.0 device flow for CLI apps",
+        "Session encryption with AES-256-GCM",
+        "Browser cookie extraction patterns"
+      ]
+    }
+  ]
+}

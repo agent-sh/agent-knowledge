@@ -12,6 +12,12 @@
 | All-in-One Plus Modular Packages | all-in-one-plus-modular-packages.md | 40 | deep | 2026-02-21 |
 | GitHub Org Project Management (Multi-Repo OSS) | github-org-project-management.md | 15 | deep | 2026-02-21 |
 | GitHub Organization Structure Patterns | github-org-structure-patterns.md | 18 | deep | 2026-02-21 |
+| Browser Agent Auth Flows (Slack, Notion, AWS) | browser-agent-auth-flows.md | training | deep | 2026-02-22 |
+| Social Platform Auth Flows (X, Reddit, Discord, LinkedIn) | social-platform-auth-flows.md | 35 | deep | 2026-02-22 |
+| Google & Microsoft Auth Flows for Browser Agents | google-microsoft-auth-flows.md | 28 | deep | 2026-02-22 |
+| Auth Flows: GitHub, GitLab, Atlassian (Browser Agent) | auth-flows-github-gitlab-atlassian.md | 28 | deep | 2026-02-22 |
+| Generic Auth Patterns & CAPTCHA Systems | generic-auth-patterns-captcha-systems.md | 40 | deep | 2026-02-22 |
+| Cursor IDE Memory Files & Project Context | cursor-ide-memory-context.md | 20 | medium | 2026-02-22 |
 
 ## Trigger Phrases
 
@@ -91,6 +97,107 @@ Use this knowledge when user asks about:
 - "GitHub org profile README" -> github-org-structure-patterns.md
 - "developer tool org layout" -> github-org-structure-patterns.md
 - "open source org patterns" -> github-org-structure-patterns.md
+- "Slack login automation" -> browser-agent-auth-flows.md
+- "Notion auth flow" -> browser-agent-auth-flows.md
+- "AWS Console login" -> browser-agent-auth-flows.md
+- "magic link detection" -> browser-agent-auth-flows.md
+- "browser agent authentication" -> browser-agent-auth-flows.md
+- "SSO SAML browser automation" -> browser-agent-auth-flows.md
+- "CAPTCHA detection selectors" -> generic-auth-patterns-captcha-systems.md
+- "MFA TOTP browser agent" -> browser-agent-auth-flows.md
+- "AWS IAM Identity Center login" -> browser-agent-auth-flows.md
+- "Slack workspace signin" -> browser-agent-auth-flows.md
+- "Notion token_v2 cookie" -> browser-agent-auth-flows.md
+- "AWS console session detection" -> browser-agent-auth-flows.md
+- "X Twitter login automation" -> social-platform-auth-flows.md
+- "Twitter auth flow" -> social-platform-auth-flows.md
+- "X multi-step login" -> social-platform-auth-flows.md
+- "Arkose Labs FunCAPTCHA" -> generic-auth-patterns-captcha-systems.md
+- "Reddit login automation" -> social-platform-auth-flows.md
+- "old reddit vs new reddit login" -> social-platform-auth-flows.md
+- "Discord login automation" -> social-platform-auth-flows.md
+- "Discord phone verification" -> social-platform-auth-flows.md
+- "Discord hCaptcha" -> generic-auth-patterns-captcha-systems.md
+- "LinkedIn login automation" -> social-platform-auth-flows.md
+- "LinkedIn email verification loop" -> social-platform-auth-flows.md
+- "li_at cookie" -> social-platform-auth-flows.md
+- "auth_token ct0 cookie" -> social-platform-auth-flows.md
+- "social media CAPTCHA detection" -> generic-auth-patterns-captcha-systems.md
+- "social platform anti-bot" -> social-platform-auth-flows.md
+- "GDPR cookie consent banner login" -> generic-auth-patterns-captcha-systems.md
+- "Google login automation" -> google-microsoft-auth-flows.md
+- "Google auth flow selectors" -> google-microsoft-auth-flows.md
+- "Google reCAPTCHA login" -> generic-auth-patterns-captcha-systems.md
+- "Google 2FA TOTP" -> google-microsoft-auth-flows.md
+- "Google Workspace SSO" -> google-microsoft-auth-flows.md
+- "SAPISID cookie" -> google-microsoft-auth-flows.md
+- "Google account chooser" -> generic-auth-patterns-captcha-systems.md
+- "Microsoft login automation" -> google-microsoft-auth-flows.md
+- "Microsoft Entra ID login" -> google-microsoft-auth-flows.md
+- "Azure AD login flow" -> google-microsoft-auth-flows.md
+- "ESTSAUTH cookie" -> google-microsoft-auth-flows.md
+- "Microsoft passwordless" -> generic-auth-patterns-captcha-systems.md
+- "Microsoft conditional access" -> google-microsoft-auth-flows.md
+- "Microsoft account picker" -> generic-auth-patterns-captcha-systems.md
+- "Azure AD B2C" -> google-microsoft-auth-flows.md
+- "Microsoft MFA Authenticator" -> google-microsoft-auth-flows.md
+- "login.microsoftonline.com" -> google-microsoft-auth-flows.md
+- "accounts.google.com selectors" -> google-microsoft-auth-flows.md
+- "Google verify it's you" -> google-microsoft-auth-flows.md
+- "Microsoft KMSI stay signed in" -> google-microsoft-auth-flows.md
+- "federated auth redirect" -> google-microsoft-auth-flows.md
+- "home realm discovery" -> google-microsoft-auth-flows.md
+- "GitHub login automation" -> auth-flows-github-gitlab-atlassian.md
+- "GitLab login CAPTCHA" -> auth-flows-github-gitlab-atlassian.md
+- "Atlassian auth flow" -> auth-flows-github-gitlab-atlassian.md
+- "Arkose Labs GitHub" -> auth-flows-github-gitlab-atlassian.md
+- "GitHub 2FA selectors" -> auth-flows-github-gitlab-atlassian.md
+- "GitLab _gitlab_session cookie" -> auth-flows-github-gitlab-atlassian.md
+- "Atlassian multi-step login" -> auth-flows-github-gitlab-atlassian.md
+- "GitHub Enterprise auth" -> auth-flows-github-gitlab-atlassian.md
+- "Bitbucket login" -> auth-flows-github-gitlab-atlassian.md
+- "auth success detection providers" -> generic-auth-patterns-captcha-systems.md
+- "SSO redirect detection" -> auth-flows-github-gitlab-atlassian.md
+- "WebAuthn passkey automation" -> generic-auth-patterns-captcha-systems.md
+- "providers.json auth config" -> auth-flows-github-gitlab-atlassian.md
+- "reCAPTCHA selectors" -> generic-auth-patterns-captcha-systems.md
+- "hCaptcha selectors" -> generic-auth-patterns-captcha-systems.md
+- "Cloudflare Turnstile" -> generic-auth-patterns-captcha-systems.md
+- "PerimeterX HUMAN" -> generic-auth-patterns-captcha-systems.md
+- "AWS WAF CAPTCHA" -> generic-auth-patterns-captcha-systems.md
+- "cookie consent dismiss" -> generic-auth-patterns-captcha-systems.md
+- "OneTrust CookieBot TrustArc" -> generic-auth-patterns-captcha-systems.md
+- "browser fingerprinting stealth" -> generic-auth-patterns-captcha-systems.md
+- "navigator.webdriver detection" -> generic-auth-patterns-captcha-systems.md
+- "playwright stealth" -> generic-auth-patterns-captcha-systems.md
+- "bot detection automation" -> generic-auth-patterns-captcha-systems.md
+- "email-first login flow" -> generic-auth-patterns-captcha-systems.md
+- "magic link flow detection" -> generic-auth-patterns-captcha-systems.md
+- "social login buttons detection" -> generic-auth-patterns-captcha-systems.md
+- "account picker detection" -> generic-auth-patterns-captcha-systems.md
+- "trust this device prompt" -> generic-auth-patterns-captcha-systems.md
+- "auth error detection" -> generic-auth-patterns-captcha-systems.md
+- "wrong password detection" -> generic-auth-patterns-captcha-systems.md
+- "account locked detection" -> generic-auth-patterns-captcha-systems.md
+- "Playwright storageState" -> generic-auth-patterns-captcha-systems.md
+- "waitForURL vs waitForNavigation" -> generic-auth-patterns-captcha-systems.md
+- "multi-domain redirect auth" -> generic-auth-patterns-captcha-systems.md
+- "SPA auth success detection" -> generic-auth-patterns-captcha-systems.md
+- "Cursor rules for AI" -> cursor-ide-memory-context.md
+- ".cursorrules file" -> cursor-ide-memory-context.md
+- ".cursor/rules directory" -> cursor-ide-memory-context.md
+- "Cursor project memory" -> cursor-ide-memory-context.md
+- "Cursor MDC frontmatter" -> cursor-ide-memory-context.md
+- "AGENTS.md Cursor" -> cursor-ide-memory-context.md
+- "Cursor notepads" -> cursor-ide-memory-context.md
+- "Cursor context window" -> cursor-ide-memory-context.md
+- "Cursor codebase indexing" -> cursor-ide-memory-context.md
+- "Cursor SKILL.md" -> cursor-ide-memory-context.md
+- "Cursor session memory" -> cursor-ide-memory-context.md
+- "Cursor hooks.json" -> cursor-ide-memory-context.md
+- "cursorignore" -> cursor-ide-memory-context.md
+- "Cursor Max Mode" -> cursor-ide-memory-context.md
+- "Cursor alwaysApply" -> cursor-ide-memory-context.md
 
 ## Quick Lookup
 
@@ -152,6 +259,84 @@ Use this knowledge when user asks about:
 | starter workflows, workflow-templates | github-org-structure-patterns.md |
 | github pages org site | github-org-structure-patterns.md |
 | verified domain github | github-org-structure-patterns.md |
+| slack login, slack magic link, slack auth | browser-agent-auth-flows.md |
+| notion login, notion magic link, token_v2 | browser-agent-auth-flows.md |
+| aws console login, aws signin, IAM login | browser-agent-auth-flows.md |
+| aws sso, iam identity center, awsapps | browser-agent-auth-flows.md |
+| mfa totp, 2fa browser, hardware mfa | browser-agent-auth-flows.md |
+| sso saml redirect, idp detection | browser-agent-auth-flows.md |
+| enterprise grid, slack enterprise sso | browser-agent-auth-flows.md |
+| aws govcloud, cross-account, switch role | browser-agent-auth-flows.md |
+| x twitter login, twitter auth, x.com login | social-platform-auth-flows.md |
+| reddit login, reddit auth, old reddit | social-platform-auth-flows.md |
+| discord login, discord auth, discord token | social-platform-auth-flows.md |
+| discord phone verification | social-platform-auth-flows.md |
+| linkedin login, linkedin auth, li_at | social-platform-auth-flows.md |
+| linkedin email verification, linkedin checkpoint | social-platform-auth-flows.md |
+| auth_token, ct0, csrf token social | social-platform-auth-flows.md |
+| social media bot detection, anti-bot | social-platform-auth-flows.md |
+| reddit_session, token_v2 reddit | social-platform-auth-flows.md |
+| discord localstorage token | social-platform-auth-flows.md |
+| jsessionid linkedin csrf | social-platform-auth-flows.md |
+| google login, accounts.google.com, google auth | google-microsoft-auth-flows.md |
+| google 2fa, google totp, google prompt | google-microsoft-auth-flows.md |
+| google workspace sso, google saml | google-microsoft-auth-flows.md |
+| SAPISID, SID, HSID, google cookies | google-microsoft-auth-flows.md |
+| microsoft login, login.microsoftonline.com | google-microsoft-auth-flows.md |
+| entra id, azure ad, microsoft entra | google-microsoft-auth-flows.md |
+| ESTSAUTH, microsoft cookies | google-microsoft-auth-flows.md |
+| conditional access, AADSTS error | google-microsoft-auth-flows.md |
+| azure ad b2c, b2clogin.com | google-microsoft-auth-flows.md |
+| microsoft mfa, microsoft 2fa | google-microsoft-auth-flows.md |
+| kmsi, stay signed in microsoft | google-microsoft-auth-flows.md |
+| federated auth, home realm discovery, HRD | google-microsoft-auth-flows.md |
+| google verify, unusual activity google | google-microsoft-auth-flows.md |
+| microsoft proof up, mfa registration | google-microsoft-auth-flows.md |
+| github login, logged_in cookie | auth-flows-github-gitlab-atlassian.md |
+| gitlab login, _gitlab_session | auth-flows-github-gitlab-atlassian.md |
+| atlassian login, id.atlassian.com | auth-flows-github-gitlab-atlassian.md |
+| bitbucket login, bb_session | auth-flows-github-gitlab-atlassian.md |
+| recaptcha gitlab | auth-flows-github-gitlab-atlassian.md |
+| 2fa selectors, totp automation | auth-flows-github-gitlab-atlassian.md |
+| saml sso redirect, oauth callback | auth-flows-github-gitlab-atlassian.md |
+| github enterprise server auth, GHES | auth-flows-github-gitlab-atlassian.md |
+| gitlab self-hosted auth, ldap | auth-flows-github-gitlab-atlassian.md |
+| atlassian data center, jira login | auth-flows-github-gitlab-atlassian.md |
+| providers.json, auth-providers | auth-flows-github-gitlab-atlassian.md |
+| cloud.session.token, atlassian cookie | auth-flows-github-gitlab-atlassian.md |
+| recaptcha v2, recaptcha v3, recaptcha enterprise | generic-auth-patterns-captcha-systems.md |
+| hcaptcha selectors, h-captcha div | generic-auth-patterns-captcha-systems.md |
+| cloudflare turnstile, cf-turnstile | generic-auth-patterns-captcha-systems.md |
+| arkose labs, funcaptcha, fc-iframe | generic-auth-patterns-captcha-systems.md |
+| aws waf captcha, awswaf | generic-auth-patterns-captcha-systems.md |
+| perimeterx, human security, px-captcha | generic-auth-patterns-captcha-systems.md |
+| captcha detection function | generic-auth-patterns-captcha-systems.md |
+| cookie consent, gdpr banner, onetrust | generic-auth-patterns-captcha-systems.md |
+| cookiebot, trustarc, quantcast | generic-auth-patterns-captcha-systems.md |
+| navigator.webdriver, stealth, fingerprint | generic-auth-patterns-captcha-systems.md |
+| playwright stealth, bot detection | generic-auth-patterns-captcha-systems.md |
+| email-first flow, magic link, passkey | generic-auth-patterns-captcha-systems.md |
+| social login buttons, sign in with google | generic-auth-patterns-captcha-systems.md |
+| account picker, account chooser | generic-auth-patterns-captcha-systems.md |
+| trust device, remember browser, tos gate | generic-auth-patterns-captcha-systems.md |
+| auth success detection, multi-signal | generic-auth-patterns-captcha-systems.md |
+| spa auth, dom mutation observer | generic-auth-patterns-captcha-systems.md |
+| wrong password, account locked, auth error | generic-auth-patterns-captcha-systems.md |
+| storageState, context.cookies | generic-auth-patterns-captcha-systems.md |
+| waitForURL, waitForLoadState, networkidle | generic-auth-patterns-captcha-systems.md |
+| multi-domain redirect, auth redirect chain | generic-auth-patterns-captcha-systems.md |
+| auth timeout strategy, human interaction | generic-auth-patterns-captcha-systems.md |
+| .cursorrules, cursor rules, cursor project rules | cursor-ide-memory-context.md |
+| AGENTS.md cursor, cursor agents.md | cursor-ide-memory-context.md |
+| .cursor/rules, MDC frontmatter, alwaysApply | cursor-ide-memory-context.md |
+| cursor memory, cursor context, cursor project context | cursor-ide-memory-context.md |
+| cursor notepads, cursor session memory | cursor-ide-memory-context.md |
+| .cursorignore, cursorindexingignore | cursor-ide-memory-context.md |
+| cursor codebase indexing, cursor semantic search | cursor-ide-memory-context.md |
+| SKILL.md cursor, cursor skills | cursor-ide-memory-context.md |
+| cursor hooks, sessionStart hook | cursor-ide-memory-context.md |
+| cursor max mode, cursor context window | cursor-ide-memory-context.md |
+| cursor team rules, cursor user rules | cursor-ide-memory-context.md |
 
 ## How to Use
 

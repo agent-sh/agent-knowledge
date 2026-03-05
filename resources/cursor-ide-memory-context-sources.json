@@ -1,0 +1,390 @@
+{
+  "topic": "Cursor IDE memory files project context",
+  "slug": "cursor-ide-memory-context",
+  "generated": "2026-02-22T00:00:00Z",
+  "depth": "medium",
+  "totalSources": 20,
+  "sources": [
+    {
+      "url": "https://cursor.com/docs/context/rules",
+      "title": "Cursor Rules Documentation",
+      "qualityScore": 98,
+      "scores": {
+        "authority": 10,
+        "recency": 10,
+        "depth": 10,
+        "examples": 9,
+        "uniqueness": 9
+      },
+      "keyInsights": [
+        "Four rule types: Project (.cursor/rules/), User, Team, AGENTS.md",
+        "MDC frontmatter fields: description, alwaysApply, globs",
+        "Rule application modes: always, intelligent, glob-scoped, manual",
+        "Keep rules under 500 lines; split into composable pieces",
+        ".cursorrules is deprecated; migrate to .cursor/rules/ or AGENTS.md",
+        "Precedence: Team Rules > Project Rules > User Rules"
+      ]
+    },
+    {
+      "url": "https://cursor.com/docs/agent/overview",
+      "title": "Cursor Agent Overview",
+      "qualityScore": 95,
+      "scores": {
+        "authority": 10,
+        "recency": 10,
+        "depth": 9,
+        "examples": 8,
+        "uniqueness": 8
+      },
+      "keyInsights": [
+        "Agent uses Instructions + Tools + User messages",
+        "Fetch Rules tool allows dynamic rule retrieval",
+        "Automatic context summarization as conversations grow",
+        "/summarize command for manual context compression",
+        "No limit on tool calls during a task",
+        "Checkpoints created before modifications"
+      ]
+    },
+    {
+      "url": "https://cursor.com/docs/context/mentions",
+      "title": "Cursor @Mentions Documentation",
+      "qualityScore": 92,
+      "scores": {
+        "authority": 10,
+        "recency": 10,
+        "depth": 8,
+        "examples": 7,
+        "uniqueness": 7
+      },
+      "keyInsights": [
+        "@Files, @Folders, @Code, @Docs, @Past Chats are main mention types",
+        "@Docs supports custom URLs and indexes all subpages",
+        "@Past Chats adds full prior conversation as context",
+        "Cursor 2.0 removed @Definitions, @Web, @Link, @Recent Changes, @Linter Errors",
+        "Agent gathers context automatically; manual attachment less needed"
+      ]
+    },
+    {
+      "url": "https://cursor.com/docs/context/semantic-search",
+      "title": "Cursor Semantic Search Documentation",
+      "qualityScore": 90,
+      "scores": {
+        "authority": 10,
+        "recency": 10,
+        "depth": 8,
+        "examples": 6,
+        "uniqueness": 7
+      },
+      "keyInsights": [
+        "7-step pipeline: sync, chunk, embed, store, query, compare, rank",
+        "Chunks are logical units: functions, classes, code blocks",
+        "Index refreshes every 5 minutes",
+        "Files matching .gitignore are excluded automatically",
+        "Large/complex files may be skipped for performance",
+        "Finds code by semantic meaning, not text matching"
+      ]
+    },
+    {
+      "url": "https://cursor.com/docs/context/ignore-files",
+      "title": "Cursor Ignore Files Documentation",
+      "qualityScore": 88,
+      "scores": {
+        "authority": 10,
+        "recency": 10,
+        "depth": 8,
+        "examples": 6,
+        "uniqueness": 6
+      },
+      "keyInsights": [
+        ".cursorignore excludes from all AI features (semantic search, Tab, Agent, @mentions)",
+        ".cursorindexingignore excludes from index only; files remain accessible",
+        "Uses .gitignore syntax",
+        "Terminal and MCP tools can still access ignored files",
+        "Hierarchical search option for parent directory ignore files",
+        "Negation with ! prefix works with limitations"
+      ]
+    },
+    {
+      "url": "https://cursor.com/docs/context/skills",
+      "title": "Cursor Skills / SKILL.md Documentation",
+      "qualityScore": 90,
+      "scores": {
+        "authority": 10,
+        "recency": 10,
+        "depth": 9,
+        "examples": 8,
+        "uniqueness": 9
+      },
+      "keyInsights": [
+        "Skills are version-controlled packages with SKILL.md + optional scripts",
+        "Required frontmatter: name, description",
+        "Discovered from .cursor/skills/, ~/.cursor/skills/, marketplace",
+        "Agent applies contextually based on description",
+        "Invoked manually with /skill-name syntax",
+        "disable-model-invocation: true makes skill explicit-only"
+      ]
+    },
+    {
+      "url": "https://cursor.com/docs/agent/hooks",
+      "title": "Cursor Agent Hooks Documentation",
+      "qualityScore": 88,
+      "scores": {
+        "authority": 10,
+        "recency": 10,
+        "depth": 8,
+        "examples": 7,
+        "uniqueness": 8
+      },
+      "keyInsights": [
+        "Hooks are JSON-configured processes communicating via stdin/stdout",
+        "sessionStart hook can inject additional_context into system context",
+        "Command hooks (exit code 0=pass, 2=block) and prompt hooks",
+        "hooks.json hierarchy: enterprise > team > project > user",
+        "Separate hooks for Agent (chat) vs Tab (inline completion)"
+      ]
+    },
+    {
+      "url": "https://cursor.com/docs/context/mcp",
+      "title": "Cursor MCP Documentation",
+      "qualityScore": 88,
+      "scores": {
+        "authority": 10,
+        "recency": 10,
+        "depth": 8,
+        "examples": 6,
+        "uniqueness": 7
+      },
+      "keyInsights": [
+        "MCP connects Cursor to external tools and data sources",
+        "Integrations: AWS docs, GitHub, Slack, Notion, Linear, databases",
+        "Extends context beyond token-based limits",
+        "Real-time access to live project data",
+        "Recommended for team-shared organizational knowledge"
+      ]
+    },
+    {
+      "url": "https://cursor.com/docs/agent/subagents",
+      "title": "Cursor Subagents Documentation",
+      "qualityScore": 85,
+      "scores": {
+        "authority": 10,
+        "recency": 10,
+        "depth": 7,
+        "examples": 6,
+        "uniqueness": 7
+      },
+      "keyInsights": [
+        "Subagents start with clean context; no conversation history inheritance",
+        "Parent agent must include all relevant context in the prompt",
+        "Foreground (blocking) and background (async) modes",
+        "Resume subagent by passing agent ID",
+        "Background subagents write state to files for parent to read"
+      ]
+    },
+    {
+      "url": "https://cursor.com/docs/context/max-mode",
+      "title": "Cursor Max Mode Documentation",
+      "qualityScore": 82,
+      "scores": {
+        "authority": 10,
+        "recency": 10,
+        "depth": 7,
+        "examples": 4,
+        "uniqueness": 6
+      },
+      "keyInsights": [
+        "Max Mode extends context to model's maximum supported window",
+        "Default window is ~200k tokens",
+        "20% surcharge on top of standard API rates",
+        "Most beneficial when model max exceeds 200k substantially",
+        "Useful for large codebase tasks requiring deep file traversal"
+      ]
+    },
+    {
+      "url": "https://cursor.com/docs/agent/modes",
+      "title": "Cursor Agent Modes Documentation",
+      "qualityScore": 82,
+      "scores": {
+        "authority": 10,
+        "recency": 10,
+        "depth": 7,
+        "examples": 4,
+        "uniqueness": 5
+      },
+      "keyInsights": [
+        "Four modes: Agent (default), Ask (read-only), Plan, Debug",
+        "Agent mode: full tools, autonomous file editing and commands",
+        "Ask mode: search-only, no modifications",
+        "Plan mode: generates plans before writing code",
+        "Debug mode: hypothesis generation, log instrumentation, runtime analysis"
+      ]
+    },
+    {
+      "url": "https://cursor.com/docs/get-started/concepts",
+      "title": "Cursor Core Concepts Documentation",
+      "qualityScore": 85,
+      "scores": {
+        "authority": 10,
+        "recency": 10,
+        "depth": 7,
+        "examples": 5,
+        "uniqueness": 5
+      },
+      "keyInsights": [
+        "Context = information provided to AI models: files, symbols, conversation history",
+        "Rules = custom instructions for coding standards and conventions",
+        "Chat supports multiple tabs, history, checkpoints, export",
+        "Semantic Search enables natural language code discovery",
+        "MCP connects AI to external data sources"
+      ]
+    },
+    {
+      "url": "https://cursor.com/docs/get-started/quickstart",
+      "title": "Cursor Quickstart Guide",
+      "qualityScore": 78,
+      "scores": {
+        "authority": 10,
+        "recency": 10,
+        "depth": 5,
+        "examples": 5,
+        "uniqueness": 4
+      },
+      "keyInsights": [
+        "Agent finds context automatically via search; no need to always tag files",
+        "Plans can be saved to .cursor/plans/ via 'Save to workspace'",
+        "Saved plans serve as documentation and future session context",
+        "@-mentions for explicit file attachment when location is known"
+      ]
+    },
+    {
+      "url": "https://cursor.com/docs/agent/security",
+      "title": "Cursor Agent Security Documentation",
+      "qualityScore": 72,
+      "scores": {
+        "authority": 10,
+        "recency": 10,
+        "depth": 5,
+        "examples": 4,
+        "uniqueness": 4
+      },
+      "keyInsights": [
+        ".cursorignore prevents sensitive file access by AI",
+        "Network restrictions: only GitHub, link retrieval, web search by default",
+        "Enterprise origin allowlists for agent browser access",
+        "Approval workflows before sensitive operations",
+        "MCP connections require user authorization"
+      ]
+    },
+    {
+      "url": "https://cursor.com/changelog",
+      "title": "Cursor Official Changelog",
+      "qualityScore": 80,
+      "scores": {
+        "authority": 10,
+        "recency": 10,
+        "depth": 6,
+        "examples": 4,
+        "uniqueness": 5
+      },
+      "keyInsights": [
+        "Skills and subagents added January 2026",
+        "Plugins/marketplace added February 2026",
+        "Long-running agents research preview February 2026",
+        "CLI agent modes (plan, ask, debug) added January 2026",
+        "No changes to rules/memory system in Jan-Feb 2026 window"
+      ]
+    },
+    {
+      "url": "https://cursor.com/docs/agent/browser",
+      "title": "Cursor Agent Browser Documentation",
+      "qualityScore": 70,
+      "scores": {
+        "authority": 10,
+        "recency": 10,
+        "depth": 5,
+        "examples": 5,
+        "uniqueness": 4
+      },
+      "keyInsights": [
+        "Browser cookies, localStorage, IndexedDB persist across agent sessions within workspace",
+        "Visual screenshots integrated with file tools for UI context",
+        "Browser console, network logs accessible to agent",
+        "Session persistence provides implicit state across browser-enabled tasks"
+      ]
+    },
+    {
+      "url": "https://github.com/PatrickJS/awesome-cursorrules",
+      "title": "awesome-cursorrules GitHub Repository",
+      "qualityScore": 75,
+      "scores": {
+        "authority": 7,
+        "recency": 8,
+        "depth": 7,
+        "examples": 10,
+        "uniqueness": 7
+      },
+      "keyInsights": [
+        "38k+ stars; community standard template collection",
+        "Templates organized by framework: React, Vue, Angular, Next.js, Go, Python, etc.",
+        "Still uses .cursorrules format in examples (pre-deprecation templates)",
+        "Demonstrates common patterns: framework preferences, testing standards, API conventions",
+        "Content remains valid when migrated to .cursor/rules/ MDC format"
+      ]
+    },
+    {
+      "url": "https://www.cursorrules.org",
+      "title": "CursorRules.org Community Directory",
+      "qualityScore": 65,
+      "scores": {
+        "authority": 5,
+        "recency": 8,
+        "depth": 6,
+        "examples": 8,
+        "uniqueness": 6
+      },
+      "keyInsights": [
+        "AI-generated rule configs for React, Vue, Next.js and other frameworks",
+        "One-click deployment templates",
+        "Cross-file dependency mapping patterns in rules",
+        "Project-aware context retention patterns documented"
+      ]
+    },
+    {
+      "url": "https://www.builder.io/blog/cursor-tips",
+      "title": "Builder.io: Cursor Tips",
+      "qualityScore": 65,
+      "scores": {
+        "authority": 6,
+        "recency": 7,
+        "depth": 6,
+        "examples": 7,
+        "uniqueness": 6
+      },
+      "keyInsights": [
+        "YOLO mode: allow automated test/build commands without approval gates",
+        "Test-driven approach: write tests first, then code, let agent iterate",
+        "Use Command K for quick inline edits without full context overhead",
+        "Add logging, share output - transforms abstract bugs into concrete data"
+      ]
+    },
+    {
+      "url": "https://cursor.com/docs/context/rules",
+      "title": "Cursor Rules - AGENTS.md section",
+      "qualityScore": 95,
+      "scores": {
+        "authority": 10,
+        "recency": 10,
+        "depth": 9,
+        "examples": 8,
+        "uniqueness": 7
+      },
+      "keyInsights": [
+        "AGENTS.md supports nested directories with hierarchical precedence",
+        "More specific (deeper) AGENTS.md takes precedence over parent",
+        "Plain markdown only - no frontmatter supported",
+        "Simpler than .cursor/rules/ but no conditional application",
+        "Cross-tool compatible with OpenCode, Codex, and other AI tools"
+      ]
+    }
+  ]
+}
