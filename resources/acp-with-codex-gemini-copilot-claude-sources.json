@@ -1,0 +1,408 @@
+{
+  "topic": "ACP (Agent Communication Protocol) with Codex, Gemini, Copilot, Claude",
+  "slug": "acp-with-codex-gemini-copilot-claude",
+  "generated": "2026-03-02T00:00:00Z",
+  "depth": "medium",
+  "totalSources": 24,
+  "sources": [
+    {
+      "url": "https://agentcommunicationprotocol.dev/",
+      "title": "Agent Communication Protocol - Official Website",
+      "qualityScore": 92,
+      "authority": 10,
+      "recency": 9,
+      "depth": 8,
+      "examples": 7,
+      "uniqueness": 10,
+      "keyInsights": [
+        "ACP is now part of A2A under the Linux Foundation",
+        "Uses REST endpoints aligned with standard HTTP patterns",
+        "Employs MIME types for content identification and extensibility",
+        "Framework-agnostic across BeeAI, LangChain, CrewAI, custom implementations",
+        "SDKs available in Python and TypeScript"
+      ]
+    },
+    {
+      "url": "https://github.com/google/A2A",
+      "title": "A2A Protocol - GitHub Repository",
+      "qualityScore": 95,
+      "authority": 10,
+      "recency": 9,
+      "depth": 9,
+      "examples": 8,
+      "uniqueness": 10,
+      "keyInsights": [
+        "JSON-RPC 2.0 over HTTP(S) transport",
+        "Agent Cards for capability discovery",
+        "Supports synchronous, SSE streaming, and async push notifications",
+        "Apache 2.0 licensed under Linux Foundation",
+        "SDKs in Python, Go, JavaScript, Java, .NET"
+      ]
+    },
+    {
+      "url": "https://a2a-protocol.org/latest/",
+      "title": "A2A Protocol - Official Specification Site",
+      "qualityScore": 88,
+      "authority": 10,
+      "recency": 9,
+      "depth": 7,
+      "examples": 6,
+      "uniqueness": 8,
+      "keyInsights": [
+        "A2A enables seamless communication between AI agents",
+        "Complementary to MCP which handles agent-to-tool communication",
+        "Connects agents across LangGraph, CrewAI, Semantic Kernel, custom solutions",
+        "Agents interact without sharing internal memory or proprietary logic"
+      ]
+    },
+    {
+      "url": "https://developers.googleblog.com/en/a2a-a-new-era-of-agent-interoperability/",
+      "title": "Google Developers Blog - A2A Announcement",
+      "qualityScore": 90,
+      "authority": 10,
+      "recency": 8,
+      "depth": 8,
+      "examples": 6,
+      "uniqueness": 9,
+      "keyInsights": [
+        "Announced April 9, 2025 by Google",
+        "50+ technology partners including Atlassian, Salesforce, SAP",
+        "Five core design principles: agentic, existing standards, security, long-running, modality agnostic",
+        "Built on HTTP, SSE, and JSON-RPC for easier IT integration",
+        "A2A complements Anthropic's MCP"
+      ]
+    },
+    {
+      "url": "https://github.com/i-am-bee/beeai",
+      "title": "Agent Stack (BeeAI) - GitHub Repository",
+      "qualityScore": 85,
+      "authority": 8,
+      "recency": 9,
+      "depth": 8,
+      "examples": 7,
+      "uniqueness": 9,
+      "keyInsights": [
+        "Built on A2A Protocol under Linux Foundation",
+        "Agents automatically exposed as A2A-compatible services",
+        "SDK handles runtime service requests and agent-to-agent communication",
+        "Supports LangGraph, CrewAI, and custom frameworks",
+        "15+ LLM provider support including Anthropic, OpenAI, watsonx.ai"
+      ]
+    },
+    {
+      "url": "https://pypi.org/project/acp-sdk/",
+      "title": "ACP SDK for Python - PyPI",
+      "qualityScore": 82,
+      "authority": 8,
+      "recency": 8,
+      "depth": 7,
+      "examples": 9,
+      "uniqueness": 7,
+      "keyInsights": [
+        "Version 1.0.3, maintained by IBM Corp.",
+        "Async/await support for agent functions",
+        "Decorator-based agent registration",
+        "Python 3.11+ required",
+        "Apache-2.0 licensed"
+      ]
+    },
+    {
+      "url": "https://modelcontextprotocol.io/introduction",
+      "title": "MCP - Model Context Protocol Introduction",
+      "qualityScore": 93,
+      "authority": 10,
+      "recency": 9,
+      "depth": 8,
+      "examples": 7,
+      "uniqueness": 8,
+      "keyInsights": [
+        "Open standard for connecting AI applications to external systems",
+        "Analogous to USB-C port for AI applications",
+        "Connects to data sources, tools, and workflows",
+        "Supported by Claude, ChatGPT, and many other applications"
+      ]
+    },
+    {
+      "url": "https://code.claude.com/docs/en/overview",
+      "title": "Claude Code - Official Overview",
+      "qualityScore": 95,
+      "authority": 10,
+      "recency": 10,
+      "depth": 9,
+      "examples": 8,
+      "uniqueness": 8,
+      "keyInsights": [
+        "Agentic coding tool with MCP support",
+        "Supports subagents, agent teams, and Agent SDK",
+        "Can serve as MCP server via 'claude mcp serve'",
+        "Available in terminal, IDE, desktop, and browser",
+        "Supports spawning multiple agent teams for parallel work"
+      ]
+    },
+    {
+      "url": "https://code.claude.com/docs/en/sub-agents",
+      "title": "Claude Code - Custom Subagents Documentation",
+      "qualityScore": 94,
+      "authority": 10,
+      "recency": 10,
+      "depth": 10,
+      "examples": 9,
+      "uniqueness": 9,
+      "keyInsights": [
+        "Subagents run in own context window with custom system prompt",
+        "Built-in subagents: Explore, Plan, General-purpose",
+        "Custom subagents defined in Markdown with YAML frontmatter",
+        "Support for different models per subagent",
+        "MCP servers can be scoped to individual subagents"
+      ]
+    },
+    {
+      "url": "https://code.claude.com/docs/en/agent-teams",
+      "title": "Claude Code - Agent Teams Documentation",
+      "qualityScore": 93,
+      "authority": 10,
+      "recency": 10,
+      "depth": 10,
+      "examples": 9,
+      "uniqueness": 10,
+      "keyInsights": [
+        "Multiple Claude Code instances coordinating via shared task lists",
+        "Direct inter-agent messaging via mailbox system",
+        "Team lead coordinates work and synthesizes results",
+        "Experimental feature requiring explicit opt-in",
+        "Significantly higher token costs than single sessions"
+      ]
+    },
+    {
+      "url": "https://code.claude.com/docs/en/mcp",
+      "title": "Claude Code - MCP Documentation",
+      "qualityScore": 95,
+      "authority": 10,
+      "recency": 10,
+      "depth": 10,
+      "examples": 10,
+      "uniqueness": 7,
+      "keyInsights": [
+        "Supports HTTP, SSE, and stdio MCP transports",
+        "Claude Code can serve as an MCP server",
+        "OAuth 2.0 authentication for remote servers",
+        "MCP Tool Search for dynamic tool loading",
+        "Managed MCP configuration for enterprise control"
+      ]
+    },
+    {
+      "url": "https://platform.claude.com/docs/en/agent-sdk/overview",
+      "title": "Claude Agent SDK - Official Overview",
+      "qualityScore": 94,
+      "authority": 10,
+      "recency": 10,
+      "depth": 9,
+      "examples": 10,
+      "uniqueness": 9,
+      "keyInsights": [
+        "Programmatic access to Claude Code tools and capabilities",
+        "Built-in tools: Read, Write, Edit, Bash, Glob, Grep, WebSearch, WebFetch",
+        "Custom subagent definitions via AgentDefinition",
+        "Hook system for controlling agent behavior",
+        "Session management with resume and fork capabilities"
+      ]
+    },
+    {
+      "url": "https://github.com/anthropics/claude-agent-sdk-python",
+      "title": "Claude Agent SDK for Python - GitHub",
+      "qualityScore": 88,
+      "authority": 10,
+      "recency": 9,
+      "depth": 8,
+      "examples": 10,
+      "uniqueness": 7,
+      "keyInsights": [
+        "In-process MCP server support for custom tools",
+        "Bidirectional communication via ClaudeSDKClient",
+        "Hook system with PreToolUse, PostToolUse events",
+        "Auto-bundled Claude Code CLI",
+        "Python 3.10+ required"
+      ]
+    },
+    {
+      "url": "https://github.com/anthropics/claude-agent-sdk-demos",
+      "title": "Claude Agent SDK Demos - GitHub",
+      "qualityScore": 80,
+      "authority": 9,
+      "recency": 8,
+      "depth": 7,
+      "examples": 10,
+      "uniqueness": 8,
+      "keyInsights": [
+        "Research Agent demonstrates multi-agent coordination",
+        "Subagent spawning for parallel research tasks",
+        "Web search integration for research workflows",
+        "7 demo applications covering various patterns"
+      ]
+    },
+    {
+      "url": "https://github.com/openai/codex",
+      "title": "OpenAI Codex CLI - GitHub Repository",
+      "qualityScore": 85,
+      "authority": 9,
+      "recency": 9,
+      "depth": 7,
+      "examples": 6,
+      "uniqueness": 8,
+      "keyInsights": [
+        "Primarily Rust-based (96.1%) local coding agent",
+        "MCP Registry integration for external tools",
+        "Contains shell-tool-mcp component",
+        "No documented agent-to-agent communication",
+        "553+ releases indicating active development"
+      ]
+    },
+    {
+      "url": "https://github.com/google-gemini/gemini-cli",
+      "title": "Google Gemini CLI - GitHub Repository",
+      "qualityScore": 87,
+      "authority": 9,
+      "recency": 9,
+      "depth": 8,
+      "examples": 7,
+      "uniqueness": 8,
+      "keyInsights": [
+        "MCP support for custom integrations",
+        "No A2A or ACP protocol references",
+        "Built-in tools: file system, shell, web fetch, Google Search",
+        "Free tier: 60 req/min, 1000 daily requests",
+        "Non-interactive mode with JSON/streaming output"
+      ]
+    },
+    {
+      "url": "https://docs.github.com/en/copilot/using-github-copilot/using-extensions-to-integrate-external-tools-with-copilot-chat",
+      "title": "GitHub Copilot Extensions - MCP Integration",
+      "qualityScore": 84,
+      "authority": 9,
+      "recency": 8,
+      "depth": 7,
+      "examples": 6,
+      "uniqueness": 7,
+      "keyInsights": [
+        "MCP as open standard for tool integration in Copilot",
+        "GitHub MCP Server for coding agent and code scanning",
+        "Local and remote server support across multiple IDEs",
+        "Organization policy controls for MCP servers"
+      ]
+    },
+    {
+      "url": "https://kiro.dev/docs/",
+      "title": "Kiro IDE - Official Documentation",
+      "qualityScore": 75,
+      "authority": 8,
+      "recency": 9,
+      "depth": 5,
+      "examples": 4,
+      "uniqueness": 7,
+      "keyInsights": [
+        "AWS agentic IDE with specs, steering, and hooks",
+        "MCP server support as core capability",
+        "Built on Claude AI model",
+        "No ACP or A2A protocol mentioned"
+      ]
+    },
+    {
+      "url": "https://kiro.dev/docs/mcp/",
+      "title": "Kiro MCP Server Support",
+      "qualityScore": 72,
+      "authority": 8,
+      "recency": 9,
+      "depth": 5,
+      "examples": 3,
+      "uniqueness": 5,
+      "keyInsights": [
+        "MCP enables Kiro to communicate with external servers",
+        "Settings-based MCP configuration",
+        "Connection status indicators and log access",
+        "No agent-to-agent communication architecture documented"
+      ]
+    },
+    {
+      "url": "https://github.com/modelcontextprotocol/servers",
+      "title": "MCP Servers Repository - Official",
+      "qualityScore": 88,
+      "authority": 10,
+      "recency": 9,
+      "depth": 7,
+      "examples": 8,
+      "uniqueness": 8,
+      "keyInsights": [
+        "Sequential Thinking server for structured reasoning",
+        "AgentRPC for cross-network function communication",
+        "Reference implementations are educational, not production",
+        "Memory server for knowledge graph-based persistence"
+      ]
+    },
+    {
+      "url": "https://github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking",
+      "title": "Sequential Thinking MCP Server",
+      "qualityScore": 83,
+      "authority": 9,
+      "recency": 8,
+      "depth": 8,
+      "examples": 8,
+      "uniqueness": 9,
+      "keyInsights": [
+        "Dynamic and reflective problem-solving through thought sequences",
+        "Supports revision, branching, and dynamic scope adjustment",
+        "Parameters: thought, nextThoughtNeeded, thoughtNumber, totalThoughts",
+        "Available via npx or Docker",
+        "Designed for problems where full scope is not initially clear"
+      ]
+    },
+    {
+      "url": "https://github.com/punkpeye/awesome-mcp-servers",
+      "title": "Awesome MCP Servers - Curated List",
+      "qualityScore": 78,
+      "authority": 7,
+      "recency": 9,
+      "depth": 6,
+      "examples": 5,
+      "uniqueness": 9,
+      "keyInsights": [
+        "AI bridge servers exist for Gemini, OpenAI, Ollama, Grok",
+        "Agent-to-agent MCP servers: agentnet, prolink, hashnet, agenium",
+        "blockrun-mcp offers access to 30+ AI models",
+        "Community-driven ecosystem of 100+ servers"
+      ]
+    },
+    {
+      "url": "https://github.com/anthropics/claude-code",
+      "title": "Claude Code - GitHub Repository",
+      "qualityScore": 82,
+      "authority": 9,
+      "recency": 9,
+      "depth": 6,
+      "examples": 5,
+      "uniqueness": 6,
+      "keyInsights": [
+        "72.3k GitHub stars indicating strong community adoption",
+        "Plugin system for extensible architecture",
+        "MCP Registry integration for external tools",
+        "Feature flags suggest advanced multi-agent capabilities"
+      ]
+    },
+    {
+      "url": "https://github.com/openai/codex/blob/main/codex-cli/README.md",
+      "title": "Codex CLI README - Detailed Documentation",
+      "qualityScore": 83,
+      "authority": 9,
+      "recency": 9,
+      "depth": 8,
+      "examples": 7,
+      "uniqueness": 6,
+      "keyInsights": [
+        "Three approval modes: Suggest, Auto Edit, Full Auto",
+        "Multi-provider support via configuration",
+        "Sandboxed execution with Apple Seatbelt (macOS) and Docker (Linux)",
+        "AGENTS.md instruction files for project context",
+        "No inter-agent communication mechanisms documented"
+      ]
+    }
+  ]
+}

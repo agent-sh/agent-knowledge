@@ -1,0 +1,135 @@
+{
+  "topic": "Kiro supervised mode, autopilot mode, and approval workflow details",
+  "slug": "kiro-supervised-autopilot",
+  "generated": "2026-03-02T00:00:00Z",
+  "depth": "brief",
+  "totalSources": 6,
+  "sources": [
+    {
+      "url": "https://kiro.dev/docs/chat/",
+      "title": "Kiro Chat Modes Documentation",
+      "qualityScore": 95,
+      "scores": {
+        "authority": 10,
+        "recency": 10,
+        "depth": 9,
+        "examples": 9,
+        "uniqueness": 7
+      },
+      "keyInsights": [
+        "Autopilot is the default mode for autonomous execution",
+        "Supervised mode pauses after each turn for file edit approval",
+        "Changes presented as individual hunks for granular review",
+        "Users can accept/reject/discuss individual hunks",
+        "Vibe mode pairs with both autopilot and supervised modes"
+      ],
+      "codeExamples": [],
+      "extractedAt": "2026-03-02T00:00:00Z"
+    },
+    {
+      "url": "https://kiro.dev/docs/chat/autopilot/",
+      "title": "Kiro Autopilot Mode Reference",
+      "qualityScore": 92,
+      "scores": {
+        "authority": 10,
+        "recency": 10,
+        "depth": 8,
+        "examples": 9,
+        "uniqueness": 6
+      },
+      "keyInsights": [
+        "Autopilot executes tasks end-to-end without approval",
+        "Agent creates/modifies files across multiple locations autonomously",
+        "Users can view diffs, revert all changes, or interrupt execution",
+        "Files written to disk immediately upon agent completion",
+        "No intermediate approval gate in autopilot mode"
+      ],
+      "codeExamples": [],
+      "extractedAt": "2026-03-02T00:00:00Z"
+    },
+    {
+      "url": "https://kiro.dev/docs/chat/vibe/",
+      "title": "Kiro Vibe Mode Documentation",
+      "qualityScore": 85,
+      "scores": {
+        "authority": 10,
+        "recency": 10,
+        "depth": 7,
+        "examples": 8,
+        "uniqueness": 6
+      },
+      "keyInsights": [
+        "Vibe mode is conversational and exploratory",
+        "Pairs with autopilot for rapid prototyping",
+        "Pairs with supervised for learning and code review",
+        "Mode combinations guide workflow selection",
+        "Spec mode provides alternative structured approach"
+      ],
+      "codeExamples": [],
+      "extractedAt": "2026-03-02T00:00:00Z"
+    },
+    {
+      "url": "https://kiro.dev/docs/steering/",
+      "title": "Kiro Steering Files Documentation",
+      "qualityScore": 80,
+      "scores": {
+        "authority": 10,
+        "recency": 9,
+        "depth": 7,
+        "examples": 8,
+        "uniqueness": 5
+      },
+      "keyInsights": [
+        "Steering files guide agent behavior across modes",
+        "Inclusion modes (always, fileMatch, manual, auto) control file loading",
+        "Steering applies to both autopilot and supervised workflows",
+        "Product, tech, and structure files provide persistent context",
+        "Custom steering enables mode-specific guidance"
+      ],
+      "codeExamples": [],
+      "extractedAt": "2026-03-02T00:00:00Z"
+    },
+    {
+      "url": "https://kiro.dev/docs/hooks/",
+      "title": "Kiro Hooks and Automation",
+      "qualityScore": 78,
+      "scores": {
+        "authority": 10,
+        "recency": 9,
+        "depth": 6,
+        "examples": 8,
+        "uniqueness": 5
+      },
+      "keyInsights": [
+        "PreToolUse hooks can validate or block command execution",
+        "Exit code 2 blocks tool invocation",
+        "Hooks provide approval-like behavior for commands",
+        "Command execution happens independently in both modes",
+        "Hook output added to agent context for certain event types"
+      ],
+      "codeExamples": [],
+      "extractedAt": "2026-03-02T00:00:00Z"
+    },
+    {
+      "url": "https://kiro.dev/docs/getting-started/first-project/",
+      "title": "Kiro First Project Getting Started",
+      "qualityScore": 76,
+      "scores": {
+        "authority": 10,
+        "recency": 9,
+        "depth": 5,
+        "examples": 7,
+        "uniqueness": 4
+      },
+      "keyInsights": [
+        "Mode selection affects workflow approach",
+        "Settings provide UI toggle for autopilot/supervised",
+        "Mid-session mode switching is supported",
+        "Different modes for different task types",
+        "Hands-on walkthrough demonstrates mode selection"
+      ],
+      "codeExamples": [],
+      "extractedAt": "2026-03-02T00:00:00Z"
+    }
+  ]
+}

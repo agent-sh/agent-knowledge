@@ -18,6 +18,9 @@
 | Auth Flows: GitHub, GitLab, Atlassian (Browser Agent) | auth-flows-github-gitlab-atlassian.md | 28 | deep | 2026-02-22 |
 | Generic Auth Patterns & CAPTCHA Systems | generic-auth-patterns-captcha-systems.md | 40 | deep | 2026-02-22 |
 | Cursor IDE Memory Files & Project Context | cursor-ide-memory-context.md | 20 | medium | 2026-02-22 |
+| Multi-Product Org Docs & Website Architecture | multi-product-org-docs.md | 42 | deep | 2026-02-21 |
+| ACP with Codex, Gemini, Copilot, Claude | acp-with-codex-gemini-copilot-claude.md | 24 | medium | 2026-03-02 |
+| Kiro Supervised Autopilot | kiro-supervised-autopilot.md | - | deep | 2026-03-02 |
 
 ## Trigger Phrases
 
@@ -198,6 +201,54 @@ Use this knowledge when user asks about:
 - "cursorignore" -> cursor-ide-memory-context.md
 - "Cursor Max Mode" -> cursor-ide-memory-context.md
 - "Cursor alwaysApply" -> cursor-ide-memory-context.md
+- "multi-product docs" -> multi-product-org-docs.md
+- "documentation architecture" -> multi-product-org-docs.md
+- "docs site structure" -> multi-product-org-docs.md
+- "Docusaurus multi-instance" -> multi-product-org-docs.md
+- "Starlight Astro docs" -> multi-product-org-docs.md
+- "Mintlify docs" -> multi-product-org-docs.md
+- "VitePress multi-sidebar" -> multi-product-org-docs.md
+- "developer portal" -> multi-product-org-docs.md
+- "plugin catalog page" -> multi-product-org-docs.md
+- "marketplace page design" -> multi-product-org-docs.md
+- "docs SEO multi-product" -> multi-product-org-docs.md
+- "hub and spoke docs" -> multi-product-org-docs.md
+- "unified docs vs separate sites" -> multi-product-org-docs.md
+- "llms.txt AI discoverability" -> multi-product-org-docs.md
+- "GitHub Pages org site docs" -> multi-product-org-docs.md
+- "HashiCorp developer portal" -> multi-product-org-docs.md
+- "Supabase docs structure" -> multi-product-org-docs.md
+- "agent-sh website" -> multi-product-org-docs.md
+- "agnix docs separate site" -> multi-product-org-docs.md
+- "plugin catalog generation" -> multi-product-org-docs.md
+- "cross-product navigation" -> multi-product-org-docs.md
+- "product switcher docs" -> multi-product-org-docs.md
+- "Diataxis framework" -> multi-product-org-docs.md
+- "Pagefind search" -> multi-product-org-docs.md
+- "docs-as-code" -> multi-product-org-docs.md
+- "ACP protocol" -> acp-with-codex-gemini-copilot-claude.md
+- "Agent Communication Protocol" -> acp-with-codex-gemini-copilot-claude.md
+- "A2A protocol" -> acp-with-codex-gemini-copilot-claude.md
+- "agent to agent communication" -> acp-with-codex-gemini-copilot-claude.md
+- "cross AI tool communication" -> acp-with-codex-gemini-copilot-claude.md
+- "MCP vs ACP vs A2A" -> acp-with-codex-gemini-copilot-claude.md
+- "Codex CLI agent protocol" -> acp-with-codex-gemini-copilot-claude.md
+- "Gemini CLI agent protocol" -> acp-with-codex-gemini-copilot-claude.md
+- "Copilot agent communication" -> acp-with-codex-gemini-copilot-claude.md
+- "Claude Code agent teams" -> acp-with-codex-gemini-copilot-claude.md
+- "Claude Agent SDK multi-agent" -> acp-with-codex-gemini-copilot-claude.md
+- "sequential thinking MCP" -> acp-with-codex-gemini-copilot-claude.md
+- "MCP bridge server" -> acp-with-codex-gemini-copilot-claude.md
+- "BeeAI Agent Stack" -> acp-with-codex-gemini-copilot-claude.md
+- "Kiro ACP" -> acp-with-codex-gemini-copilot-claude.md
+- "Cross-tool MCP bridges" -> acp-with-codex-gemini-copilot-claude.md
+- "ACP SDK" -> acp-with-codex-gemini-copilot-claude.md
+- "A2A SDK" -> acp-with-codex-gemini-copilot-claude.md
+- "agent interoperability" -> acp-with-codex-gemini-copilot-claude.md
+- "Agent Cards A2A" -> acp-with-codex-gemini-copilot-claude.md
+- "claude mcp serve cross-tool" -> acp-with-codex-gemini-copilot-claude.md
+- "Kiro supervised autopilot" -> kiro-supervised-autopilot.md
+- "Kiro specs hooks" -> kiro-supervised-autopilot.md
 
 ## Quick Lookup
 
@@ -337,6 +388,31 @@ Use this knowledge when user asks about:
 | cursor hooks, sessionStart hook | cursor-ide-memory-context.md |
 | cursor max mode, cursor context window | cursor-ide-memory-context.md |
 | cursor team rules, cursor user rules | cursor-ide-memory-context.md |
+| multi-product docs, documentation architecture | multi-product-org-docs.md |
+| Docusaurus, Starlight, Mintlify, VitePress | multi-product-org-docs.md |
+| developer portal, docs site structure | multi-product-org-docs.md |
+| plugin catalog, marketplace page | multi-product-org-docs.md |
+| docs SEO, llms.txt, AI discoverability | multi-product-org-docs.md |
+| hub-and-spoke, unified portal | multi-product-org-docs.md |
+| HashiCorp, Supabase, Vercel docs | multi-product-org-docs.md |
+| product switcher, cross-product navigation | multi-product-org-docs.md |
+| Diataxis, docs-as-code | multi-product-org-docs.md |
+| Pagefind, Algolia DocSearch | multi-product-org-docs.md |
+| agent-sh website, agnix docs | multi-product-org-docs.md |
+| GitBook, ReadMe, Nextra | multi-product-org-docs.md |
+| GitHub Pages docs hosting | multi-product-org-docs.md |
+| Cloudflare Pages, Vercel hosting | multi-product-org-docs.md |
+| ACP, Agent Communication Protocol | acp-with-codex-gemini-copilot-claude.md |
+| A2A, Agent2Agent, agent-to-agent | acp-with-codex-gemini-copilot-claude.md |
+| ACP vs MCP vs A2A | acp-with-codex-gemini-copilot-claude.md |
+| BeeAI, Agent Stack, agent interop | acp-with-codex-gemini-copilot-claude.md |
+| agent teams, subagents, multi-agent | acp-with-codex-gemini-copilot-claude.md |
+| MCP bridge, Gemini bridge, OpenAI bridge | acp-with-codex-gemini-copilot-claude.md |
+| sequential thinking, cross-AI reasoning | acp-with-codex-gemini-copilot-claude.md |
+| Agent Cards, agent discovery | acp-with-codex-gemini-copilot-claude.md |
+| claude mcp serve, claude as MCP server | acp-with-codex-gemini-copilot-claude.md |
+| acp-sdk, a2a-sdk | acp-with-codex-gemini-copilot-claude.md |
+| Kiro, supervised autopilot, specs | kiro-supervised-autopilot.md |
 
 ## How to Use
 
