@@ -1,0 +1,20 @@
+severity = "Warning"
+exclude = ["node_modules/**", ".git/**"]
+target = "ClaudeCode"
+tools = []
+locale = "en"
+
+[rules]
+cross_platform = false  # Reference docs include cross-platform examples (Cursor paths, etc.)
+
+disabled_rules = [
+    "AGM-003",     # Intentional - AGENTS.md is a comprehensive research reference, needs full length
+    "AGM-004",     # AGENTS.md is a knowledge base index, not a standard agent instruction file
+    "AGM-005",     # Cursor platform examples are reference content
+    "CC-MEM-009",  # Intentional - CLAUDE.md is a comprehensive reference doc, size is necessary
+    "CDX-AG-002",  # False positive - knowledge base content contains "token" references, not secrets
+]
+
+[tool_versions]
+
+[spec_revisions]
