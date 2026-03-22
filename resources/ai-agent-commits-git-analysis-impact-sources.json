@@ -1,0 +1,420 @@
+{
+  "topic": "How AI-Generated Code and AI Agent Commits Affect Git History Analysis and Developer Metrics",
+  "slug": "ai-agent-commits-git-analysis-impact",
+  "generated": "2026-03-14T00:00:00Z",
+  "depth": "medium",
+  "totalSources": 25,
+  "sources": [
+    {
+      "url": "https://www.gitclear.com/ai_assistant_code_quality_2025_research",
+      "title": "AI Copilot Code Quality: 2025 Data Suggests 4x Growth in Code Clones - GitClear",
+      "qualityScore": 95,
+      "authority": 10,
+      "recency": 9,
+      "depth": 10,
+      "examples": 9,
+      "uniqueness": 9,
+      "keyInsights": [
+        "211M lines analyzed from 2020-2024 across major tech companies",
+        "Copy/pasted code rose from 8.3% to 12.3%",
+        "Refactored/moved code dropped from 25% to under 10%",
+        "8x increase in duplicated code blocks",
+        "Short-term churn (revised within 2 weeks) rose from 3.1% to 5.7%"
+      ]
+    },
+    {
+      "url": "https://arxiv.org/html/2601.13597",
+      "title": "AI IDEs or Autonomous Agents? Measuring the Impact of Coding Agents on Software Development",
+      "qualityScore": 93,
+      "authority": 10,
+      "recency": 10,
+      "depth": 10,
+      "examples": 8,
+      "uniqueness": 10,
+      "keyInsights": [
+        "Agent-first repos: +36.3% commits, +76.6% lines added",
+        "IDE-first repos: +3.06% commits, -6.34% lines added",
+        "Cognitive complexity up ~39% regardless of prior AI exposure",
+        "Diminishing returns to AI assistance demonstrated",
+        "Staggered difference-in-differences methodology with matched controls"
+      ]
+    },
+    {
+      "url": "https://jellyfish.co/blog/2025-ai-metrics-in-review/",
+      "title": "2025 AI Metrics in Review: What 12 Months of Data Tell Us - Jellyfish",
+      "qualityScore": 90,
+      "authority": 9,
+      "recency": 9,
+      "depth": 9,
+      "examples": 8,
+      "uniqueness": 8,
+      "keyInsights": [
+        "50% of companies now have at least 50% AI-generated code",
+        "PRs per engineer increased 113% at full AI adoption",
+        "Median cycle time dropped 24% (16.7 to 12.7 hours)",
+        "Code assistant adoption went from 49.2% to 69% in 2025",
+        "Cursor gained from under 20% to nearly 40% market share"
+      ]
+    },
+    {
+      "url": "https://github.blog/news-insights/octoverse/octoverse-a-new-developer-joins-github-every-second-as-ai-leads-typescript-to-1/",
+      "title": "GitHub Octoverse 2025 Report",
+      "qualityScore": 92,
+      "authority": 10,
+      "recency": 9,
+      "depth": 8,
+      "examples": 7,
+      "uniqueness": 9,
+      "keyInsights": [
+        "986 million commits pushed in 2025 (+25.1% YoY)",
+        "43.2 million PRs merged monthly (+23% YoY)",
+        "80% of new developers use Copilot within first week",
+        "1.1M+ public repos import an LLM SDK (+178% YoY)",
+        "11.5 billion GitHub Actions minutes consumed (+35% YoY)"
+      ]
+    },
+    {
+      "url": "https://usegitai.com/docs/cli/how-git-ai-works",
+      "title": "How Git AI Works - Git AI Documentation",
+      "qualityScore": 88,
+      "authority": 8,
+      "recency": 9,
+      "depth": 10,
+      "examples": 8,
+      "uniqueness": 10,
+      "keyInsights": [
+        "Explicit marking system - agents invoke hooks to mark AI code",
+        "Git Notes storage indexed by commit SHA",
+        "Checkpoint system tracks incremental changes between commit start and end",
+        "Preserves attribution across rebases, merges, squashes, cherry-picks",
+        "~10-20ms overhead per command, fully offline"
+      ]
+    },
+    {
+      "url": "https://agent-trace.dev/",
+      "title": "Agent Trace - Open Specification for AI Code Attribution",
+      "qualityScore": 85,
+      "authority": 8,
+      "recency": 10,
+      "depth": 8,
+      "examples": 7,
+      "uniqueness": 9,
+      "keyInsights": [
+        "JSON-based trace records connecting code ranges to conversations",
+        "Categories: human, AI, mixed, unknown",
+        "Storage-agnostic - supports files, git notes, databases",
+        "Supports multiple VCS including Git, Jujutsu, Mercurial",
+        "Currently in RFC/draft phase"
+      ]
+    },
+    {
+      "url": "https://dev.to/pullflow/the-new-git-blame-whos-responsible-when-ai-writes-the-code-285j",
+      "title": "The New Git Blame: Who's Responsible When AI Writes the Code?",
+      "qualityScore": 85,
+      "authority": 7,
+      "recency": 8,
+      "depth": 9,
+      "examples": 8,
+      "uniqueness": 8,
+      "keyInsights": [
+        "Four responsibility frameworks for AI code",
+        "Bot Sponsorship pattern for accountability",
+        "Claude's Co-Authored-By email registration issues",
+        "Legal consequences in regulated industries",
+        "Recommendation to annotate commits with model names and prompts"
+      ]
+    },
+    {
+      "url": "https://codescene.com/blog/agentic-ai-coding-best-practice-patterns-for-speed-with-quality",
+      "title": "Agentic AI Coding: Best Practice Patterns for Speed with Quality - CodeScene",
+      "qualityScore": 88,
+      "authority": 9,
+      "recency": 9,
+      "depth": 9,
+      "examples": 8,
+      "uniqueness": 8,
+      "keyInsights": [
+        "Six best practice patterns for agentic AI coding",
+        "Code Health threshold of 9.5-10.0 for AI-ready code",
+        "MCP safeguards expose code quality feedback to agents",
+        "AI operates in self-harm mode - writes code it cannot maintain",
+        "Multi-level safeguards: continuous review, pre-commit, PR pre-flight"
+      ]
+    },
+    {
+      "url": "https://altersquare.io/ai-generated-code-next-refactor-will-prove-its-not-clean/",
+      "title": "AI-Generated Code Looks Clean. Here's Why Your Next Refactor Will Prove It Isn't",
+      "qualityScore": 90,
+      "authority": 8,
+      "recency": 9,
+      "depth": 10,
+      "examples": 10,
+      "uniqueness": 9,
+      "keyInsights": [
+        "82% of AI PRs had inadequate error handling",
+        "76% lacked network timeouts",
+        "44% introduced N+1 database query problems",
+        "Duplicate code ratios rose from 3.1% to 14.2%",
+        "68% of AI modules require complete rewrites, not minor fixes",
+        "AI PRs average 10.83 issues vs 6.45 for human code"
+      ]
+    },
+    {
+      "url": "https://dev.to/anchildress1/did-ai-erase-attribution-your-git-history-is-missing-a-co-author-1m2l",
+      "title": "Did AI Erase Attribution? Your Git History Is Missing a Co-Author",
+      "qualityScore": 80,
+      "authority": 6,
+      "recency": 8,
+      "depth": 8,
+      "examples": 7,
+      "uniqueness": 9,
+      "keyInsights": [
+        "Proposed four-level attribution system (Assisted/Co-authored/Generated/Commit-generated)",
+        "AI contributions systematically erased from git history",
+        "Existing Co-authored-by convention underutilized for AI",
+        "Conventional Commits with AI attribution footers recommended"
+      ]
+    },
+    {
+      "url": "https://zenvanriel.com/ai-engineer-blog/maintaining-code-ownership-with-ai-assistance/",
+      "title": "Maintaining Code Ownership in the Age of AI Assistance",
+      "qualityScore": 82,
+      "authority": 7,
+      "recency": 8,
+      "depth": 8,
+      "examples": 7,
+      "uniqueness": 8,
+      "keyInsights": [
+        "Disconnect between implied understanding and actual knowledge",
+        "Developer responsibility remains regardless of generation method",
+        "Knowledge transfer risks from AI-assisted workflows",
+        "Recommendation to trace execution paths and verify edge cases"
+      ]
+    },
+    {
+      "url": "https://vfunction.com/blog/vibe-coding-architecture-ai-agents/",
+      "title": "The Rise of Vibe Coding: Why Architecture Still Matters in the Age of AI Agents",
+      "qualityScore": 85,
+      "authority": 8,
+      "recency": 9,
+      "depth": 9,
+      "examples": 9,
+      "uniqueness": 8,
+      "keyInsights": [
+        "AI agents generate architecture by default without guidance",
+        "Missing abstraction layers unless specifically instructed",
+        "Agents skip services, repositories, DTOs by default",
+        "Architecture-aware prompting strategies recommended",
+        "vFunction detects coupling violations in agent-generated changes"
+      ]
+    },
+    {
+      "url": "https://www.sonarsource.com/blog/auto-detect-and-review-ai-generated-code-from-github-copilot/",
+      "title": "Auto-Detect and Review AI-Generated Code from GitHub Copilot - Sonar",
+      "qualityScore": 82,
+      "authority": 9,
+      "recency": 8,
+      "depth": 7,
+      "examples": 6,
+      "uniqueness": 7,
+      "keyInsights": [
+        "Auto-detects Copilot usage via GitHub API",
+        "Routes AI code through AI Code Assurance quality gates",
+        "Built-in Sonar way for AI Code with seven conditions",
+        "Projects passing gate receive quality badge"
+      ]
+    },
+    {
+      "url": "https://www.deployhq.com/blog/how-to-use-git-with-claude-code-understanding-the-co-authored-by-attribution",
+      "title": "How to Use Git with Claude Code: Understanding the Co-Authored-By Attribution",
+      "qualityScore": 78,
+      "authority": 7,
+      "recency": 8,
+      "depth": 8,
+      "examples": 7,
+      "uniqueness": 7,
+      "keyInsights": [
+        "Claude Code adds Co-Authored-By trailer by default",
+        "Configurable via includeCoAuthoredBy and gitAttribution settings",
+        "Claude won't appear in main contributors list unless directly authored",
+        "Project-level overrides via .claude/settings.json"
+      ]
+    },
+    {
+      "url": "https://www.infoq.com/news/2026/02/agent-trace-cursor/",
+      "title": "Agent Trace: Cursor Proposes an Open Specification for AI Code Attribution - InfoQ",
+      "qualityScore": 83,
+      "authority": 8,
+      "recency": 10,
+      "depth": 7,
+      "examples": 6,
+      "uniqueness": 7,
+      "keyInsights": [
+        "Agent Trace addresses gap where git blame cannot distinguish AI from human",
+        "Currently in RFC phase with cautiously optimistic developer response",
+        "Leaves merge/rebase handling as unresolved question",
+        "Does not define ownership semantics or quality assessment"
+      ]
+    },
+    {
+      "url": "https://kodus.io/en/ai-generated-code-is-messing-with-your-technical-debt/",
+      "title": "How AI-Generated Code is Messing with Your Technical Debt",
+      "qualityScore": 80,
+      "authority": 7,
+      "recency": 8,
+      "depth": 8,
+      "examples": 7,
+      "uniqueness": 6,
+      "keyInsights": [
+        "Code churn doubled between 2021 and 2024",
+        "DORA report: 7.2% drop in software delivery stability linked to AI",
+        "90% of developers have committed AI-generated code",
+        "30% average acceptance rate for Copilot suggestions",
+        "Treat AI as ultra-fast intern requiring guidance"
+      ]
+    },
+    {
+      "url": "https://knowledge.buka.sh/the-rise-of-git-worktrees-in-the-age-of-ai-coding-agents/",
+      "title": "The Rise of Git Worktrees in the Age of AI Coding Agents",
+      "qualityScore": 78,
+      "authority": 7,
+      "recency": 8,
+      "depth": 7,
+      "examples": 8,
+      "uniqueness": 9,
+      "keyInsights": [
+        "Worktree farm model: multiple agents work simultaneously",
+        "Shared git object database eliminates duplication",
+        "Each worktree maps to distinct branch for isolation",
+        "Development pipelines resemble distributed agent systems"
+      ]
+    },
+    {
+      "url": "https://leaddev.com/software-quality/how-ai-generated-code-accelerates-technical-debt",
+      "title": "How AI-Generated Code Compounds Technical Debt - LeadDev",
+      "qualityScore": 80,
+      "authority": 8,
+      "recency": 8,
+      "depth": 7,
+      "examples": 6,
+      "uniqueness": 6,
+      "keyInsights": [
+        "AI generates similar solutions repeatedly rather than refactoring",
+        "Volume of generated code exceeds team review capacity",
+        "Velocity improvements negated by maintenance overhead",
+        "Coding standards needed before AI adoption"
+      ]
+    },
+    {
+      "url": "https://github.blog/news-insights/octoverse/what-986-million-code-pushes-say-about-the-developer-workflow-in-2025/",
+      "title": "What 986 Million Code Pushes Say About Developer Workflow in 2025 - GitHub Blog",
+      "qualityScore": 85,
+      "authority": 10,
+      "recency": 9,
+      "depth": 7,
+      "examples": 6,
+      "uniqueness": 7,
+      "keyInsights": [
+        "Smaller and more frequent commits becoming the norm",
+        "Feature flags now central to deployment strategy",
+        "11.5 billion Actions minutes (+35% YoY)",
+        "PR reviews trending toward smaller single-purpose reviews"
+      ]
+    },
+    {
+      "url": "https://www.gitclear.com/coding_on_copilot_data_shows_ais_downward_pressure_on_code_quality",
+      "title": "Coding on Copilot: 2023 Data Suggests Downward Pressure on Code Quality - GitClear",
+      "qualityScore": 85,
+      "authority": 9,
+      "recency": 7,
+      "depth": 9,
+      "examples": 8,
+      "uniqueness": 7,
+      "keyInsights": [
+        "First major study linking Copilot to code quality decline",
+        "2024 projections for continued quality erosion",
+        "Established methodology for measuring AI code impact",
+        "Foundation for the 2025 follow-up study"
+      ]
+    },
+    {
+      "url": "https://github.com/git-ai-project/git-ai",
+      "title": "Git AI - A Git Extension for Tracking AI-Generated Code",
+      "qualityScore": 82,
+      "authority": 7,
+      "recency": 9,
+      "depth": 8,
+      "examples": 8,
+      "uniqueness": 9,
+      "keyInsights": [
+        "Open source zero-configuration CLI tool",
+        "Vendor-agnostic AI code tracking",
+        "Tags AI code at moment of creation",
+        "Preserves metadata through entire git workflow"
+      ]
+    },
+    {
+      "url": "https://www.humai.blog/github-hits-nearly-1-billion-commits-in-a-year-ai-is-rewriting-the-essence-of-software-development/",
+      "title": "GitHub Hits Nearly 1 Billion Commits in a Year - AI Is Rewriting Software Development",
+      "qualityScore": 75,
+      "authority": 6,
+      "recency": 9,
+      "depth": 7,
+      "examples": 6,
+      "uniqueness": 6,
+      "keyInsights": [
+        "Growing share of commit activity reflects agentic AI workflows",
+        "Autonomous agents create PRs without direct human code authorship",
+        "36 million new developers joined GitHub in one year"
+      ]
+    },
+    {
+      "url": "https://www.secondtalent.com/resources/ai-generated-code-quality-metrics-and-statistics-for-2026/",
+      "title": "AI-Generated Code Quality Metrics and Statistics for 2026",
+      "qualityScore": 75,
+      "authority": 6,
+      "recency": 10,
+      "depth": 7,
+      "examples": 6,
+      "uniqueness": 5,
+      "keyInsights": [
+        "AI introduces 1.7x more total issues than human code",
+        "15-18% more security vulnerabilities in AI code",
+        "71% do not merge AI code without manual review",
+        "Only 3% highly trust AI-generated code"
+      ]
+    },
+    {
+      "url": "https://www.getpanto.ai/blog/vibe-coding-statistics",
+      "title": "Vibe Coding Statistics: Productivity, Risk in AI-Assisted Development",
+      "qualityScore": 72,
+      "authority": 6,
+      "recency": 9,
+      "depth": 7,
+      "examples": 6,
+      "uniqueness": 6,
+      "keyInsights": [
+        "PR size increased 154% on average with AI",
+        "Review times balloon 91% with high AI adoption",
+        "Code review time increases 25-40% for AI code",
+        "Security issues 2.74x higher in AI-generated code"
+      ]
+    },
+    {
+      "url": "https://codescene.com/product/behavioral-code-analysis",
+      "title": "Behavioral Code Analysis - CodeScene",
+      "qualityScore": 78,
+      "authority": 9,
+      "recency": 8,
+      "depth": 7,
+      "examples": 6,
+      "uniqueness": 6,
+      "keyInsights": [
+        "Combines static analysis with behavioral VCS data",
+        "CodeHealth metric links quality to development velocity",
+        "Hotspot analysis identifies frequently-changed unhealthy code",
+        "Development Output normalized by contributing authors"
+      ]
+    }
+  ]
+}

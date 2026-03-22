@@ -21,6 +21,11 @@
 | Multi-Product Org Docs & Website Architecture | multi-product-org-docs.md | 42 | deep | 2026-02-21 |
 | ACP with Codex, Gemini, Copilot, Claude | acp-with-codex-gemini-copilot-claude.md | 24 | medium | 2026-03-02 |
 | Kiro Supervised Autopilot | kiro-supervised-autopilot.md | - | deep | 2026-03-02 |
+| Git History Analysis in Developer Tools | git-history-analysis-developer-tools.md | 24 | medium | 2026-03-14 |
+| AI Agent Commits & Git Analysis Impact | ai-agent-commits-git-analysis-impact.md | 25 | medium | 2026-03-14 |
+| AI Commit Detection Forensics | ai-commit-detection-forensics.md | 42 | deep | 2026-03-14 |
+| glide-mq (Message Queue on Valkey/Redis) | glide-mq.md | 12 | medium | 2026-03-19 |
+| Skills for Library/SDK - Best Practices | skills-for-library-and-sdk-best-practices.md | 16 | medium | 2026-03-19 |
 
 ## Trigger Phrases
 
@@ -249,6 +254,107 @@ Use this knowledge when user asks about:
 - "claude mcp serve cross-tool" -> acp-with-codex-gemini-copilot-claude.md
 - "Kiro supervised autopilot" -> kiro-supervised-autopilot.md
 - "Kiro specs hooks" -> kiro-supervised-autopilot.md
+- "git history analysis" -> git-history-analysis-developer-tools.md
+- "git-map tool" -> git-history-analysis-developer-tools.md
+- "code churn analysis" -> git-history-analysis-developer-tools.md
+- "file coupling co-change" -> git-history-analysis-developer-tools.md
+- "temporal coupling" -> git-history-analysis-developer-tools.md
+- "truck factor bus factor" -> git-history-analysis-developer-tools.md
+- "code ownership git" -> git-history-analysis-developer-tools.md
+- "knowledge distribution" -> git-history-analysis-developer-tools.md
+- "hotspot analysis" -> git-history-analysis-developer-tools.md
+- "CodeScene analysis" -> git-history-analysis-developer-tools.md
+- "GitClear metrics" -> git-history-analysis-developer-tools.md
+- "git-of-theseus" -> git-history-analysis-developer-tools.md
+- "Hercules git analysis" -> git-history-analysis-developer-tools.md
+- "mining software repositories" -> git-history-analysis-developer-tools.md
+- "behavioral code analysis" -> git-history-analysis-developer-tools.md
+- "code as crime scene" -> git-history-analysis-developer-tools.md
+- "commit pattern analysis" -> git-history-analysis-developer-tools.md
+- "conventional commits analysis" -> git-history-analysis-developer-tools.md
+- "defect prediction git" -> git-history-analysis-developer-tools.md
+- "code survival cohort" -> git-history-analysis-developer-tools.md
+- "release pattern analysis" -> git-history-analysis-developer-tools.md
+- "DORA metrics git" -> git-history-analysis-developer-tools.md
+- "Conway's Law measurement" -> git-history-analysis-developer-tools.md
+- "developer collaboration patterns" -> git-history-analysis-developer-tools.md
+- "PyDriller" -> git-history-analysis-developer-tools.md
+- "git forensics" -> git-history-analysis-developer-tools.md
+- "technical debt git history" -> git-history-analysis-developer-tools.md
+- "AI generated code git impact" -> ai-agent-commits-git-analysis-impact.md
+- "AI commits git analysis" -> ai-agent-commits-git-analysis-impact.md
+- "AI code attribution" -> ai-agent-commits-git-analysis-impact.md
+- "AI code ownership git blame" -> ai-agent-commits-git-analysis-impact.md
+- "AI churn metrics" -> ai-agent-commits-git-analysis-impact.md
+- "AI code quality GitClear" -> ai-agent-commits-git-analysis-impact.md
+- "AI code duplication increase" -> ai-agent-commits-git-analysis-impact.md
+- "git-ai tracking standard" -> ai-agent-commits-git-analysis-impact.md
+- "Agent Trace specification" -> ai-agent-commits-git-analysis-impact.md
+- "AI commit detection" -> ai-agent-commits-git-analysis-impact.md
+- "Copilot code percentage statistics" -> ai-agent-commits-git-analysis-impact.md
+- "AI bus factor knowledge risk" -> ai-agent-commits-git-analysis-impact.md
+- "AI coupling architectural erosion" -> ai-agent-commits-git-analysis-impact.md
+- "Sonar AI Code Assurance" -> ai-agent-commits-git-analysis-impact.md
+- "AI code review metrics" -> ai-agent-commits-git-analysis-impact.md
+- "vibe coding git impact" -> ai-agent-commits-git-analysis-impact.md
+- "AI slop code quality" -> ai-agent-commits-git-analysis-impact.md
+- "AI PR merge rate quality" -> ai-agent-commits-git-analysis-impact.md
+- "autonomous agent vs pair programming git" -> ai-agent-commits-git-analysis-impact.md
+- "AI code governance policy" -> ai-agent-commits-git-analysis-impact.md
+- "Co-Authored-By Claude Copilot Aider" -> ai-agent-commits-git-analysis-impact.md
+- "AI developer metrics adjustment" -> ai-agent-commits-git-analysis-impact.md
+- "AI technical debt acceleration" -> ai-agent-commits-git-analysis-impact.md
+- "detect AI commits" -> ai-commit-detection-forensics.md
+- "AI commit forensics" -> ai-commit-detection-forensics.md
+- "AI commit fingerprinting" -> ai-commit-detection-forensics.md
+- "Copilot commit signature" -> ai-commit-detection-forensics.md
+- "Claude Code commit trailer" -> ai-commit-detection-forensics.md
+- "Cursor commit attribution" -> ai-commit-detection-forensics.md
+- "Aider commit format" -> ai-commit-detection-forensics.md
+- "Codex commit metadata" -> ai-commit-detection-forensics.md
+- "Devin commit author email" -> ai-commit-detection-forensics.md
+- "AI branch prefix copilot/ cursor/" -> ai-commit-detection-forensics.md
+- "noreply@anthropic.com" -> ai-commit-detection-forensics.md
+- "noreply@aider.chat" -> ai-commit-detection-forensics.md
+- "cursoragent@cursor.com" -> ai-commit-detection-forensics.md
+- "bot@devin.ai" -> ai-commit-detection-forensics.md
+- "AI code stylometry" -> ai-commit-detection-forensics.md
+- "code perplexity detection" -> ai-commit-detection-forensics.md
+- "AI code burstiness entropy" -> ai-commit-detection-forensics.md
+- "isvibecoded detection" -> ai-commit-detection-forensics.md
+- "VibeDetect heuristics" -> ai-commit-detection-forensics.md
+- "AI commit composite score" -> ai-commit-detection-forensics.md
+- "AI tool email registry" -> ai-commit-detection-forensics.md
+- "AI commit heuristic reliability" -> ai-commit-detection-forensics.md
+- "AI commit false positive" -> ai-commit-detection-forensics.md
+- "hallucinated imports detection" -> ai-commit-detection-forensics.md
+- "AI commit timing patterns" -> ai-commit-detection-forensics.md
+- "AI worktree usage detection" -> ai-commit-detection-forensics.md
+- "Windsurf commit detection" -> ai-commit-detection-forensics.md
+- "Lovable Replit bolt commit" -> ai-commit-detection-forensics.md
+- "Agent Trace spec JSON" -> ai-commit-detection-forensics.md
+- "git-ai authorship log" -> ai-commit-detection-forensics.md
+- "AI commit message patterns" -> ai-commit-detection-forensics.md
+- "AI diff size patterns" -> ai-commit-detection-forensics.md
+- "AI PR description patterns" -> ai-commit-detection-forensics.md
+- "Binoculars code detection" -> ai-commit-detection-forensics.md
+- "GPTZero code AUC" -> ai-commit-detection-forensics.md
+- "Coding-Agent trailer" -> ai-commit-detection-forensics.md
+- "AI-assistant trailer proposal" -> ai-commit-detection-forensics.md
+- "AIDev dataset 33580 PRs" -> ai-commit-detection-forensics.md
+- "multiline commit ratio fingerprint" -> ai-commit-detection-forensics.md
+- "glide-mq" -> glide-mq.md
+- "message queue valkey" -> glide-mq.md
+- "valkey streams queue" -> glide-mq.md
+- "bullmq alternative" -> glide-mq.md
+- "node.js job queue valkey" -> glide-mq.md
+- "SKILL.md best practices" -> skills-for-library-and-sdk-best-practices.md
+- "writing skills for library" -> skills-for-library-and-sdk-best-practices.md
+- "SDK skill design" -> skills-for-library-and-sdk-best-practices.md
+- "skill description trigger" -> skills-for-library-and-sdk-best-practices.md
+- "progressive disclosure skill" -> skills-for-library-and-sdk-best-practices.md
+- "ship skills with npm" -> skills-for-library-and-sdk-best-practices.md
+- "TanStack Intent" -> skills-for-library-and-sdk-best-practices.md
 
 ## Quick Lookup
 
@@ -413,6 +519,63 @@ Use this knowledge when user asks about:
 | claude mcp serve, claude as MCP server | acp-with-codex-gemini-copilot-claude.md |
 | acp-sdk, a2a-sdk | acp-with-codex-gemini-copilot-claude.md |
 | Kiro, supervised autopilot, specs | kiro-supervised-autopilot.md |
+| git history, git-map, git analysis | git-history-analysis-developer-tools.md |
+| code churn, churn analysis, rework ratio | git-history-analysis-developer-tools.md |
+| file coupling, co-change, temporal coupling | git-history-analysis-developer-tools.md |
+| truck factor, bus factor, knowledge risk | git-history-analysis-developer-tools.md |
+| code ownership, knowledge map, contributor | git-history-analysis-developer-tools.md |
+| hotspot analysis, churn x complexity | git-history-analysis-developer-tools.md |
+| CodeScene, GitClear, Pluralsight Flow | git-history-analysis-developer-tools.md |
+| git-of-theseus, hercules, code survival | git-history-analysis-developer-tools.md |
+| MSR, mining software repositories | git-history-analysis-developer-tools.md |
+| behavioral code analysis, crime scene | git-history-analysis-developer-tools.md |
+| commit patterns, conventional commits | git-history-analysis-developer-tools.md |
+| defect prediction, JIT-SDP, risk scoring | git-history-analysis-developer-tools.md |
+| release patterns, DORA metrics, deployment | git-history-analysis-developer-tools.md |
+| Conway's Law, team coupling, org alignment | git-history-analysis-developer-tools.md |
+| PyDriller, code-forensics, gitinspector | git-history-analysis-developer-tools.md |
+| AI code git impact, AI commits analysis | ai-agent-commits-git-analysis-impact.md |
+| AI attribution, Co-Authored-By, git blame AI | ai-agent-commits-git-analysis-impact.md |
+| AI churn, AI code duplication, AI quality | ai-agent-commits-git-analysis-impact.md |
+| git-ai, Agent Trace, AI tracking standard | ai-agent-commits-git-analysis-impact.md |
+| Copilot statistics, AI code percentage | ai-agent-commits-git-analysis-impact.md |
+| AI bus factor, phantom ownership | ai-agent-commits-git-analysis-impact.md |
+| AI coupling, architectural erosion | ai-agent-commits-git-analysis-impact.md |
+| Sonar AI Code Assurance, AI quality gate | ai-agent-commits-git-analysis-impact.md |
+| vibe coding, AI slop, AI PR quality | ai-agent-commits-git-analysis-impact.md |
+| autonomous agent git footprint, Aider commits | ai-agent-commits-git-analysis-impact.md |
+| AI governance, AI disclosure policy | ai-agent-commits-git-analysis-impact.md |
+| AI developer metrics, adjusted metrics | ai-agent-commits-git-analysis-impact.md |
+| AI commit detection, forensic heuristics | ai-commit-detection-forensics.md |
+| AI commit fingerprint, agent fingerprinting | ai-commit-detection-forensics.md |
+| Copilot branch prefix, cursor branch prefix | ai-commit-detection-forensics.md |
+| noreply@anthropic.com, noreply@aider.chat | ai-commit-detection-forensics.md |
+| cursoragent@cursor.com, bot@devin.ai | ai-commit-detection-forensics.md |
+| AI code stylometry, code perplexity | ai-commit-detection-forensics.md |
+| isvibecoded, VibeDetect, vibe detection | ai-commit-detection-forensics.md |
+| AI commit composite score, confidence | ai-commit-detection-forensics.md |
+| AI tool email registry, known emails | ai-commit-detection-forensics.md |
+| hallucinated imports, AI code hallucination | ai-commit-detection-forensics.md |
+| AI commit timing, autonomous agent patterns | ai-commit-detection-forensics.md |
+| AI PR patterns, AI diff patterns | ai-commit-detection-forensics.md |
+| Agent Trace JSON, agent-trace.dev | ai-commit-detection-forensics.md |
+| git-ai authorship, git notes AI | ai-commit-detection-forensics.md |
+| Binoculars detection, Fast-DetectGPT | ai-commit-detection-forensics.md |
+| Coding-Agent trailer, AI-assistant trailer | ai-commit-detection-forensics.md |
+| AIDev dataset, 33580 PRs, 932K PRs | ai-commit-detection-forensics.md |
+| multiline commit ratio, feature importance | ai-commit-detection-forensics.md |
+| per-tool commit signature, tool fingerprint | ai-commit-detection-forensics.md |
+| AI detection false positive, reliable signal | ai-commit-detection-forensics.md |
+| glide-mq, message queue, job queue | glide-mq.md |
+| valkey streams, valkey queue, redis queue | glide-mq.md |
+| bullmq alternative, bullmq migration | glide-mq.md |
+| FCALL, server functions, NAPI rust | glide-mq.md |
+| FlowProducer, DAG workflow, fan-out | glide-mq.md |
+| SKILL.md, skill authoring, skill format | skills-for-library-and-sdk-best-practices.md |
+| skill description, skill trigger, discovery | skills-for-library-and-sdk-best-practices.md |
+| progressive disclosure, token budget | skills-for-library-and-sdk-best-practices.md |
+| TanStack Intent, npm-agentskills | skills-for-library-and-sdk-best-practices.md |
+| SDK skill, library skill, npm skills | skills-for-library-and-sdk-best-practices.md |
 
 ## How to Use
 

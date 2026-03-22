@@ -1,0 +1,656 @@
+{
+  "topic": "Detecting AI-generated commits and code contributions in git history",
+  "slug": "ai-commit-detection-forensics",
+  "generated": "2026-03-14T12:00:00Z",
+  "depth": "deep",
+  "totalSources": 42,
+  "sources": [
+    {
+      "url": "https://arxiv.org/abs/2601.17406",
+      "title": "Fingerprinting AI Coding Agents on GitHub (arXiv:2601.17406)",
+      "qualityScore": 98,
+      "authority": 10,
+      "recency": 10,
+      "depth": 10,
+      "examples": 9,
+      "uniqueness": 10,
+      "keyInsights": [
+        "97.2% F1-score for multi-class agent identification using 41 features",
+        "Multiline commit ratio is dominant feature at 44.7% importance",
+        "Codex multiline patterns 67.5%, Claude conditional density 27.2%",
+        "33,580 PRs from 5 agents analyzed with XGBoost",
+        "Claude Code has lowest recall at 57% due to small sample size"
+      ]
+    },
+    {
+      "url": "https://arxiv.org/abs/2602.09185",
+      "title": "AIDev: Studying AI Coding Agents on GitHub",
+      "qualityScore": 95,
+      "authority": 10,
+      "recency": 10,
+      "depth": 9,
+      "examples": 8,
+      "uniqueness": 9,
+      "keyInsights": [
+        "932,791 agent-authored PRs from 5 agents across 116,211 repos",
+        "88,576 commits and 711,923 file-level diffs analyzed",
+        "Agentic PRs differ most in commit structure and file breadth",
+        "Dataset available on Hugging Face and Zenodo"
+      ]
+    },
+    {
+      "url": "https://arxiv.org/abs/2506.17323",
+      "title": "LLM-generated Code Stylometry for Authorship Attribution",
+      "qualityScore": 92,
+      "authority": 9,
+      "recency": 8,
+      "depth": 10,
+      "examples": 9,
+      "uniqueness": 9,
+      "keyInsights": [
+        "CodeT5-Authorship achieves 97.56% accuracy for binary LLM attribution",
+        "Comment style is dominant signal (2-3pp impact when removed)",
+        "Claude favors longer identifiers, ChatGPT shorter names",
+        "95.40% multi-class accuracy across 5 LLMs",
+        "Limited to C language; generalization unknown"
+      ]
+    },
+    {
+      "url": "https://agent-trace.dev/",
+      "title": "Agent Trace Specification (by Cursor)",
+      "qualityScore": 90,
+      "authority": 9,
+      "recency": 10,
+      "depth": 9,
+      "examples": 8,
+      "uniqueness": 10,
+      "keyInsights": [
+        "JSON-based open spec for AI code attribution at file/line level",
+        "Contributor types: human, ai, mixed, unknown",
+        "Content hashing via murmur3 for tracking code across moves",
+        "Partners include Cline, Cognition, Jules, Vercel, Cloudflare",
+        "Storage-agnostic: files, git notes, database"
+      ]
+    },
+    {
+      "url": "https://usegitai.com/docs/cli/how-git-ai-works",
+      "title": "Git AI - How It Works (vendor-agnostic tracking)",
+      "qualityScore": 88,
+      "authority": 8,
+      "recency": 9,
+      "depth": 9,
+      "examples": 8,
+      "uniqueness": 9,
+      "keyInsights": [
+        "Uses git notes (--ref=ai) for metadata storage",
+        "Pre/post-edit checkpoints capture AI vs human changes",
+        "Authorship logs map line ranges to agent sessions",
+        "Preserves attribution through rebases and squashes",
+        "Requires proactive agent integration"
+      ]
+    },
+    {
+      "url": "https://fabiorehm.com/blog/2026/03/02/our-coding-agent-commits-deserve-better-than-co-authored-by/",
+      "title": "Our Coding Agent Commits Deserve Better Than Co-Authored-By",
+      "qualityScore": 87,
+      "authority": 7,
+      "recency": 10,
+      "depth": 8,
+      "examples": 9,
+      "uniqueness": 10,
+      "keyInsights": [
+        "Co-Authored-By was designed for humans, not AI metadata",
+        "Proposes Coding-Agent and Model trailers as alternatives",
+        "AI-assistant trailer captures tool+model in single field",
+        "Format changes between Claude Code releases cause inconsistencies",
+        "Same model produces different output across different agent tools"
+      ]
+    },
+    {
+      "url": "https://aider.chat/docs/git.html",
+      "title": "Aider Git Integration Documentation",
+      "qualityScore": 90,
+      "authority": 9,
+      "recency": 9,
+      "depth": 9,
+      "examples": 9,
+      "uniqueness": 7,
+      "keyInsights": [
+        "Co-authored-by: aider (model) <noreply@aider.chat> format",
+        "(aider) appended to git author/committer name",
+        "aider: prefix for commit messages configurable",
+        "Conventional commits format by default",
+        "All attribution options independently configurable"
+      ]
+    },
+    {
+      "url": "https://docs.github.com/en/copilot/concepts/agents/coding-agent/about-coding-agent",
+      "title": "About GitHub Copilot Coding Agent - GitHub Docs",
+      "qualityScore": 92,
+      "authority": 10,
+      "recency": 9,
+      "depth": 8,
+      "examples": 7,
+      "uniqueness": 7,
+      "keyInsights": [
+        "Branch prefix copilot/ is hardcoded security restriction",
+        "One PR per assigned issue",
+        "Co-authored by requesting developer",
+        "Cannot push to default branches",
+        "Commits authored as GitHub Copilot bot"
+      ]
+    },
+    {
+      "url": "https://github.blog/changelog/2025-10-16-copilot-coding-agent-uses-better-branch-names-and-pull-request-titles/",
+      "title": "Copilot Coding Agent Better Branch Names - GitHub Changelog",
+      "qualityScore": 82,
+      "authority": 10,
+      "recency": 8,
+      "depth": 5,
+      "examples": 7,
+      "uniqueness": 6,
+      "keyInsights": [
+        "Evolved from random UUIDs to descriptive copilot/ branch names",
+        "Example: copilot/add-theme-switcher instead of copilot/fix-bdaf7923"
+      ]
+    },
+    {
+      "url": "https://docs.anthropic.com/en/docs/claude-code/settings",
+      "title": "Claude Code Settings - Attribution Configuration",
+      "qualityScore": 90,
+      "authority": 10,
+      "recency": 9,
+      "depth": 8,
+      "examples": 8,
+      "uniqueness": 6,
+      "keyInsights": [
+        "Attribution setting controls commit and PR attribution separately",
+        "Default: Co-Authored-By: Claude <noreply@anthropic.com>",
+        "Generated with Claude Code text in commit body",
+        "Can be fully disabled via settings"
+      ]
+    },
+    {
+      "url": "https://github.com/anthropics/claude-code/issues/617",
+      "title": "Claude Code - Allow disabling attribution in git commits",
+      "qualityScore": 78,
+      "authority": 8,
+      "recency": 8,
+      "depth": 6,
+      "examples": 7,
+      "uniqueness": 6,
+      "keyInsights": [
+        "Users request ability to disable Claude attribution",
+        "includeCoAuthoredBy setting sometimes not respected",
+        "Format inconsistencies between releases"
+      ]
+    },
+    {
+      "url": "https://forum.cursor.com/t/co-author-added-without-consent-and-cant-be-turned-off/150096",
+      "title": "Cursor Co-Author Added Without Consent",
+      "qualityScore": 76,
+      "authority": 6,
+      "recency": 9,
+      "depth": 7,
+      "examples": 7,
+      "uniqueness": 7,
+      "keyInsights": [
+        "Cursor auto-adds Co-authored-by: Cursor <cursoragent@cursor.com>",
+        "Cannot be turned off by users",
+        "Users develop workaround scripts to filter attribution"
+      ]
+    },
+    {
+      "url": "https://docs.cursor.com/en/background-agent",
+      "title": "Cursor Background Agents Documentation",
+      "qualityScore": 82,
+      "authority": 9,
+      "recency": 9,
+      "depth": 7,
+      "examples": 6,
+      "uniqueness": 7,
+      "keyInsights": [
+        "Background Agent creates cursor/ prefixed branches",
+        "Branch naming not customizable",
+        "May ignore commit message rules set in .cursor/rules"
+      ]
+    },
+    {
+      "url": "https://community.openai.com/t/does-openai-codex-add-any-default-commit-level-metadata-in-git-workflows/1371947",
+      "title": "Does OpenAI Codex Add Default Commit-Level Metadata?",
+      "qualityScore": 80,
+      "authority": 7,
+      "recency": 9,
+      "depth": 7,
+      "examples": 6,
+      "uniqueness": 8,
+      "keyInsights": [
+        "Codex did not add commit attribution by default initially",
+        "command_attribution config added later",
+        "No hidden signals or API metadata in git history",
+        "Configurable via ~/.codex/config.toml"
+      ]
+    },
+    {
+      "url": "https://github.com/openai/codex/pull/11617",
+      "title": "Codex: Prompt-based co-author attribution with config override",
+      "qualityScore": 82,
+      "authority": 9,
+      "recency": 9,
+      "depth": 7,
+      "examples": 7,
+      "uniqueness": 7,
+      "keyInsights": [
+        "Hook-based co-author attribution via codex_git_commit",
+        "command_attribution config supports custom labels",
+        "Can be disabled with empty string",
+        "Treats override as verbatim trailer text"
+      ]
+    },
+    {
+      "url": "https://docs.devin.ai/work-with-devin/devin-review",
+      "title": "Devin Review - Devin Documentation",
+      "qualityScore": 78,
+      "authority": 9,
+      "recency": 8,
+      "depth": 6,
+      "examples": 6,
+      "uniqueness": 7,
+      "keyInsights": [
+        "Commits made as Devin bot with bot@devin.ai email",
+        "Custom PR template support",
+        "GitHub App integration as devin-ai-integration[bot]"
+      ]
+    },
+    {
+      "url": "https://jules.google/docs/",
+      "title": "Google Jules Documentation",
+      "qualityScore": 80,
+      "authority": 9,
+      "recency": 9,
+      "depth": 6,
+      "examples": 6,
+      "uniqueness": 7,
+      "keyInsights": [
+        "Three authorship modes: Jules sole, co-authored, user sole",
+        "Jules listed as commit author by default",
+        "PR author is the user, not Jules",
+        "Supports Agent Trace specification"
+      ]
+    },
+    {
+      "url": "https://www.vibedetect.io/",
+      "title": "VibeDetect - AI Code Detection Tool",
+      "qualityScore": 75,
+      "authority": 6,
+      "recency": 9,
+      "depth": 7,
+      "examples": 6,
+      "uniqueness": 8,
+      "keyInsights": [
+        "Weighted scoring system combining multiple analyzer categories",
+        "Signals: template similarity, dependency selection, naming patterns",
+        "Score 0-100 mapped to human-readable verdicts",
+        "Deterministic heuristics + optional LLM analysis"
+      ]
+    },
+    {
+      "url": "https://isvibecoded.com/",
+      "title": "IsVibeCoded - Detect AI-generated code in GitHub repos",
+      "qualityScore": 70,
+      "authority": 5,
+      "recency": 9,
+      "depth": 5,
+      "examples": 5,
+      "uniqueness": 7,
+      "keyInsights": [
+        "Analyzes 5 features: naming, repetition, comments, boilerplate, creativity",
+        "Provides confidence score (0-100)",
+        "Entertainment/insight only, not for hiring/integrity",
+        "AI: verbose names, consistent formatting, formal docs"
+      ]
+    },
+    {
+      "url": "https://dev.to/satinathnit/introducing-ai-usage-measurement-framework-track-ai-assisted-development-in-your-repositories-3m1i",
+      "title": "AI Usage Measurement Framework",
+      "qualityScore": 74,
+      "authority": 5,
+      "recency": 8,
+      "depth": 7,
+      "examples": 7,
+      "uniqueness": 7,
+      "keyInsights": [
+        "Pattern matching on commit messages for tool signatures",
+        "Confidence levels: High (0.9), Medium (0.7-0.85), Low (0.3-0.6)",
+        "Supports 10 AI tools via string matching",
+        "Privacy-friendly local analysis only"
+      ]
+    },
+    {
+      "url": "https://docs.sonarsource.com/sonarqube-server/ai-capabilities/autodetect-ai-code",
+      "title": "SonarQube Autodetect AI Code",
+      "qualityScore": 72,
+      "authority": 9,
+      "recency": 7,
+      "depth": 5,
+      "examples": 4,
+      "uniqueness": 6,
+      "keyInsights": [
+        "Detects Copilot usage via GitHub App API (user activity, not code patterns)",
+        "DEPRECATED in SonarQube Server 2026.1",
+        "Limited to GitHub Copilot only",
+        "No code-level analysis"
+      ]
+    },
+    {
+      "url": "https://arxiv.org/abs/2401.12070",
+      "title": "Spotting LLMs With Binoculars: Zero-Shot Detection (ICML 2024)",
+      "qualityScore": 88,
+      "authority": 10,
+      "recency": 7,
+      "depth": 9,
+      "examples": 7,
+      "uniqueness": 8,
+      "keyInsights": [
+        "90%+ detection rate at 0.01% false positive rate",
+        "Zero-shot, domain-agnostic approach",
+        "Contrasts two related LLMs (observer + performer)",
+        "Outperforms GPTZero, Ghostbuster, DetectGPT, Fast-DetectGPT",
+        "Not specifically validated for code"
+      ]
+    },
+    {
+      "url": "https://ojs.aaai.org/index.php/AAAI/article/view/30361/32410",
+      "title": "Detecting AI-Generated Code Using Perplexity (AAAI 2024)",
+      "qualityScore": 85,
+      "authority": 9,
+      "recency": 7,
+      "depth": 9,
+      "examples": 8,
+      "uniqueness": 8,
+      "keyInsights": [
+        "Targeted masking perturbation on high-perplexity code areas",
+        "AUC 87.81% for >50 LOC, drops to 69.75% for <20 LOC",
+        "AI code has more uniform perplexity distribution",
+        "Line-level granularity possible via per-token perplexity"
+      ]
+    },
+    {
+      "url": "https://gptzero.me/technology",
+      "title": "GPTZero Technology - AI Detection Methodology",
+      "qualityScore": 68,
+      "authority": 7,
+      "recency": 7,
+      "depth": 6,
+      "examples": 4,
+      "uniqueness": 5,
+      "keyInsights": [
+        "7-component detection model for AI-generated text",
+        "Code detection AUC only 0.64 (poor to fair)",
+        "Examines perplexity, burstiness, and style",
+        "Not effective for code compared to prose"
+      ]
+    },
+    {
+      "url": "https://arxiv.org/html/2603.04212v1",
+      "title": "Code Fingerprints: Disentangled Attribution of LLM-Generated Code",
+      "qualityScore": 82,
+      "authority": 9,
+      "recency": 10,
+      "depth": 8,
+      "examples": 7,
+      "uniqueness": 8,
+      "keyInsights": [
+        "Recent (2026) work on LLM code attribution",
+        "Disentangled approach separating style from content"
+      ]
+    },
+    {
+      "url": "https://www.deployhq.com/blog/how-to-use-git-with-claude-code-understanding-the-co-authored-by-attribution",
+      "title": "How to Use Git with Claude Code: Co-Authored-By Attribution",
+      "qualityScore": 78,
+      "authority": 6,
+      "recency": 8,
+      "depth": 8,
+      "examples": 8,
+      "uniqueness": 5,
+      "keyInsights": [
+        "Default format: Co-Authored-By: Claude <noreply@anthropic.com>",
+        "\\n\\n separator required by git trailers format",
+        "Attribution setting controls commit and PR separately"
+      ]
+    },
+    {
+      "url": "https://github.com/orgs/community/discussions/179983",
+      "title": "Prevent Copilot Coding Agent from being main author of commits",
+      "qualityScore": 76,
+      "authority": 7,
+      "recency": 9,
+      "depth": 7,
+      "examples": 6,
+      "uniqueness": 6,
+      "keyInsights": [
+        "Squash-and-merge sets Copilot as primary author",
+        "No official GitHub solution for author override",
+        "Workarounds via Co-authored-by trailers ineffective"
+      ]
+    },
+    {
+      "url": "https://nx.dev/blog/git-worktrees-ai-agents",
+      "title": "How Git Worktrees Changed My AI Agent Workflow",
+      "qualityScore": 75,
+      "authority": 7,
+      "recency": 8,
+      "depth": 7,
+      "examples": 7,
+      "uniqueness": 7,
+      "keyInsights": [
+        "Worktrees enable parallel AI agent workflows",
+        "Each agent gets isolated working directory",
+        "Branch-per-task pattern for agent work",
+        "Prevents context contamination between tasks"
+      ]
+    },
+    {
+      "url": "https://dev.to/kenimo49/why-just-squash-merge-no-longer-works-in-the-age-of-ai-1kfc",
+      "title": "Why Squash Merge No Longer Works in the Age of AI",
+      "qualityScore": 74,
+      "authority": 5,
+      "recency": 9,
+      "depth": 7,
+      "examples": 6,
+      "uniqueness": 8,
+      "keyInsights": [
+        "AI agents produce PRs with 50+ tests and 1000+ lines",
+        "Squash merge obscures AI authorship attribution",
+        "Merge commits recommended to preserve AI attribution"
+      ]
+    },
+    {
+      "url": "https://www.ssw.com.au/rules/attribute-ai-assisted-commits-with-co-authors",
+      "title": "Do You Attribute AI-Assisted Commits with Co-Authors?",
+      "qualityScore": 72,
+      "authority": 6,
+      "recency": 8,
+      "depth": 6,
+      "examples": 8,
+      "uniqueness": 5,
+      "keyInsights": [
+        "Best practice: attribute AI commits with Co-authored-by trailers",
+        "Standard format for multiple AI tools",
+        "Team governance recommendations"
+      ]
+    },
+    {
+      "url": "https://www.pangram.com/blog/why-perplexity-and-burstiness-fail-to-detect-ai",
+      "title": "Why Perplexity and Burstiness Fail to Detect AI",
+      "qualityScore": 72,
+      "authority": 6,
+      "recency": 8,
+      "depth": 7,
+      "examples": 5,
+      "uniqueness": 7,
+      "keyInsights": [
+        "Newer LLMs produce higher-entropy, more varied text",
+        "Signature patterns less pronounced in 2025+ models",
+        "Human writing can exhibit AI-like patterns"
+      ]
+    },
+    {
+      "url": "https://dev.to/carl_max007/understanding-false-positives-in-ai-code-detection-systems-2ce6",
+      "title": "Understanding False Positives in AI Code Detection",
+      "qualityScore": 70,
+      "authority": 5,
+      "recency": 8,
+      "depth": 7,
+      "examples": 6,
+      "uniqueness": 7,
+      "keyInsights": [
+        "Good developers write clean code matching AI patterns",
+        "Version history tells clearer story than static analysis",
+        "Code in popular stacks more likely misclassified",
+        "Behavior-based validation better than detection heuristics"
+      ]
+    },
+    {
+      "url": "https://www.blueoptima.com/post/how-to-detect-ai-generated-code-in-your-software-projects",
+      "title": "How to Detect AI-Generated Code in Your Software Projects",
+      "qualityScore": 68,
+      "authority": 6,
+      "recency": 7,
+      "depth": 6,
+      "examples": 5,
+      "uniqueness": 5,
+      "keyInsights": [
+        "Statistical analysis, ML models, syntax evaluation approaches",
+        "Pattern comparison against known AI-generated code databases",
+        "CI pipeline integration for automated detection"
+      ]
+    },
+    {
+      "url": "https://docs.windsurf.com/windsurf/ai-commit-message",
+      "title": "Windsurf AI Commit Messages Documentation",
+      "qualityScore": 68,
+      "authority": 8,
+      "recency": 8,
+      "depth": 5,
+      "examples": 5,
+      "uniqueness": 5,
+      "keyInsights": [
+        "Single-click AI commit message generation",
+        "No Co-Authored-By trailer or attribution",
+        "Analyzes code changes for message content",
+        "One of hardest tools to detect"
+      ]
+    },
+    {
+      "url": "https://docs.cline.bot/features/commands-and-shortcuts/git-integration",
+      "title": "Cline Git Integration - Generate Commit Message",
+      "qualityScore": 68,
+      "authority": 7,
+      "recency": 8,
+      "depth": 6,
+      "examples": 5,
+      "uniqueness": 5,
+      "keyInsights": [
+        "Generates commit messages via getWorkingState() and git diff",
+        "No attribution trailer or author modification",
+        "Uses VSCode Git extension API"
+      ]
+    },
+    {
+      "url": "https://docs.tabnine.com/main/welcome/readme/protection/provenance-and-attribution",
+      "title": "Tabnine Provenance and Attribution",
+      "qualityScore": 72,
+      "authority": 8,
+      "recency": 7,
+      "depth": 7,
+      "examples": 5,
+      "uniqueness": 7,
+      "keyInsights": [
+        "Provenance tracing against GitHub public code",
+        "License-aware attribution with source references",
+        "Postgres-based signature database",
+        "CI/CD integration for license compliance"
+      ]
+    },
+    {
+      "url": "https://github.com/git-ai-project/git-ai",
+      "title": "git-ai: Git Extension for Tracking AI-Generated Code",
+      "qualityScore": 75,
+      "authority": 6,
+      "recency": 9,
+      "depth": 7,
+      "examples": 7,
+      "uniqueness": 8,
+      "keyInsights": [
+        "Vendor-agnostic, zero-configuration CLI",
+        "Checkpoints stored in .git/ai/",
+        "Authorship logs attached via git notes",
+        "Heuristic-free approach: agents explicitly mark their code"
+      ]
+    },
+    {
+      "url": "https://github.com/satinath-nit/ai-usage-measurement-framework",
+      "title": "AI Usage Measurement Framework (GitHub)",
+      "qualityScore": 70,
+      "authority": 5,
+      "recency": 8,
+      "depth": 6,
+      "examples": 7,
+      "uniqueness": 6,
+      "keyInsights": [
+        "Commit message pattern matching for 10 AI tools",
+        "Confidence scoring: High/Medium/Low",
+        "Also analyzes Agents.md files",
+        "Open source, privacy-friendly"
+      ]
+    },
+    {
+      "url": "https://www.cs.cmu.edu/~ckaestne/pdf/jsep17.pdf",
+      "title": "Identifying Unusual Commits on GitHub (CMU Research)",
+      "qualityScore": 75,
+      "authority": 9,
+      "recency": 4,
+      "depth": 8,
+      "examples": 7,
+      "uniqueness": 7,
+      "keyInsights": [
+        "Commit time-of-day analysis for anomaly detection",
+        "Per-developer timing baselines for unusual detection",
+        "Anomaly scores based on commit frequency patterns",
+        "Applicable to detecting autonomous agent timing"
+      ]
+    },
+    {
+      "url": "https://cline.bot/blog/commit-messages-arent-just-for-humans",
+      "title": "Commit Messages Aren't Just For Humans (Cline)",
+      "qualityScore": 72,
+      "authority": 7,
+      "recency": 8,
+      "depth": 6,
+      "examples": 6,
+      "uniqueness": 7,
+      "keyInsights": [
+        "AI agents parse commit messages for context signals",
+        "Commit quality directly impacts AI code generation quality",
+        "Vague commits force agent to guess intent"
+      ]
+    },
+    {
+      "url": "https://elite-ai-assisted-coding.dev/p/attribute-git-commits-to-ai-agents",
+      "title": "Attribute Git Commits to AI Agents",
+      "qualityScore": 74,
+      "authority": 6,
+      "recency": 8,
+      "depth": 7,
+      "examples": 7,
+      "uniqueness": 6,
+      "keyInsights": [
+        "Recommended: --author='AI <agent@example.com>' for agent commits",
+        "Git distinguishes author vs committer for attribution",
+        "Best practices for team AI commit governance"
+      ]
+    }
+  ]
+}

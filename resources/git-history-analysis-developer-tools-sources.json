@@ -1,0 +1,467 @@
+{
+  "topic": "Git History Analysis in Developer Tools",
+  "slug": "git-history-analysis-developer-tools",
+  "generated": "2026-03-14T00:00:00Z",
+  "depth": "medium",
+  "totalSources": 24,
+  "sources": [
+    {
+      "url": "https://adamtornhill.com/articles/crimescene/codeascrimescene.htm",
+      "title": "Code as a Crime Scene - Adam Tornhill",
+      "qualityScore": 97,
+      "scores": {
+        "authority": 10,
+        "recency": 7,
+        "depth": 10,
+        "examples": 10,
+        "uniqueness": 10
+      },
+      "keyInsights": [
+        "Geographical profiling from criminal psychology applied to code analysis",
+        "Version control as behavioral record, not just versioning",
+        "Logical coupling reveals hidden dependencies invisible to static analysis",
+        "Social analysis: developer count, knowledge drain, parallel activity as quality signals",
+        "Complexity only matters when combined with change frequency",
+        "Tree maps and Code City metaphor for visualization"
+      ]
+    },
+    {
+      "url": "https://codescene.io/docs/guides/technical/hotspots.html",
+      "title": "CodeScene Technical Debt and Hotspot Analysis Documentation",
+      "qualityScore": 95,
+      "scores": {
+        "authority": 10,
+        "recency": 9,
+        "depth": 10,
+        "examples": 8,
+        "uniqueness": 8
+      },
+      "keyInsights": [
+        "Hotspots combine development frequency with code health metrics",
+        "1.2% of codebase can consume 12.5% of development effort and 45% of bugs",
+        "Code health weighted by temporal activity data",
+        "Integration with Jira for defect correlation and cost assignment",
+        "Team-level filtering and organizational data integration"
+      ]
+    },
+    {
+      "url": "https://codescene.io/docs/guides/technical/change-coupling.html",
+      "title": "CodeScene Change Coupling Documentation",
+      "qualityScore": 92,
+      "scores": {
+        "authority": 10,
+        "recency": 9,
+        "depth": 9,
+        "examples": 7,
+        "uniqueness": 8
+      },
+      "keyInsights": [
+        "Three coupling detection mechanisms: commit-level, temporal, ticket-based",
+        "Sum of couplings as primary metric for architectural centrality",
+        "Color-coded trends: red (strengthening), blue (weakening), yellow (stable)",
+        "Use cases: clone detection, test relevance, architectural decay, hidden dependencies",
+        "Cross-team coordination bottleneck detection"
+      ]
+    },
+    {
+      "url": "https://github.com/src-d/hercules",
+      "title": "Hercules - Git Repository Analysis Engine",
+      "qualityScore": 91,
+      "scores": {
+        "authority": 8,
+        "recency": 6,
+        "depth": 10,
+        "examples": 9,
+        "uniqueness": 9
+      },
+      "keyInsights": [
+        "DAG-based analysis pipeline over full commit history including branches and merges",
+        "Burndown analysis at repo, file, and developer levels",
+        "File and developer coupling matrices",
+        "Sentiment analysis of code comments via neural networks",
+        "Dynamic Time Warping for developer similarity, HDBSCAN clustering",
+        "Linux kernel analysis in ~100 minutes",
+        "Output in YAML, Protocol Buffers, JSON, TSV"
+      ]
+    },
+    {
+      "url": "https://github.com/erikbern/git-of-theseus",
+      "title": "git-of-theseus - Analyze How a Git Repo Grows Over Time",
+      "qualityScore": 88,
+      "scores": {
+        "authority": 8,
+        "recency": 6,
+        "depth": 8,
+        "examples": 9,
+        "uniqueness": 9
+      },
+      "keyInsights": [
+        "Code survival tracking via Kaplan-Meier estimation with exponential decay fitting",
+        "Cohort analysis grouping code by year written",
+        "Author contribution persistence tracking",
+        "Output as JSON files: cohorts.json, authors.json, exts.json, survival.json",
+        "Stack plots and line plots for visualization"
+      ]
+    },
+    {
+      "url": "https://amedee.me/introducing-gix-of-theseus/",
+      "title": "500x Faster Theseus Plots with Rust and Gitoxide",
+      "qualityScore": 87,
+      "scores": {
+        "authority": 7,
+        "recency": 9,
+        "depth": 8,
+        "examples": 9,
+        "uniqueness": 9
+      },
+      "keyInsights": [
+        "500-850x speedup over Python git-of-theseus using Rust and gitoxide",
+        "Incremental blame tracking instead of repeated git blame calls",
+        "Linux repo: 36000s -> 68s; FFmpeg: 8195s -> 9.6s",
+        "Single-pass history traversal maintaining blame state",
+        "Focused scope reduction for performance"
+      ]
+    },
+    {
+      "url": "https://www.gitclear.com/measuring_code_activity_a_comprehensive_guide_for_the_data_driven",
+      "title": "GitClear - Measuring Code Activity: A Comprehensive Guide",
+      "qualityScore": 86,
+      "scores": {
+        "authority": 8,
+        "recency": 9,
+        "depth": 9,
+        "examples": 7,
+        "uniqueness": 8
+      },
+      "keyInsights": [
+        "Diff Delta correlates 26-61% with developer effort vs 13-31% for lines of code",
+        "Values removed code equally with added code",
+        "Code churn identified as problematic metric that conflates multiple concepts",
+        "65+ velocity, AI usage, code quality, and DevEx metrics",
+        "2172 developer-weeks of AI productivity correlation analysis"
+      ]
+    },
+    {
+      "url": "https://understandlegacycode.com/blog/focus-refactoring-with-hotspots-analysis/",
+      "title": "Focus Refactoring on What Matters with Hotspots Analysis",
+      "qualityScore": 90,
+      "scores": {
+        "authority": 7,
+        "recency": 8,
+        "depth": 9,
+        "examples": 10,
+        "uniqueness": 7
+      },
+      "keyInsights": [
+        "Churn vs Complexity quadrant model with four actionable zones",
+        "Practical git command for computing file churn from last 12 months",
+        "Top-right quadrant (high churn + high complexity) is the refactoring priority",
+        "Complex but stable code doesn't cost money - focus on active hotspots",
+        "Data-driven approach prevents 'everything is urgent' paralysis"
+      ]
+    },
+    {
+      "url": "https://dev.to/lakshmisravyavedantham/commit-prophet-i-built-a-tool-that-predicts-buggy-files-using-git-history-35mk",
+      "title": "commit-prophet: Predicting Buggy Files Using Git History",
+      "qualityScore": 85,
+      "scores": {
+        "authority": 6,
+        "recency": 9,
+        "depth": 9,
+        "examples": 10,
+        "uniqueness": 8
+      },
+      "keyInsights": [
+        "Three weighted signals: churn (40%), defect coupling (50%), co-change (10%)",
+        "Bug-fix detection via commit message keywords (fix, bug, patch, crash)",
+        "File pair co-occurrence computed via itertools.combinations",
+        "0-100 risk scores with labels: CRITICAL, HIGH, MEDIUM, LOW",
+        "90-day analysis windows for co-change detection",
+        "Pure Python with subprocess calls to git"
+      ]
+    },
+    {
+      "url": "https://github.com/smontanari/code-forensics/wiki/Coupling-analysis",
+      "title": "code-forensics Coupling Analysis Documentation",
+      "qualityScore": 84,
+      "scores": {
+        "authority": 7,
+        "recency": 6,
+        "depth": 9,
+        "examples": 8,
+        "uniqueness": 8
+      },
+      "keyInsights": [
+        "Coupling degree derived from shared commits within a period",
+        "Two analysis types: sum of coupling (global) and temporal coupling (targeted)",
+        "Interactive enclosure diagrams with color intensity for coupling strength",
+        "Combined visualization of coupling degree with code churn metrics",
+        "Time-split analysis showing coupling evolution across periods"
+      ]
+    },
+    {
+      "url": "https://github.com/HelgeCPH/truckfactor",
+      "title": "truckfactor - Compute the Truck Factor of a Git Repository",
+      "qualityScore": 83,
+      "scores": {
+        "authority": 7,
+        "recency": 7,
+        "depth": 8,
+        "examples": 8,
+        "uniqueness": 8
+      },
+      "keyInsights": [
+        "Knowledge ownership = developer who edited most lines in each file",
+        "Iterative removal algorithm with >50% file coverage threshold",
+        "Output: truck factor number, critical authors list, commit SHA",
+        "CSV and verbose output formats",
+        "Based on Avelino et al. 'A novel approach for estimating Truck Factors'"
+      ]
+    },
+    {
+      "url": "https://codescene.com/blog/measure-conways-law/",
+      "title": "How Can You Measure Conway's Law? - CodeScene Blog",
+      "qualityScore": 88,
+      "scores": {
+        "authority": 9,
+        "recency": 8,
+        "depth": 9,
+        "examples": 8,
+        "uniqueness": 9
+      },
+      "keyInsights": [
+        "Team coupling measured by overlapping code contributions to same components",
+        "Color-coded visualization: redder = more team coupling",
+        "Strong coupling indicates design issues or org-architecture misalignment",
+        "Aggregation from individual authors to team-level boundaries",
+        "Data-driven decisions about team formation and service splitting"
+      ]
+    },
+    {
+      "url": "https://axify.io/blog/git-analytics",
+      "title": "Git Analytics: Challenges, Tools & Key Metrics",
+      "qualityScore": 82,
+      "scores": {
+        "authority": 7,
+        "recency": 9,
+        "depth": 8,
+        "examples": 7,
+        "uniqueness": 7
+      },
+      "keyInsights": [
+        "DORA metrics, SPACE framework, and flow metrics as foundations",
+        "Activity != productivity - high activity could mean unnecessary bloat",
+        "Track teams not individuals to prevent toxic metrics culture",
+        "Balance quantitative git data with qualitative developer feedback",
+        "Investment distribution tracking across features, refactoring, maintenance"
+      ]
+    },
+    {
+      "url": "https://www.conventionalcommits.org/en/v1.0.0/",
+      "title": "Conventional Commits Specification v1.0.0",
+      "qualityScore": 90,
+      "scores": {
+        "authority": 10,
+        "recency": 8,
+        "depth": 8,
+        "examples": 9,
+        "uniqueness": 7
+      },
+      "keyInsights": [
+        "Structured format: type[scope]: description [body] [footer]",
+        "Core types: fix (PATCH), feat (MINOR), BREAKING CHANGE (MAJOR)",
+        "Machine-parseable for automated changelog and version bump",
+        "Compatible with semantic versioning",
+        "Adopted by Angular, commitlint, semantic-release ecosystem"
+      ]
+    },
+    {
+      "url": "https://github.com/ishepard/pydriller",
+      "title": "PyDriller - Python Framework for Mining Software Repositories",
+      "qualityScore": 85,
+      "scores": {
+        "authority": 8,
+        "recency": 8,
+        "depth": 8,
+        "examples": 9,
+        "uniqueness": 7
+      },
+      "keyInsights": [
+        "Extract commits, developers, modifications, diffs, source code",
+        "Filter by date range, commit hash, tag, author",
+        "Structural metrics via Lizard integration",
+        "Traverse full history or filtered subsets",
+        "Academic origin with ACM ESEC/FSE 2018 publication"
+      ]
+    },
+    {
+      "url": "https://arxiv.org/html/2602.00410v1",
+      "title": "GitEvo: Code Evolution Analysis for Git Repositories",
+      "qualityScore": 84,
+      "scores": {
+        "authority": 8,
+        "recency": 10,
+        "depth": 9,
+        "examples": 7,
+        "uniqueness": 9
+      },
+      "keyInsights": [
+        "Four-step pipeline: commit selection, parsing, metric computation, export",
+        "Combines git-level (GitPython, PyDriller) with code-level (tree-sitter) analysis",
+        "Tracks evolution of functions, classes, decorators, type annotations",
+        "Supports Python, JavaScript, TypeScript, Java",
+        "Custom metric API for extensibility"
+      ]
+    },
+    {
+      "url": "https://github.com/reposense/RepoSense",
+      "title": "RepoSense - Contribution Analysis Tool for Git Repositories",
+      "qualityScore": 78,
+      "scores": {
+        "authority": 7,
+        "recency": 8,
+        "depth": 7,
+        "examples": 7,
+        "uniqueness": 7
+      },
+      "keyInsights": [
+        "Chronological visualization of code contributions and commits",
+        "Static HTML report generation",
+        "Contribution frequency and amount visualization",
+        "Code review panel and author comparison",
+        "Originated at NUS School of Computing for educational use"
+      ]
+    },
+    {
+      "url": "https://github.com/ejwa/gitinspector",
+      "title": "gitinspector - Statistical Analysis Tool for Git Repositories",
+      "qualityScore": 75,
+      "scores": {
+        "authority": 6,
+        "recency": 5,
+        "depth": 7,
+        "examples": 7,
+        "uniqueness": 6
+      },
+      "keyInsights": [
+        "Per-author statistics with timeline analysis",
+        "Workload and activity visualization per author",
+        "Multi-threaded analysis using multiple git instances",
+        "Output in plain text, HTML, and XML",
+        "Originally for university grading, now used worldwide"
+      ]
+    },
+    {
+      "url": "https://conferences.computer.org/ase/pdfs/ASE2020-4sGQAuWfliLhpf5VK4ZM4u/676800b336/676800b336.pdf",
+      "title": "JITBot: An Explainable Just-In-Time Defect Prediction Bot (ASE 2020)",
+      "qualityScore": 86,
+      "scores": {
+        "authority": 9,
+        "recency": 7,
+        "depth": 9,
+        "examples": 8,
+        "uniqueness": 9
+      },
+      "keyInsights": [
+        "Automatic commit risk scoring with explanations",
+        "Risk mitigation plan suggestions per commit",
+        "Integration into GitHub CI/CD as a GitHub App",
+        "Just-In-Time prediction at commit time, not retrospective",
+        "Continuous monitoring across multiple repositories"
+      ]
+    },
+    {
+      "url": "https://github.com/marketplace/actions/git-history-analyzer-and-code-quality-predictor",
+      "title": "Git History Analyzer and Code Quality Predictor - GitHub Action",
+      "qualityScore": 76,
+      "scores": {
+        "authority": 6,
+        "recency": 9,
+        "depth": 7,
+        "examples": 8,
+        "uniqueness": 7
+      },
+      "keyInsights": [
+        "ML-powered commit pattern and code churn analysis",
+        "Configurable risk thresholds (high: 0.8, medium: 0.5)",
+        "Automatic PR comments with analysis results",
+        "Identifies bug hotspots, refactoring candidates, test coverage gaps",
+        "Triggered on push/pull request events"
+      ]
+    },
+    {
+      "url": "https://www.metabase.com/blog/bus-factor",
+      "title": "Bus Factor of Top GitHub Projects - Metabase Blog",
+      "qualityScore": 80,
+      "scores": {
+        "authority": 7,
+        "recency": 8,
+        "depth": 7,
+        "examples": 8,
+        "uniqueness": 7
+      },
+      "keyInsights": [
+        "65% of GitHub projects have bus factor of 2 or less",
+        "Almost half have bus factor of 2 or less",
+        "Analysis across top GitHub projects",
+        "Quantifies knowledge concentration risk at ecosystem level"
+      ]
+    },
+    {
+      "url": "https://github.com/flacle/truegitcodechurn",
+      "title": "truegitcodechurn - Compute True Code Churn of a Git Repository",
+      "qualityScore": 77,
+      "scores": {
+        "authority": 6,
+        "recency": 7,
+        "depth": 8,
+        "examples": 8,
+        "uniqueness": 8
+      },
+      "keyInsights": [
+        "Distinguishes 'true' churn (rework of recently-written code) from normal changes",
+        "Python script for churn computation",
+        "Separates productive changes from wasteful rework",
+        "Configurable time window for 'recent' definition"
+      ]
+    },
+    {
+      "url": "https://pragprog.com/titles/atcrime2/your-code-as-a-crime-scene-second-edition/",
+      "title": "Your Code as a Crime Scene, Second Edition - Pragmatic Bookshelf",
+      "qualityScore": 93,
+      "scores": {
+        "authority": 10,
+        "recency": 9,
+        "depth": 10,
+        "examples": 9,
+        "uniqueness": 8
+      },
+      "keyInsights": [
+        "Forensic techniques applied to code: geographical profiling, behavioral analysis",
+        "Predict future of codebase from version control patterns",
+        "Assess refactoring direction with data",
+        "Understand how team dynamics influence code design",
+        "Language-agnostic analysis techniques"
+      ]
+    },
+    {
+      "url": "https://github.com/smontanari/code-forensics",
+      "title": "code-forensics - Code Analysis and Report Visualization Toolset",
+      "qualityScore": 81,
+      "scores": {
+        "authority": 7,
+        "recency": 6,
+        "depth": 8,
+        "examples": 8,
+        "uniqueness": 7
+      },
+      "keyInsights": [
+        "Node.js-based analysis running on gulp 4",
+        "Language-agnostic for most analyses",
+        "Sloc-trend, complexity-trend, developer-effort analysis tasks",
+        "Web-based report visualization",
+        "Time interval configuration for analysis periods"
+      ]
+    }
+  ]
+}

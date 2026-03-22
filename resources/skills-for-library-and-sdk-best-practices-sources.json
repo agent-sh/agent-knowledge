@@ -1,0 +1,185 @@
+{
+  "topic": "skills for a library and sdk best practices",
+  "slug": "skills-for-library-and-sdk-best-practices",
+  "generated": "2026-03-19T00:00:00Z",
+  "depth": "medium",
+  "totalSources": 16,
+  "sources": [
+    {
+      "url": "https://platform.claude.com/docs/en/agents-and-tools/agent-skills/best-practices",
+      "title": "Skill Authoring Best Practices - Anthropic",
+      "qualityScore": 99,
+      "scores": { "authority": 10, "recency": 10, "depth": 10, "examples": 10, "uniqueness": 10 },
+      "keyInsights": [
+        "Context window is a public good - only add what Claude doesn't know",
+        "Description field is the gatekeeper for skill discovery",
+        "Keep SKILL.md under 500 lines, use progressive disclosure",
+        "Match degrees of freedom to task fragility",
+        "Test with all models (Haiku/Sonnet/Opus)",
+        "Build evaluations before writing documentation"
+      ]
+    },
+    {
+      "url": "https://agentskills.io/what-are-skills",
+      "title": "What Are Skills? - Agent Skills Specification",
+      "qualityScore": 92,
+      "scores": { "authority": 9, "recency": 10, "depth": 8, "examples": 8, "uniqueness": 9 },
+      "keyInsights": [
+        "Discovery-activation-execution lifecycle",
+        "~100 tokens during metadata scanning",
+        "Full skill loads at <5k tokens",
+        "Bundled resources load only as needed"
+      ]
+    },
+    {
+      "url": "https://tanstack.com/blog/from-docs-to-agents",
+      "title": "TanStack Intent: Ship Agent Skills with npm Packages",
+      "qualityScore": 95,
+      "scores": { "authority": 9, "recency": 10, "depth": 9, "examples": 9, "uniqueness": 10 },
+      "keyInsights": [
+        "Skills should ship inside npm packages for version-locking",
+        "scaffold/validate/stale CLI commands for maintenance",
+        "Dependency graph enables automatic discovery",
+        "Staleness detection as part of release pipeline"
+      ]
+    },
+    {
+      "url": "https://code.claude.com/docs/en/skills",
+      "title": "Extend Claude with Skills - Claude Code Docs",
+      "qualityScore": 90,
+      "scores": { "authority": 10, "recency": 10, "depth": 7, "examples": 8, "uniqueness": 7 },
+      "keyInsights": [
+        "Skills structure in Claude Code",
+        "Installation and management workflow",
+        "Progressive disclosure implementation"
+      ]
+    },
+    {
+      "url": "https://bibek-poudel.medium.com/the-skill-md-pattern-how-to-write-ai-agent-skills-that-actually-work-72a3169dd7ee",
+      "title": "The SKILL.md Pattern: How to Write Skills That Actually Work",
+      "qualityScore": 82,
+      "scores": { "authority": 6, "recency": 9, "depth": 8, "examples": 8, "uniqueness": 7 },
+      "keyInsights": [
+        "Practical examples of good vs bad skill structure",
+        "Common failure modes and how to fix them",
+        "Real-world iteration stories"
+      ]
+    },
+    {
+      "url": "https://github.com/onmax/npm-agentskills",
+      "title": "npm-agentskills: Bundle Agent Skills with npm Packages",
+      "qualityScore": 85,
+      "scores": { "authority": 7, "recency": 9, "depth": 7, "examples": 8, "uniqueness": 9 },
+      "keyInsights": [
+        "agents field in package.json for skill discovery",
+        "Framework-agnostic skill export",
+        "Cross-tool compatibility (Claude, Copilot, Cursor)"
+      ]
+    },
+    {
+      "url": "https://www.gitbook.com/blog/skill-md",
+      "title": "skill.md explained: Structure Your Product for AI Agents",
+      "qualityScore": 80,
+      "scores": { "authority": 7, "recency": 9, "depth": 7, "examples": 7, "uniqueness": 7 },
+      "keyInsights": [
+        "Operational guidance vs marketing content distinction",
+        "How different agent tools discover and use skills"
+      ]
+    },
+    {
+      "url": "https://github.com/VoltAgent/awesome-agent-skills",
+      "title": "Awesome Agent Skills - 500+ Skills Collection",
+      "qualityScore": 78,
+      "scores": { "authority": 7, "recency": 9, "depth": 6, "examples": 8, "uniqueness": 6 },
+      "keyInsights": [
+        "Real-world examples across many domains",
+        "Cross-tool compatibility patterns",
+        "Community skill quality benchmarks"
+      ]
+    },
+    {
+      "url": "https://medium.com/@unicodeveloper/10-must-have-skills-for-claude-and-any-coding-agent-in-2026-b5451b013051",
+      "title": "10 Must-Have Skills for Claude in 2026",
+      "qualityScore": 75,
+      "scores": { "authority": 6, "recency": 9, "depth": 7, "examples": 7, "uniqueness": 6 },
+      "keyInsights": [
+        "Top skill categories by developer adoption",
+        "Patterns that work across different agent tools"
+      ]
+    },
+    {
+      "url": "https://developers.openai.com/codex/skills",
+      "title": "Agent Skills - OpenAI Codex Documentation",
+      "qualityScore": 88,
+      "scores": { "authority": 10, "recency": 10, "depth": 7, "examples": 7, "uniqueness": 7 },
+      "keyInsights": [
+        "OpenAI/Codex skill format compatibility",
+        "Cross-platform skill specification"
+      ]
+    },
+    {
+      "url": "https://vineeth.io/posts/sdk-development",
+      "title": "Design Patterns for REST API SDKs",
+      "qualityScore": 78,
+      "scores": { "authority": 7, "recency": 7, "depth": 9, "examples": 7, "uniqueness": 7 },
+      "keyInsights": [
+        "Client singleton, pagination, error wrappers",
+        "SDK wrapper design patterns (bridge, composite)",
+        "Type-safe filter patterns"
+      ]
+    },
+    {
+      "url": "https://medium.com/@andrejkurocenko/managing-ai-skills-across-projects-and-harnesses-was-a-mess-so-i-attempted-to-fix-it-697f6d30fdac",
+      "title": "Managing AI Skills Across Projects - skillbook",
+      "qualityScore": 75,
+      "scores": { "authority": 6, "recency": 9, "depth": 7, "examples": 6, "uniqueness": 8 },
+      "keyInsights": [
+        "Central library architecture for skill management",
+        "Cross-harness syncing challenges",
+        "Git-based skill distribution"
+      ]
+    },
+    {
+      "url": "https://dev.to/lightningdev123/understanding-skills-in-ai-agents-essential-skills-developers-should-know-in-2026-49hd",
+      "title": "Understanding Skills in AI Agents - DEV Community",
+      "qualityScore": 72,
+      "scores": { "authority": 5, "recency": 9, "depth": 7, "examples": 6, "uniqueness": 6 },
+      "keyInsights": [
+        "Skill ecosystem maturity in 2026",
+        "Developer adoption patterns"
+      ]
+    },
+    {
+      "url": "https://lobehub.com/skills/jeremylongshore-claude-code-plugins-plus-skills-linear-sdk-patterns",
+      "title": "Linear SDK Patterns Skill - LobeHub",
+      "qualityScore": 74,
+      "scores": { "authority": 6, "recency": 8, "depth": 7, "examples": 8, "uniqueness": 7 },
+      "keyInsights": [
+        "Real-world example of SDK wrapper skill",
+        "TypeScript SDK pattern best practices"
+      ]
+    },
+    {
+      "url": "https://auth0.com/blog/guiding-principles-for-building-sdks/",
+      "title": "Guiding Principles for Building SDKs - Auth0",
+      "qualityScore": 80,
+      "scores": { "authority": 8, "recency": 6, "depth": 8, "examples": 7, "uniqueness": 7 },
+      "keyInsights": [
+        "SDK design principles applicable to skill design",
+        "Developer experience first approach",
+        "Consistent patterns across platform variants"
+      ]
+    },
+    {
+      "url": "https://www.skillsdirectory.com/docs/skill-md-format",
+      "title": "SKILL.md Format - Skills Directory",
+      "qualityScore": 82,
+      "scores": { "authority": 7, "recency": 9, "depth": 8, "examples": 7, "uniqueness": 7 },
+      "keyInsights": [
+        "Complete SKILL.md specification",
+        "Frontmatter field definitions and constraints",
+        "Validation rules for name and description"
+      ]
+    }
+  ]
+}

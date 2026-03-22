@@ -1,0 +1,146 @@
+{
+  "topic": "glide-mq",
+  "slug": "glide-mq",
+  "generated": "2026-03-19T00:00:00Z",
+  "depth": "medium",
+  "totalSources": 12,
+  "sources": [
+    {
+      "url": "https://github.com/avifenesh/glide-mq",
+      "title": "glide-mq GitHub Repository",
+      "qualityScore": 98,
+      "scores": { "authority": 10, "recency": 10, "depth": 10, "examples": 10, "uniqueness": 10 },
+      "keyInsights": [
+        "1-RTT per job via FCALL server functions",
+        "Rust NAPI core via valkey-glide for lower latency",
+        "Cluster-native with hash-tagged keys",
+        "35-38% faster than BullMQ at concurrency >= 10",
+        "addBulk: 10,000 jobs in 350ms",
+        "API mirrors BullMQ for easy migration"
+      ]
+    },
+    {
+      "url": "https://valkey.io/topics/streams-intro/",
+      "title": "Valkey Streams Introduction",
+      "qualityScore": 90,
+      "scores": { "authority": 10, "recency": 9, "depth": 9, "examples": 8, "uniqueness": 8 },
+      "keyInsights": [
+        "Streams provide persistent log-based message queuing",
+        "Consumer groups enable exactly-once delivery within a group",
+        "PEL (Pending Entries List) tracks unacknowledged messages",
+        "XACK completes message processing"
+      ]
+    },
+    {
+      "url": "https://valkey.io/topics/functions-intro/",
+      "title": "Valkey Server Functions Introduction",
+      "qualityScore": 88,
+      "scores": { "authority": 10, "recency": 9, "depth": 8, "examples": 8, "uniqueness": 8 },
+      "keyInsights": [
+        "Server Functions persist across restarts (unlike EVAL)",
+        "FCALL invokes loaded functions with key arguments",
+        "No per-call compilation overhead",
+        "Functions can access multiple keys atomically"
+      ]
+    },
+    {
+      "url": "https://glide.valkey.io/languages/nodejs/",
+      "title": "Valkey GLIDE Node.js Documentation",
+      "qualityScore": 85,
+      "scores": { "authority": 10, "recency": 9, "depth": 7, "examples": 7, "uniqueness": 8 },
+      "keyInsights": [
+        "Official Valkey client with Rust core and NAPI bindings",
+        "Supports standalone and cluster modes",
+        "Built-in connection pooling and failover"
+      ]
+    },
+    {
+      "url": "https://www.npmjs.com/package/@valkey/valkey-glide",
+      "title": "@valkey/valkey-glide npm package",
+      "qualityScore": 82,
+      "scores": { "authority": 9, "recency": 9, "depth": 6, "examples": 7, "uniqueness": 7 },
+      "keyInsights": [
+        "Node.js 16+ required",
+        "Platform-specific native binaries distributed via optional deps",
+        "Part of the official valkey-io organization"
+      ]
+    },
+    {
+      "url": "https://glide.valkey.io/tutorials/pubsub/pubsub-basics/",
+      "title": "Valkey GLIDE Pub/Sub Basics",
+      "qualityScore": 78,
+      "scores": { "authority": 9, "recency": 8, "depth": 7, "examples": 7, "uniqueness": 6 },
+      "keyInsights": [
+        "Three subscription modes: Exact, Pattern, Sharded",
+        "Automatic reconnection for all subscriptions",
+        "Pub/Sub is fire-and-forget; Streams provide persistence"
+      ]
+    },
+    {
+      "url": "https://valkey.io/commands/fcall/",
+      "title": "Valkey FCALL Command Reference",
+      "qualityScore": 80,
+      "scores": { "authority": 10, "recency": 9, "depth": 6, "examples": 6, "uniqueness": 7 },
+      "keyInsights": [
+        "FCALL signature: FCALL function numkeys key [key ...] arg [arg ...]",
+        "All accessed keys must be explicitly provided",
+        "Functions loaded via FUNCTION LOAD persist across restarts"
+      ]
+    },
+    {
+      "url": "https://docs.bullmq.io/",
+      "title": "BullMQ Documentation",
+      "qualityScore": 75,
+      "scores": { "authority": 8, "recency": 8, "depth": 8, "examples": 7, "uniqueness": 5 },
+      "keyInsights": [
+        "BullMQ is the incumbent Node.js queue library",
+        "Uses ioredis and Lua EVAL scripts",
+        "API structure that glide-mq mirrors for migration compatibility"
+      ]
+    },
+    {
+      "url": "https://aws.amazon.com/blogs/database/introducing-valkey-glide-an-open-source-client-library-for-valkey-and-redis-open-source/",
+      "title": "AWS Blog: Introducing Valkey GLIDE",
+      "qualityScore": 82,
+      "scores": { "authority": 9, "recency": 7, "depth": 7, "examples": 6, "uniqueness": 8 },
+      "keyInsights": [
+        "GLIDE is multi-language with shared Rust core",
+        "Designed for reliability and high availability",
+        "Optimized for ElastiCache and MemoryDB"
+      ]
+    },
+    {
+      "url": "https://deepwiki.com/valkey-io/valkey-glide/3.5-pubsub-and-streaming",
+      "title": "DeepWiki: Valkey GLIDE Pub/Sub and Streaming",
+      "qualityScore": 72,
+      "scores": { "authority": 6, "recency": 8, "depth": 7, "examples": 6, "uniqueness": 7 },
+      "keyInsights": [
+        "GLIDE provides unified interface for standalone and cluster pub/sub",
+        "Sharded channels available in cluster mode only",
+        "Streams vs Pub/Sub trade-offs clearly explained"
+      ]
+    },
+    {
+      "url": "https://github.com/valkey-io/valkey-glide",
+      "title": "Valkey GLIDE GitHub Repository",
+      "qualityScore": 85,
+      "scores": { "authority": 10, "recency": 9, "depth": 7, "examples": 6, "uniqueness": 7 },
+      "keyInsights": [
+        "Multi-language: Java, Python, Node.js, Go",
+        "Core written in Rust with language bindings",
+        "Protobuf protocol between language layer and Rust core"
+      ]
+    },
+    {
+      "url": "https://valkey.io/commands/xreadgroup/",
+      "title": "Valkey XREADGROUP Command",
+      "qualityScore": 75,
+      "scores": { "authority": 10, "recency": 9, "depth": 6, "examples": 5, "uniqueness": 6 },
+      "keyInsights": [
+        "Consumer groups provide load balancing across consumers",
+        "Each message delivered to exactly one consumer in a group",
+        "PEL tracks delivery until XACK acknowledgment"
+      ]
+    }
+  ]
+}
