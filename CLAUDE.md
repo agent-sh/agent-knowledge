@@ -12,6 +12,10 @@
 | All-in-One Plus Modular Packages | all-in-one-plus-modular-packages.md | 40 | deep | 2026-02-21 |
 | GitHub Org Project Management (Multi-Repo OSS) | github-org-project-management.md | 15 | deep | 2026-02-21 |
 | GitHub Organization Structure Patterns | github-org-structure-patterns.md | 18 | deep | 2026-02-21 |
+| OSS Org Naming Patterns | oss-org-naming-patterns.md | 24 | medium | 2026-02-20 |
+| CLI Browser Automation for Agents | cli-browser-automation-agents.md | 32 | deep | 2026-02-20 |
+| Terminal Browsers & Agent Automation | terminal-browsers-agent-automation.md | 40 | deep | 2026-02-20 |
+| Web Session Persistence for CLI Agents | web-session-persistence-cli-agents.md | 42 | deep | 2026-02-20 |
 | Browser Agent Auth Flows (Slack, Notion, AWS) | browser-agent-auth-flows.md | training | deep | 2026-02-22 |
 | Social Platform Auth Flows (X, Reddit, Discord, LinkedIn) | social-platform-auth-flows.md | 35 | deep | 2026-02-22 |
 | Google & Microsoft Auth Flows for Browser Agents | google-microsoft-auth-flows.md | 28 | deep | 2026-02-22 |
@@ -52,7 +56,7 @@ Use this knowledge when user asks about:
 - "Codex MCP" -> ai-cli-advanced-integration-patterns.md
 - "Crush OpenCode" -> ai-cli-advanced-integration-patterns.md
 - "Agent SDK hosting" -> ai-cli-advanced-integration-patterns.md
-- "A2A protocol" -> ai-cli-advanced-integration-patterns.md
+- "A2A in AI CLI integration" -> ai-cli-advanced-integration-patterns.md
 - "Cross-tool MCP" -> ai-cli-advanced-integration-patterns.md
 - "AI CLI server mode" -> ai-cli-advanced-integration-patterns.md
 - "Claude Code as service" -> ai-cli-advanced-integration-patterns.md
@@ -108,6 +112,33 @@ Use this knowledge when user asks about:
 - "GitHub org profile README" -> github-org-structure-patterns.md
 - "developer tool org layout" -> github-org-structure-patterns.md
 - "open source org patterns" -> github-org-structure-patterns.md
+- "OSS org naming" -> oss-org-naming-patterns.md
+- "developer tool org names" -> oss-org-naming-patterns.md
+- "org name ecosystem branding" -> oss-org-naming-patterns.md
+- "npm scope naming" -> oss-org-naming-patterns.md
+- "GitHub org name availability" -> oss-org-naming-patterns.md
+- "project naming conventions OSS" -> oss-org-naming-patterns.md
+- "naming open source ecosystem" -> oss-org-naming-patterns.md
+- "CLI browser automation" -> cli-browser-automation-agents.md
+- "headless browser agent CLI" -> cli-browser-automation-agents.md
+- "Puppeteer CLI agent" -> cli-browser-automation-agents.md
+- "Playwright CLI agent" -> cli-browser-automation-agents.md
+- "browser automation AI agent" -> cli-browser-automation-agents.md
+- "programmatic browser control" -> cli-browser-automation-agents.md
+- "web scraping AI agent" -> cli-browser-automation-agents.md
+- "terminal browser automation" -> terminal-browsers-agent-automation.md
+- "w3m lynx links automation" -> terminal-browsers-agent-automation.md
+- "Browsh agent scripting" -> terminal-browsers-agent-automation.md
+- "text browser AI agent" -> terminal-browsers-agent-automation.md
+- "elinks agent automation" -> terminal-browsers-agent-automation.md
+- "terminal browser scripting" -> terminal-browsers-agent-automation.md
+- "web session persistence CLI" -> web-session-persistence-cli-agents.md
+- "cookie persistence agent" -> web-session-persistence-cli-agents.md
+- "CLI agent cookie jar" -> web-session-persistence-cli-agents.md
+- "session storage CLI agent" -> web-session-persistence-cli-agents.md
+- "auth state reuse CLI" -> web-session-persistence-cli-agents.md
+- "web session cache agent" -> web-session-persistence-cli-agents.md
+- "persistent browser context CLI" -> web-session-persistence-cli-agents.md
 - "Slack login automation" -> browser-agent-auth-flows.md
 - "Notion auth flow" -> browser-agent-auth-flows.md
 - "AWS Console login" -> browser-agent-auth-flows.md
@@ -361,7 +392,7 @@ Use this knowledge when user asks about:
 - "RAG skill indexing" -> rag-skill-indexing.md
 - "RAG chunking strategy" -> rag-skill-indexing.md
 - "skill description optimization" -> rag-skill-indexing.md
-- "progressive disclosure skill" -> rag-skill-indexing.md
+- "progressive disclosure RAG" -> rag-skill-indexing.md
 - "context window optimization" -> rag-skill-indexing.md
 - "XML vs markdown AI retrieval" -> rag-skill-indexing.md
 - "skill trigger phrases" -> rag-skill-indexing.md
@@ -499,6 +530,17 @@ Use this knowledge when user asks about:
 | starter workflows, workflow-templates | github-org-structure-patterns.md |
 | github pages org site | github-org-structure-patterns.md |
 | verified domain github | github-org-structure-patterns.md |
+| OSS org naming, developer tool org names | oss-org-naming-patterns.md |
+| npm scope, GitHub org availability | oss-org-naming-patterns.md |
+| project naming convention, ecosystem branding | oss-org-naming-patterns.md |
+| CLI browser automation, headless agent | cli-browser-automation-agents.md |
+| Puppeteer agent, Playwright agent, AI browser | cli-browser-automation-agents.md |
+| programmatic browser control, web scraping agent | cli-browser-automation-agents.md |
+| terminal browser, w3m, lynx, links, elinks | terminal-browsers-agent-automation.md |
+| Browsh, text browser automation | terminal-browsers-agent-automation.md |
+| web session persistence CLI, cookie jar agent | web-session-persistence-cli-agents.md |
+| session storage CLI, auth state reuse | web-session-persistence-cli-agents.md |
+| persistent browser context, cookie serialization | web-session-persistence-cli-agents.md |
 | slack login, slack magic link, slack auth | browser-agent-auth-flows.md |
 | notion login, notion magic link, token_v2 | browser-agent-auth-flows.md |
 | aws console login, aws signin, IAM login | browser-agent-auth-flows.md |
@@ -661,7 +703,7 @@ Use this knowledge when user asks about:
 | SDK skill, library skill, npm skills | skills-for-library-and-sdk-best-practices.md |
 | RAG, retrieval augmented generation, indexing | rag-skill-indexing.md |
 | skill description, trigger optimization | rag-skill-indexing.md |
-| progressive disclosure, context engineering | rag-skill-indexing.md |
+| progressive disclosure RAG, context engineering | rag-skill-indexing.md |
 | XML vs markdown, structured references | rag-skill-indexing.md |
 | chunking strategy, chunk size, embedding | rag-skill-indexing.md |
 | semantic routing, keyword matching, hybrid | rag-skill-indexing.md |

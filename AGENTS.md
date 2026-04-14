@@ -12,6 +12,10 @@
 | All-in-One Plus Modular Packages | all-in-one-plus-modular-packages.md | 40 | deep | 2026-02-21 |
 | GitHub Org Project Management (Multi-Repo OSS) | github-org-project-management.md | 15 | deep | 2026-02-21 |
 | GitHub Organization Structure Patterns | github-org-structure-patterns.md | 18 | deep | 2026-02-21 |
+| OSS Org Naming Patterns | oss-org-naming-patterns.md | 24 | medium | 2026-02-20 |
+| CLI Browser Automation for Agents | cli-browser-automation-agents.md | 32 | deep | 2026-02-20 |
+| Terminal Browsers & Agent Automation | terminal-browsers-agent-automation.md | 40 | deep | 2026-02-20 |
+| Web Session Persistence for CLI Agents | web-session-persistence-cli-agents.md | 42 | deep | 2026-02-20 |
 | Browser Agent Auth Flows (Slack, Notion, AWS) | browser-agent-auth-flows.md | training | deep | 2026-02-22 |
 | Social Platform Auth Flows (X, Reddit, Discord, LinkedIn) | social-platform-auth-flows.md | 35 | deep | 2026-02-22 |
 | Google & Microsoft Auth Flows for Browser Agents | google-microsoft-auth-flows.md | 28 | deep | 2026-02-22 |
@@ -33,6 +37,404 @@
 ## Trigger Phrases
 
 Use this knowledge when user asks about:
+- "How to use claude -p" -> ai-cli-non-interactive-programmatic-usage.md
+- "Non-interactive AI CLI" -> ai-cli-non-interactive-programmatic-usage.md
+- "Claude Code programmatic" -> ai-cli-non-interactive-programmatic-usage.md
+- "Gemini CLI headless" -> ai-cli-non-interactive-programmatic-usage.md
+- "Codex CLI quiet mode" -> ai-cli-non-interactive-programmatic-usage.md
+- "OpenCode non-interactive" -> ai-cli-non-interactive-programmatic-usage.md
+- "AI CLI session management" -> ai-cli-non-interactive-programmatic-usage.md
+- "Claude Agent SDK" -> ai-cli-non-interactive-programmatic-usage.md
+- "Consultant pattern AI" -> ai-cli-non-interactive-programmatic-usage.md
+- "Piping to AI CLI" -> ai-cli-non-interactive-programmatic-usage.md
+- "Structured output from AI CLI" -> ai-cli-non-interactive-programmatic-usage.md
+- "AI in CI/CD" -> ai-cli-non-interactive-programmatic-usage.md
+- "claude mcp serve" -> ai-cli-advanced-integration-patterns.md
+- "MCP server mode" -> ai-cli-advanced-integration-patterns.md
+- "AI CLI MCP integration" -> ai-cli-advanced-integration-patterns.md
+- "Gemini CLI extensions" -> ai-cli-advanced-integration-patterns.md
+- "Codex MCP" -> ai-cli-advanced-integration-patterns.md
+- "Crush OpenCode" -> ai-cli-advanced-integration-patterns.md
+- "Agent SDK hosting" -> ai-cli-advanced-integration-patterns.md
+- "A2A in AI CLI integration" -> ai-cli-advanced-integration-patterns.md
+- "Cross-tool MCP" -> ai-cli-advanced-integration-patterns.md
+- "AI CLI server mode" -> ai-cli-advanced-integration-patterns.md
+- "Claude Code as service" -> ai-cli-advanced-integration-patterns.md
+- "Plugin distribution patterns" -> skill-plugin-distribution-patterns.md
+- "npm vs git submodules vs vendoring" -> skill-plugin-distribution-patterns.md
+- "How to distribute CLI plugins" -> skill-plugin-distribution-patterns.md
+- "Plugin registry architecture" -> skill-plugin-distribution-patterns.md
+- "Extension marketplace design" -> skill-plugin-distribution-patterns.md
+- "asdf mise plugin model" -> skill-plugin-distribution-patterns.md
+- "Terraform provider registry" -> skill-plugin-distribution-patterns.md
+- "Homebrew taps" -> skill-plugin-distribution-patterns.md
+- "oh-my-zsh plugin system" -> skill-plugin-distribution-patterns.md
+- "Plugin contract design" -> skill-plugin-distribution-patterns.md
+- "Small ecosystem plugin strategy" -> skill-plugin-distribution-patterns.md
+- "Convention-based plugin discovery" -> skill-plugin-distribution-patterns.md
+- "monorepo packages" -> all-in-one-plus-modular-packages.md
+- "meta-package pattern" -> all-in-one-plus-modular-packages.md
+- "batteries included but removable" -> all-in-one-plus-modular-packages.md
+- "npm workspaces" -> all-in-one-plus-modular-packages.md
+- "pnpm workspaces" -> all-in-one-plus-modular-packages.md
+- "Lerna monorepo" -> all-in-one-plus-modular-packages.md
+- "Changesets versioning" -> all-in-one-plus-modular-packages.md
+- "modular package architecture" -> all-in-one-plus-modular-packages.md
+- "scoped npm packages" -> all-in-one-plus-modular-packages.md
+- "plugin architecture" -> all-in-one-plus-modular-packages.md
+- "CLI installer pattern" -> all-in-one-plus-modular-packages.md
+- "degit tiged scaffolding" -> all-in-one-plus-modular-packages.md
+- "dual CJS ESM" -> all-in-one-plus-modular-packages.md
+- "package exports map" -> all-in-one-plus-modular-packages.md
+- "independent versioning" -> all-in-one-plus-modular-packages.md
+- "GitHub releases distribution" -> all-in-one-plus-modular-packages.md
+- "AWS SDK v3 modular" -> all-in-one-plus-modular-packages.md
+- "lodash per-method packages" -> all-in-one-plus-modular-packages.md
+- "Babel plugin architecture" -> all-in-one-plus-modular-packages.md
+- "Turborepo Nx Rush" -> all-in-one-plus-modular-packages.md
+- "GitHub Projects v2" -> github-org-project-management.md
+- "org-level project management" -> github-org-project-management.md
+- "multi-repo GitHub board" -> github-org-project-management.md
+- "GitHub Issue Types" -> github-org-project-management.md
+- "GitHub sub-issues" -> github-org-project-management.md
+- "GitHub roadmap project" -> github-org-project-management.md
+- "addProjectV2ItemById" -> github-org-project-management.md
+- "actions/add-to-project" -> github-org-project-management.md
+- "Kubernetes SIG model" -> github-org-project-management.md
+- "RFC process GitHub" -> github-org-project-management.md
+- "cross-repo issue tracking" -> github-org-project-management.md
+- "GitHub Projects automation" -> github-org-project-management.md
+- "GitHub org structure" -> github-org-structure-patterns.md
+- "GitHub .github repo" -> github-org-structure-patterns.md
+- "org community health files" -> github-org-structure-patterns.md
+- "reusable GitHub Actions workflows" -> github-org-structure-patterns.md
+- "CODEOWNERS working groups" -> github-org-structure-patterns.md
+- "GitHub org profile README" -> github-org-structure-patterns.md
+- "developer tool org layout" -> github-org-structure-patterns.md
+- "open source org patterns" -> github-org-structure-patterns.md
+- "OSS org naming" -> oss-org-naming-patterns.md
+- "developer tool org names" -> oss-org-naming-patterns.md
+- "org name ecosystem branding" -> oss-org-naming-patterns.md
+- "npm scope naming" -> oss-org-naming-patterns.md
+- "GitHub org name availability" -> oss-org-naming-patterns.md
+- "project naming conventions OSS" -> oss-org-naming-patterns.md
+- "naming open source ecosystem" -> oss-org-naming-patterns.md
+- "CLI browser automation" -> cli-browser-automation-agents.md
+- "headless browser agent CLI" -> cli-browser-automation-agents.md
+- "Puppeteer CLI agent" -> cli-browser-automation-agents.md
+- "Playwright CLI agent" -> cli-browser-automation-agents.md
+- "browser automation AI agent" -> cli-browser-automation-agents.md
+- "programmatic browser control" -> cli-browser-automation-agents.md
+- "web scraping AI agent" -> cli-browser-automation-agents.md
+- "terminal browser automation" -> terminal-browsers-agent-automation.md
+- "w3m lynx links automation" -> terminal-browsers-agent-automation.md
+- "Browsh agent scripting" -> terminal-browsers-agent-automation.md
+- "text browser AI agent" -> terminal-browsers-agent-automation.md
+- "elinks agent automation" -> terminal-browsers-agent-automation.md
+- "terminal browser scripting" -> terminal-browsers-agent-automation.md
+- "web session persistence CLI" -> web-session-persistence-cli-agents.md
+- "cookie persistence agent" -> web-session-persistence-cli-agents.md
+- "CLI agent cookie jar" -> web-session-persistence-cli-agents.md
+- "session storage CLI agent" -> web-session-persistence-cli-agents.md
+- "auth state reuse CLI" -> web-session-persistence-cli-agents.md
+- "web session cache agent" -> web-session-persistence-cli-agents.md
+- "persistent browser context CLI" -> web-session-persistence-cli-agents.md
+- "Slack login automation" -> browser-agent-auth-flows.md
+- "Notion auth flow" -> browser-agent-auth-flows.md
+- "AWS Console login" -> browser-agent-auth-flows.md
+- "magic link detection" -> browser-agent-auth-flows.md
+- "browser agent authentication" -> browser-agent-auth-flows.md
+- "SSO SAML browser automation" -> browser-agent-auth-flows.md
+- "CAPTCHA detection selectors" -> generic-auth-patterns-captcha-systems.md
+- "MFA TOTP browser agent" -> browser-agent-auth-flows.md
+- "AWS IAM Identity Center login" -> browser-agent-auth-flows.md
+- "Slack workspace signin" -> browser-agent-auth-flows.md
+- "Notion token_v2 cookie" -> browser-agent-auth-flows.md
+- "AWS console session detection" -> browser-agent-auth-flows.md
+- "X Twitter login automation" -> social-platform-auth-flows.md
+- "Twitter auth flow" -> social-platform-auth-flows.md
+- "X multi-step login" -> social-platform-auth-flows.md
+- "Arkose Labs FunCAPTCHA" -> generic-auth-patterns-captcha-systems.md
+- "Reddit login automation" -> social-platform-auth-flows.md
+- "old reddit vs new reddit login" -> social-platform-auth-flows.md
+- "Discord login automation" -> social-platform-auth-flows.md
+- "Discord phone verification" -> social-platform-auth-flows.md
+- "Discord hCaptcha" -> generic-auth-patterns-captcha-systems.md
+- "LinkedIn login automation" -> social-platform-auth-flows.md
+- "LinkedIn email verification loop" -> social-platform-auth-flows.md
+- "li_at cookie" -> social-platform-auth-flows.md
+- "auth_token ct0 cookie" -> social-platform-auth-flows.md
+- "social media CAPTCHA detection" -> generic-auth-patterns-captcha-systems.md
+- "social platform anti-bot" -> social-platform-auth-flows.md
+- "GDPR cookie consent banner login" -> generic-auth-patterns-captcha-systems.md
+- "Google login automation" -> google-microsoft-auth-flows.md
+- "Google auth flow selectors" -> google-microsoft-auth-flows.md
+- "Google reCAPTCHA login" -> generic-auth-patterns-captcha-systems.md
+- "Google 2FA TOTP" -> google-microsoft-auth-flows.md
+- "Google Workspace SSO" -> google-microsoft-auth-flows.md
+- "SAPISID cookie" -> google-microsoft-auth-flows.md
+- "Google account chooser" -> generic-auth-patterns-captcha-systems.md
+- "Microsoft login automation" -> google-microsoft-auth-flows.md
+- "Microsoft Entra ID login" -> google-microsoft-auth-flows.md
+- "Azure AD login flow" -> google-microsoft-auth-flows.md
+- "ESTSAUTH cookie" -> google-microsoft-auth-flows.md
+- "Microsoft passwordless" -> generic-auth-patterns-captcha-systems.md
+- "Microsoft conditional access" -> google-microsoft-auth-flows.md
+- "Microsoft account picker" -> generic-auth-patterns-captcha-systems.md
+- "Azure AD B2C" -> google-microsoft-auth-flows.md
+- "Microsoft MFA Authenticator" -> google-microsoft-auth-flows.md
+- "login.microsoftonline.com" -> google-microsoft-auth-flows.md
+- "accounts.google.com selectors" -> google-microsoft-auth-flows.md
+- "Google verify it's you" -> google-microsoft-auth-flows.md
+- "Microsoft KMSI stay signed in" -> google-microsoft-auth-flows.md
+- "federated auth redirect" -> google-microsoft-auth-flows.md
+- "home realm discovery" -> google-microsoft-auth-flows.md
+- "GitHub login automation" -> auth-flows-github-gitlab-atlassian.md
+- "GitLab login CAPTCHA" -> auth-flows-github-gitlab-atlassian.md
+- "Atlassian auth flow" -> auth-flows-github-gitlab-atlassian.md
+- "Arkose Labs GitHub" -> auth-flows-github-gitlab-atlassian.md
+- "GitHub 2FA selectors" -> auth-flows-github-gitlab-atlassian.md
+- "GitLab _gitlab_session cookie" -> auth-flows-github-gitlab-atlassian.md
+- "Atlassian multi-step login" -> auth-flows-github-gitlab-atlassian.md
+- "GitHub Enterprise auth" -> auth-flows-github-gitlab-atlassian.md
+- "Bitbucket login" -> auth-flows-github-gitlab-atlassian.md
+- "auth success detection providers" -> generic-auth-patterns-captcha-systems.md
+- "SSO redirect detection" -> auth-flows-github-gitlab-atlassian.md
+- "WebAuthn passkey automation" -> generic-auth-patterns-captcha-systems.md
+- "providers.json auth config" -> auth-flows-github-gitlab-atlassian.md
+- "reCAPTCHA selectors" -> generic-auth-patterns-captcha-systems.md
+- "hCaptcha selectors" -> generic-auth-patterns-captcha-systems.md
+- "Cloudflare Turnstile" -> generic-auth-patterns-captcha-systems.md
+- "PerimeterX HUMAN" -> generic-auth-patterns-captcha-systems.md
+- "AWS WAF CAPTCHA" -> generic-auth-patterns-captcha-systems.md
+- "cookie consent dismiss" -> generic-auth-patterns-captcha-systems.md
+- "OneTrust CookieBot TrustArc" -> generic-auth-patterns-captcha-systems.md
+- "browser fingerprinting stealth" -> generic-auth-patterns-captcha-systems.md
+- "navigator.webdriver detection" -> generic-auth-patterns-captcha-systems.md
+- "playwright stealth" -> generic-auth-patterns-captcha-systems.md
+- "bot detection automation" -> generic-auth-patterns-captcha-systems.md
+- "email-first login flow" -> generic-auth-patterns-captcha-systems.md
+- "magic link flow detection" -> generic-auth-patterns-captcha-systems.md
+- "social login buttons detection" -> generic-auth-patterns-captcha-systems.md
+- "account picker detection" -> generic-auth-patterns-captcha-systems.md
+- "trust this device prompt" -> generic-auth-patterns-captcha-systems.md
+- "auth error detection" -> generic-auth-patterns-captcha-systems.md
+- "wrong password detection" -> generic-auth-patterns-captcha-systems.md
+- "account locked detection" -> generic-auth-patterns-captcha-systems.md
+- "Playwright storageState" -> generic-auth-patterns-captcha-systems.md
+- "waitForURL vs waitForNavigation" -> generic-auth-patterns-captcha-systems.md
+- "multi-domain redirect auth" -> generic-auth-patterns-captcha-systems.md
+- "SPA auth success detection" -> generic-auth-patterns-captcha-systems.md
+- "Cursor rules for AI" -> cursor-ide-memory-context.md
+- ".cursorrules file" -> cursor-ide-memory-context.md
+- ".cursor/rules directory" -> cursor-ide-memory-context.md
+- "Cursor project memory" -> cursor-ide-memory-context.md
+- "Cursor MDC frontmatter" -> cursor-ide-memory-context.md
+- "AGENTS.md Cursor" -> cursor-ide-memory-context.md
+- "Cursor notepads" -> cursor-ide-memory-context.md
+- "Cursor context window" -> cursor-ide-memory-context.md
+- "Cursor codebase indexing" -> cursor-ide-memory-context.md
+- "Cursor SKILL.md" -> cursor-ide-memory-context.md
+- "Cursor session memory" -> cursor-ide-memory-context.md
+- "Cursor hooks.json" -> cursor-ide-memory-context.md
+- "cursorignore" -> cursor-ide-memory-context.md
+- "Cursor Max Mode" -> cursor-ide-memory-context.md
+- "Cursor alwaysApply" -> cursor-ide-memory-context.md
+- "multi-product docs" -> multi-product-org-docs.md
+- "documentation architecture" -> multi-product-org-docs.md
+- "docs site structure" -> multi-product-org-docs.md
+- "Docusaurus multi-instance" -> multi-product-org-docs.md
+- "Starlight Astro docs" -> multi-product-org-docs.md
+- "Mintlify docs" -> multi-product-org-docs.md
+- "VitePress multi-sidebar" -> multi-product-org-docs.md
+- "developer portal" -> multi-product-org-docs.md
+- "plugin catalog page" -> multi-product-org-docs.md
+- "marketplace page design" -> multi-product-org-docs.md
+- "docs SEO multi-product" -> multi-product-org-docs.md
+- "hub and spoke docs" -> multi-product-org-docs.md
+- "unified docs vs separate sites" -> multi-product-org-docs.md
+- "llms.txt AI discoverability" -> multi-product-org-docs.md
+- "GitHub Pages org site docs" -> multi-product-org-docs.md
+- "HashiCorp developer portal" -> multi-product-org-docs.md
+- "Supabase docs structure" -> multi-product-org-docs.md
+- "agent-sh website" -> multi-product-org-docs.md
+- "agnix docs separate site" -> multi-product-org-docs.md
+- "plugin catalog generation" -> multi-product-org-docs.md
+- "cross-product navigation" -> multi-product-org-docs.md
+- "product switcher docs" -> multi-product-org-docs.md
+- "Diataxis framework" -> multi-product-org-docs.md
+- "Pagefind search" -> multi-product-org-docs.md
+- "docs-as-code" -> multi-product-org-docs.md
+- "ACP protocol" -> acp-with-codex-gemini-copilot-claude.md
+- "Agent Communication Protocol" -> acp-with-codex-gemini-copilot-claude.md
+- "A2A protocol" -> acp-with-codex-gemini-copilot-claude.md
+- "agent to agent communication" -> acp-with-codex-gemini-copilot-claude.md
+- "cross AI tool communication" -> acp-with-codex-gemini-copilot-claude.md
+- "MCP vs ACP vs A2A" -> acp-with-codex-gemini-copilot-claude.md
+- "Codex CLI agent protocol" -> acp-with-codex-gemini-copilot-claude.md
+- "Gemini CLI agent protocol" -> acp-with-codex-gemini-copilot-claude.md
+- "Copilot agent communication" -> acp-with-codex-gemini-copilot-claude.md
+- "Claude Code agent teams" -> acp-with-codex-gemini-copilot-claude.md
+- "Claude Agent SDK multi-agent" -> acp-with-codex-gemini-copilot-claude.md
+- "sequential thinking MCP" -> acp-with-codex-gemini-copilot-claude.md
+- "MCP bridge server" -> acp-with-codex-gemini-copilot-claude.md
+- "BeeAI Agent Stack" -> acp-with-codex-gemini-copilot-claude.md
+- "Kiro ACP" -> acp-with-codex-gemini-copilot-claude.md
+- "Cross-tool MCP bridges" -> acp-with-codex-gemini-copilot-claude.md
+- "ACP SDK" -> acp-with-codex-gemini-copilot-claude.md
+- "A2A SDK" -> acp-with-codex-gemini-copilot-claude.md
+- "agent interoperability" -> acp-with-codex-gemini-copilot-claude.md
+- "Agent Cards A2A" -> acp-with-codex-gemini-copilot-claude.md
+- "claude mcp serve cross-tool" -> acp-with-codex-gemini-copilot-claude.md
+- "Kiro supervised autopilot" -> kiro-supervised-autopilot.md
+- "Kiro specs hooks" -> kiro-supervised-autopilot.md
+- "git history analysis" -> git-history-analysis-developer-tools.md
+- "git-map tool" -> git-history-analysis-developer-tools.md
+- "code churn analysis" -> git-history-analysis-developer-tools.md
+- "file coupling co-change" -> git-history-analysis-developer-tools.md
+- "temporal coupling" -> git-history-analysis-developer-tools.md
+- "truck factor bus factor" -> git-history-analysis-developer-tools.md
+- "code ownership git" -> git-history-analysis-developer-tools.md
+- "knowledge distribution" -> git-history-analysis-developer-tools.md
+- "hotspot analysis" -> git-history-analysis-developer-tools.md
+- "CodeScene analysis" -> git-history-analysis-developer-tools.md
+- "GitClear metrics" -> git-history-analysis-developer-tools.md
+- "git-of-theseus" -> git-history-analysis-developer-tools.md
+- "Hercules git analysis" -> git-history-analysis-developer-tools.md
+- "mining software repositories" -> git-history-analysis-developer-tools.md
+- "behavioral code analysis" -> git-history-analysis-developer-tools.md
+- "code as crime scene" -> git-history-analysis-developer-tools.md
+- "commit pattern analysis" -> git-history-analysis-developer-tools.md
+- "conventional commits analysis" -> git-history-analysis-developer-tools.md
+- "defect prediction git" -> git-history-analysis-developer-tools.md
+- "code survival cohort" -> git-history-analysis-developer-tools.md
+- "release pattern analysis" -> git-history-analysis-developer-tools.md
+- "DORA metrics git" -> git-history-analysis-developer-tools.md
+- "Conway's Law measurement" -> git-history-analysis-developer-tools.md
+- "developer collaboration patterns" -> git-history-analysis-developer-tools.md
+- "PyDriller" -> git-history-analysis-developer-tools.md
+- "git forensics" -> git-history-analysis-developer-tools.md
+- "technical debt git history" -> git-history-analysis-developer-tools.md
+- "AI generated code git impact" -> ai-agent-commits-git-analysis-impact.md
+- "AI commits git analysis" -> ai-agent-commits-git-analysis-impact.md
+- "AI code attribution" -> ai-agent-commits-git-analysis-impact.md
+- "AI code ownership git blame" -> ai-agent-commits-git-analysis-impact.md
+- "AI churn metrics" -> ai-agent-commits-git-analysis-impact.md
+- "AI code quality GitClear" -> ai-agent-commits-git-analysis-impact.md
+- "AI code duplication increase" -> ai-agent-commits-git-analysis-impact.md
+- "git-ai tracking standard" -> ai-agent-commits-git-analysis-impact.md
+- "Agent Trace specification" -> ai-agent-commits-git-analysis-impact.md
+- "AI commit detection" -> ai-agent-commits-git-analysis-impact.md
+- "Copilot code percentage statistics" -> ai-agent-commits-git-analysis-impact.md
+- "AI bus factor knowledge risk" -> ai-agent-commits-git-analysis-impact.md
+- "AI coupling architectural erosion" -> ai-agent-commits-git-analysis-impact.md
+- "Sonar AI Code Assurance" -> ai-agent-commits-git-analysis-impact.md
+- "AI code review metrics" -> ai-agent-commits-git-analysis-impact.md
+- "vibe coding git impact" -> ai-agent-commits-git-analysis-impact.md
+- "AI slop code quality" -> ai-agent-commits-git-analysis-impact.md
+- "AI PR merge rate quality" -> ai-agent-commits-git-analysis-impact.md
+- "autonomous agent vs pair programming git" -> ai-agent-commits-git-analysis-impact.md
+- "AI code governance policy" -> ai-agent-commits-git-analysis-impact.md
+- "Co-Authored-By Claude Copilot Aider" -> ai-agent-commits-git-analysis-impact.md
+- "AI developer metrics adjustment" -> ai-agent-commits-git-analysis-impact.md
+- "AI technical debt acceleration" -> ai-agent-commits-git-analysis-impact.md
+- "detect AI commits" -> ai-commit-detection-forensics.md
+- "AI commit forensics" -> ai-commit-detection-forensics.md
+- "AI commit fingerprinting" -> ai-commit-detection-forensics.md
+- "Copilot commit signature" -> ai-commit-detection-forensics.md
+- "Claude Code commit trailer" -> ai-commit-detection-forensics.md
+- "Cursor commit attribution" -> ai-commit-detection-forensics.md
+- "Aider commit format" -> ai-commit-detection-forensics.md
+- "Codex commit metadata" -> ai-commit-detection-forensics.md
+- "Devin commit author email" -> ai-commit-detection-forensics.md
+- "AI branch prefix copilot/ cursor/" -> ai-commit-detection-forensics.md
+- "noreply@anthropic.com" -> ai-commit-detection-forensics.md
+- "noreply@aider.chat" -> ai-commit-detection-forensics.md
+- "cursoragent@cursor.com" -> ai-commit-detection-forensics.md
+- "bot@devin.ai" -> ai-commit-detection-forensics.md
+- "AI code stylometry" -> ai-commit-detection-forensics.md
+- "code perplexity detection" -> ai-commit-detection-forensics.md
+- "AI code burstiness entropy" -> ai-commit-detection-forensics.md
+- "isvibecoded detection" -> ai-commit-detection-forensics.md
+- "VibeDetect heuristics" -> ai-commit-detection-forensics.md
+- "AI commit composite score" -> ai-commit-detection-forensics.md
+- "AI tool email registry" -> ai-commit-detection-forensics.md
+- "AI commit heuristic reliability" -> ai-commit-detection-forensics.md
+- "AI commit false positive" -> ai-commit-detection-forensics.md
+- "hallucinated imports detection" -> ai-commit-detection-forensics.md
+- "AI commit timing patterns" -> ai-commit-detection-forensics.md
+- "AI worktree usage detection" -> ai-commit-detection-forensics.md
+- "Windsurf commit detection" -> ai-commit-detection-forensics.md
+- "Lovable Replit bolt commit" -> ai-commit-detection-forensics.md
+- "Agent Trace spec JSON" -> ai-commit-detection-forensics.md
+- "git-ai authorship log" -> ai-commit-detection-forensics.md
+- "AI commit message patterns" -> ai-commit-detection-forensics.md
+- "AI diff size patterns" -> ai-commit-detection-forensics.md
+- "AI PR description patterns" -> ai-commit-detection-forensics.md
+- "Binoculars code detection" -> ai-commit-detection-forensics.md
+- "GPTZero code AUC" -> ai-commit-detection-forensics.md
+- "Coding-Agent trailer" -> ai-commit-detection-forensics.md
+- "AI-assistant trailer proposal" -> ai-commit-detection-forensics.md
+- "AIDev dataset 33580 PRs" -> ai-commit-detection-forensics.md
+- "multiline commit ratio fingerprint" -> ai-commit-detection-forensics.md
+- "glide-mq" -> glide-mq.md
+- "message queue valkey" -> glide-mq.md
+- "valkey streams queue" -> glide-mq.md
+- "bullmq alternative" -> glide-mq.md
+- "node.js job queue valkey" -> glide-mq.md
+- "SKILL.md best practices" -> skills-for-library-and-sdk-best-practices.md
+- "writing skills for library" -> skills-for-library-and-sdk-best-practices.md
+- "SDK skill design" -> skills-for-library-and-sdk-best-practices.md
+- "skill description trigger" -> skills-for-library-and-sdk-best-practices.md
+- "progressive disclosure skill" -> skills-for-library-and-sdk-best-practices.md
+- "ship skills with npm" -> skills-for-library-and-sdk-best-practices.md
+- "TanStack Intent" -> skills-for-library-and-sdk-best-practices.md
+- "RAG skill indexing" -> rag-skill-indexing.md
+- "RAG chunking strategy" -> rag-skill-indexing.md
+- "skill description optimization" -> rag-skill-indexing.md
+- "progressive disclosure RAG" -> rag-skill-indexing.md
+- "context window optimization" -> rag-skill-indexing.md
+- "XML vs markdown AI retrieval" -> rag-skill-indexing.md
+- "skill trigger phrases" -> rag-skill-indexing.md
+- "SKILL.md structure best practices" -> rag-skill-indexing.md
+- "agent knowledge retrieval" -> rag-skill-indexing.md
+- "semantic routing triggers" -> rag-skill-indexing.md
+- "embedding vs keyword retrieval" -> rag-skill-indexing.md
+- "Claude Code skill discovery" -> rag-skill-indexing.md
+- "Cursor Copilot skill loading" -> rag-skill-indexing.md
+- "agent skills open standard" -> rag-skill-indexing.md
+- "context engineering" -> rag-skill-indexing.md
+- "knowledge file structure AI" -> rag-skill-indexing.md
+- "reference file organization" -> rag-skill-indexing.md
+- "description field optimization" -> rag-skill-indexing.md
+- "contextual retrieval" -> rag-skill-indexing.md
+- "Codex plugin.json" -> codex-plugin-manifest.md
+- "Codex plugin manifest" -> codex-plugin-manifest.md
+- ".codex-plugin directory" -> codex-plugin-manifest.md
+- "Codex CLI plugin system" -> codex-plugin-manifest.md
+- "Codex plugin validation" -> codex-plugin-manifest.md
+- "Codex marketplace.json" -> codex-plugin-manifest.md
+- "Codex plugin discovery" -> codex-plugin-manifest.md
+- "Codex plugin installation" -> codex-plugin-manifest.md
+- "Codex plugin paths" -> codex-plugin-manifest.md
+- "Codex defaultPrompt" -> codex-plugin-manifest.md
+- "Codex plugin interface" -> codex-plugin-manifest.md
+- "Codex PluginId format" -> codex-plugin-manifest.md
+- "Codex plugin skills namespace" -> codex-plugin-manifest.md
+- "Codex plugin MCP servers" -> codex-plugin-manifest.md
+- "Codex plugin app connectors" -> codex-plugin-manifest.md
+- "Codex curated marketplace" -> codex-plugin-manifest.md
+- "Codex plugin policy" -> codex-plugin-manifest.md
+- "Codex plugin feature flag" -> codex-plugin-manifest.md
+- "Codex plugin store cache" -> codex-plugin-manifest.md
+- "Codex plugin path traversal" -> codex-plugin-manifest.md
+- ".agents/plugins/marketplace.json" -> codex-plugin-manifest.md
+- "resolve_manifest_path" -> codex-plugin-manifest.md
+- "validate_plugin_segment" -> codex-plugin-manifest.md
+- "PluginManifestInterface" -> codex-plugin-manifest.md
+- "Codex plugin hooks limitation" -> codex-plugin-manifest.md
+- "Codex plugin startup sync" -> codex-plugin-manifest.md
+- "Codex plugin linter rules" -> codex-plugin-manifest.md
 - "RESP protocol Rust" -> resp-mq-server-rust.md
 - "Redis server Rust" -> resp-mq-server-rust.md
 - "RESP wire protocol" -> resp-mq-server-rust.md
@@ -72,6 +474,257 @@ Use this knowledge when user asks about:
 
 | Keyword | Guide |
 |---------|-------|
+| claude -p, headless, non-interactive | ai-cli-non-interactive-programmatic-usage.md |
+| gemini cli, gemini -p | ai-cli-non-interactive-programmatic-usage.md |
+| codex cli, codex -q | ai-cli-non-interactive-programmatic-usage.md |
+| opencode, opencode -p | ai-cli-non-interactive-programmatic-usage.md |
+| agent sdk, claude-agent-sdk | ai-cli-non-interactive-programmatic-usage.md |
+| session, resume, continue | ai-cli-non-interactive-programmatic-usage.md |
+| json output, structured output | ai-cli-non-interactive-programmatic-usage.md |
+| mcp, model context protocol | ai-cli-non-interactive-programmatic-usage.md |
+| subprocess, spawn, piping | ai-cli-non-interactive-programmatic-usage.md |
+| consultant pattern | ai-cli-non-interactive-programmatic-usage.md |
+| claude mcp serve, mcp server | ai-cli-advanced-integration-patterns.md |
+| gemini extensions, a2a protocol | ai-cli-advanced-integration-patterns.md |
+| codex shell-tool-mcp | ai-cli-advanced-integration-patterns.md |
+| crush, opencode successor | ai-cli-advanced-integration-patterns.md |
+| agent sdk hosting, containers | ai-cli-advanced-integration-patterns.md |
+| cross-tool mcp, tool integration | ai-cli-advanced-integration-patterns.md |
+| remote agents, long-running | ai-cli-advanced-integration-patterns.md |
+| plugin distribution, extension marketplace | skill-plugin-distribution-patterns.md |
+| npm packages, vendoring, git submodules | skill-plugin-distribution-patterns.md |
+| terraform registry, homebrew taps | skill-plugin-distribution-patterns.md |
+| asdf plugins, mise backends | skill-plugin-distribution-patterns.md |
+| plugin contract, plugin protocol | skill-plugin-distribution-patterns.md |
+| oh-my-zsh, zsh plugins, vim plugins | skill-plugin-distribution-patterns.md |
+| vscode extensions, grafana plugins | skill-plugin-distribution-patterns.md |
+| small ecosystem, plugin discovery | skill-plugin-distribution-patterns.md |
+| monorepo, workspaces, multi-package | all-in-one-plus-modular-packages.md |
+| lerna, changesets, turborepo, nx, rush | all-in-one-plus-modular-packages.md |
+| meta-package, re-export, barrel | all-in-one-plus-modular-packages.md |
+| lodash, aws-sdk, babel, eslint, angular | all-in-one-plus-modular-packages.md |
+| plugin architecture, core + plugins | all-in-one-plus-modular-packages.md |
+| degit, tiged, create-react-app, scaffolding | all-in-one-plus-modular-packages.md |
+| npm publish, semantic-release, np | all-in-one-plus-modular-packages.md |
+| CJS, ESM, dual module, exports map | all-in-one-plus-modular-packages.md |
+| cargo workspaces, go modules, pip extras | all-in-one-plus-modular-packages.md |
+| github releases, binary distribution | all-in-one-plus-modular-packages.md |
+| github projects v2, projects board | github-org-project-management.md |
+| issue types, sub-issues, github hierarchy | github-org-project-management.md |
+| cross-repo tracking, org project | github-org-project-management.md |
+| graphql addProjectV2ItemById | github-org-project-management.md |
+| actions/add-to-project, auto-add | github-org-project-management.md |
+| kubernetes SIG, KEP, enhancement proposals | github-org-project-management.md |
+| rust RFC, working groups | github-org-project-management.md |
+| astro roadmap, withastro | github-org-project-management.md |
+| github public roadmap, shipped label | github-org-project-management.md |
+| iteration fields, sprint planning github | github-org-project-management.md |
+| label sync, org labels | github-org-project-management.md |
+| .github repo, org defaults, community health | github-org-structure-patterns.md |
+| CODEOWNERS, working groups, wg-tauri | github-org-structure-patterns.md |
+| reusable workflows, workflow_call | github-org-structure-patterns.md |
+| org profile README, pinned repos | github-org-structure-patterns.md |
+| bun org, deno org, astro org | github-org-structure-patterns.md |
+| AI contribution policy, AI disclosure | github-org-structure-patterns.md |
+| just commands, justfile | github-org-structure-patterns.md |
+| starter workflows, workflow-templates | github-org-structure-patterns.md |
+| github pages org site | github-org-structure-patterns.md |
+| verified domain github | github-org-structure-patterns.md |
+| OSS org naming, developer tool org names | oss-org-naming-patterns.md |
+| npm scope, GitHub org availability | oss-org-naming-patterns.md |
+| project naming convention, ecosystem branding | oss-org-naming-patterns.md |
+| CLI browser automation, headless agent | cli-browser-automation-agents.md |
+| Puppeteer agent, Playwright agent, AI browser | cli-browser-automation-agents.md |
+| programmatic browser control, web scraping agent | cli-browser-automation-agents.md |
+| terminal browser, w3m, lynx, links, elinks | terminal-browsers-agent-automation.md |
+| Browsh, text browser automation | terminal-browsers-agent-automation.md |
+| web session persistence CLI, cookie jar agent | web-session-persistence-cli-agents.md |
+| session storage CLI, auth state reuse | web-session-persistence-cli-agents.md |
+| persistent browser context, cookie serialization | web-session-persistence-cli-agents.md |
+| slack login, slack magic link, slack auth | browser-agent-auth-flows.md |
+| notion login, notion magic link, token_v2 | browser-agent-auth-flows.md |
+| aws console login, aws signin, IAM login | browser-agent-auth-flows.md |
+| aws sso, iam identity center, awsapps | browser-agent-auth-flows.md |
+| mfa totp, 2fa browser, hardware mfa | browser-agent-auth-flows.md |
+| sso saml redirect, idp detection | browser-agent-auth-flows.md |
+| enterprise grid, slack enterprise sso | browser-agent-auth-flows.md |
+| aws govcloud, cross-account, switch role | browser-agent-auth-flows.md |
+| x twitter login, twitter auth, x.com login | social-platform-auth-flows.md |
+| reddit login, reddit auth, old reddit | social-platform-auth-flows.md |
+| discord login, discord auth, discord token | social-platform-auth-flows.md |
+| discord phone verification | social-platform-auth-flows.md |
+| linkedin login, linkedin auth, li_at | social-platform-auth-flows.md |
+| linkedin email verification, linkedin checkpoint | social-platform-auth-flows.md |
+| auth_token, ct0, csrf token social | social-platform-auth-flows.md |
+| social media bot detection, anti-bot | social-platform-auth-flows.md |
+| reddit_session, token_v2 reddit | social-platform-auth-flows.md |
+| discord localstorage token | social-platform-auth-flows.md |
+| jsessionid linkedin csrf | social-platform-auth-flows.md |
+| google login, accounts.google.com, google auth | google-microsoft-auth-flows.md |
+| google 2fa, google totp, google prompt | google-microsoft-auth-flows.md |
+| google workspace sso, google saml | google-microsoft-auth-flows.md |
+| SAPISID, SID, HSID, google cookies | google-microsoft-auth-flows.md |
+| microsoft login, login.microsoftonline.com | google-microsoft-auth-flows.md |
+| entra id, azure ad, microsoft entra | google-microsoft-auth-flows.md |
+| ESTSAUTH, microsoft cookies | google-microsoft-auth-flows.md |
+| conditional access, AADSTS error | google-microsoft-auth-flows.md |
+| azure ad b2c, b2clogin.com | google-microsoft-auth-flows.md |
+| microsoft mfa, microsoft 2fa | google-microsoft-auth-flows.md |
+| kmsi, stay signed in microsoft | google-microsoft-auth-flows.md |
+| federated auth, home realm discovery, HRD | google-microsoft-auth-flows.md |
+| google verify, unusual activity google | google-microsoft-auth-flows.md |
+| microsoft proof up, mfa registration | google-microsoft-auth-flows.md |
+| github login, logged_in cookie | auth-flows-github-gitlab-atlassian.md |
+| gitlab login, _gitlab_session | auth-flows-github-gitlab-atlassian.md |
+| atlassian login, id.atlassian.com | auth-flows-github-gitlab-atlassian.md |
+| bitbucket login, bb_session | auth-flows-github-gitlab-atlassian.md |
+| recaptcha gitlab | auth-flows-github-gitlab-atlassian.md |
+| 2fa selectors, totp automation | auth-flows-github-gitlab-atlassian.md |
+| saml sso redirect, oauth callback | auth-flows-github-gitlab-atlassian.md |
+| github enterprise server auth, GHES | auth-flows-github-gitlab-atlassian.md |
+| gitlab self-hosted auth, ldap | auth-flows-github-gitlab-atlassian.md |
+| atlassian data center, jira login | auth-flows-github-gitlab-atlassian.md |
+| providers.json, auth-providers | auth-flows-github-gitlab-atlassian.md |
+| cloud.session.token, atlassian cookie | auth-flows-github-gitlab-atlassian.md |
+| recaptcha v2, recaptcha v3, recaptcha enterprise | generic-auth-patterns-captcha-systems.md |
+| hcaptcha selectors, h-captcha div | generic-auth-patterns-captcha-systems.md |
+| cloudflare turnstile, cf-turnstile | generic-auth-patterns-captcha-systems.md |
+| arkose labs, funcaptcha, fc-iframe | generic-auth-patterns-captcha-systems.md |
+| aws waf captcha, awswaf | generic-auth-patterns-captcha-systems.md |
+| perimeterx, human security, px-captcha | generic-auth-patterns-captcha-systems.md |
+| captcha detection function | generic-auth-patterns-captcha-systems.md |
+| cookie consent, gdpr banner, onetrust | generic-auth-patterns-captcha-systems.md |
+| cookiebot, trustarc, quantcast | generic-auth-patterns-captcha-systems.md |
+| navigator.webdriver, stealth, fingerprint | generic-auth-patterns-captcha-systems.md |
+| playwright stealth, bot detection | generic-auth-patterns-captcha-systems.md |
+| email-first flow, magic link, passkey | generic-auth-patterns-captcha-systems.md |
+| social login buttons, sign in with google | generic-auth-patterns-captcha-systems.md |
+| account picker, account chooser | generic-auth-patterns-captcha-systems.md |
+| trust device, remember browser, tos gate | generic-auth-patterns-captcha-systems.md |
+| auth success detection, multi-signal | generic-auth-patterns-captcha-systems.md |
+| spa auth, dom mutation observer | generic-auth-patterns-captcha-systems.md |
+| wrong password, account locked, auth error | generic-auth-patterns-captcha-systems.md |
+| storageState, context.cookies | generic-auth-patterns-captcha-systems.md |
+| waitForURL, waitForLoadState, networkidle | generic-auth-patterns-captcha-systems.md |
+| multi-domain redirect, auth redirect chain | generic-auth-patterns-captcha-systems.md |
+| auth timeout strategy, human interaction | generic-auth-patterns-captcha-systems.md |
+| .cursorrules, cursor rules, cursor project rules | cursor-ide-memory-context.md |
+| AGENTS.md cursor, cursor agents.md | cursor-ide-memory-context.md |
+| .cursor/rules, MDC frontmatter, alwaysApply | cursor-ide-memory-context.md |
+| cursor memory, cursor context, cursor project context | cursor-ide-memory-context.md |
+| cursor notepads, cursor session memory | cursor-ide-memory-context.md |
+| .cursorignore, cursorindexingignore | cursor-ide-memory-context.md |
+| cursor codebase indexing, cursor semantic search | cursor-ide-memory-context.md |
+| SKILL.md cursor, cursor skills | cursor-ide-memory-context.md |
+| cursor hooks, sessionStart hook | cursor-ide-memory-context.md |
+| cursor max mode, cursor context window | cursor-ide-memory-context.md |
+| cursor team rules, cursor user rules | cursor-ide-memory-context.md |
+| multi-product docs, documentation architecture | multi-product-org-docs.md |
+| Docusaurus, Starlight, Mintlify, VitePress | multi-product-org-docs.md |
+| developer portal, docs site structure | multi-product-org-docs.md |
+| plugin catalog, marketplace page | multi-product-org-docs.md |
+| docs SEO, llms.txt, AI discoverability | multi-product-org-docs.md |
+| hub-and-spoke, unified portal | multi-product-org-docs.md |
+| HashiCorp, Supabase, Vercel docs | multi-product-org-docs.md |
+| product switcher, cross-product navigation | multi-product-org-docs.md |
+| Diataxis, docs-as-code | multi-product-org-docs.md |
+| Pagefind, Algolia DocSearch | multi-product-org-docs.md |
+| agent-sh website, agnix docs | multi-product-org-docs.md |
+| GitBook, ReadMe, Nextra | multi-product-org-docs.md |
+| GitHub Pages docs hosting | multi-product-org-docs.md |
+| Cloudflare Pages, Vercel hosting | multi-product-org-docs.md |
+| ACP, Agent Communication Protocol | acp-with-codex-gemini-copilot-claude.md |
+| A2A, Agent2Agent, agent-to-agent | acp-with-codex-gemini-copilot-claude.md |
+| ACP vs MCP vs A2A | acp-with-codex-gemini-copilot-claude.md |
+| BeeAI, Agent Stack, agent interop | acp-with-codex-gemini-copilot-claude.md |
+| agent teams, subagents, multi-agent | acp-with-codex-gemini-copilot-claude.md |
+| MCP bridge, Gemini bridge, OpenAI bridge | acp-with-codex-gemini-copilot-claude.md |
+| sequential thinking, cross-AI reasoning | acp-with-codex-gemini-copilot-claude.md |
+| Agent Cards, agent discovery | acp-with-codex-gemini-copilot-claude.md |
+| claude mcp serve, claude as MCP server | acp-with-codex-gemini-copilot-claude.md |
+| acp-sdk, a2a-sdk | acp-with-codex-gemini-copilot-claude.md |
+| Kiro, supervised autopilot, specs | kiro-supervised-autopilot.md |
+| git history, git-map, git analysis | git-history-analysis-developer-tools.md |
+| code churn, churn analysis, rework ratio | git-history-analysis-developer-tools.md |
+| file coupling, co-change, temporal coupling | git-history-analysis-developer-tools.md |
+| truck factor, bus factor, knowledge risk | git-history-analysis-developer-tools.md |
+| code ownership, knowledge map, contributor | git-history-analysis-developer-tools.md |
+| hotspot analysis, churn x complexity | git-history-analysis-developer-tools.md |
+| CodeScene, GitClear, Pluralsight Flow | git-history-analysis-developer-tools.md |
+| git-of-theseus, hercules, code survival | git-history-analysis-developer-tools.md |
+| MSR, mining software repositories | git-history-analysis-developer-tools.md |
+| behavioral code analysis, crime scene | git-history-analysis-developer-tools.md |
+| commit patterns, conventional commits | git-history-analysis-developer-tools.md |
+| defect prediction, JIT-SDP, risk scoring | git-history-analysis-developer-tools.md |
+| release patterns, DORA metrics, deployment | git-history-analysis-developer-tools.md |
+| Conway's Law, team coupling, org alignment | git-history-analysis-developer-tools.md |
+| PyDriller, code-forensics, gitinspector | git-history-analysis-developer-tools.md |
+| AI code git impact, AI commits analysis | ai-agent-commits-git-analysis-impact.md |
+| AI attribution, Co-Authored-By, git blame AI | ai-agent-commits-git-analysis-impact.md |
+| AI churn, AI code duplication, AI quality | ai-agent-commits-git-analysis-impact.md |
+| git-ai, Agent Trace, AI tracking standard | ai-agent-commits-git-analysis-impact.md |
+| Copilot statistics, AI code percentage | ai-agent-commits-git-analysis-impact.md |
+| AI bus factor, phantom ownership | ai-agent-commits-git-analysis-impact.md |
+| AI coupling, architectural erosion | ai-agent-commits-git-analysis-impact.md |
+| Sonar AI Code Assurance, AI quality gate | ai-agent-commits-git-analysis-impact.md |
+| vibe coding, AI slop, AI PR quality | ai-agent-commits-git-analysis-impact.md |
+| autonomous agent git footprint, Aider commits | ai-agent-commits-git-analysis-impact.md |
+| AI governance, AI disclosure policy | ai-agent-commits-git-analysis-impact.md |
+| AI developer metrics, adjusted metrics | ai-agent-commits-git-analysis-impact.md |
+| AI commit detection, forensic heuristics | ai-commit-detection-forensics.md |
+| AI commit fingerprint, agent fingerprinting | ai-commit-detection-forensics.md |
+| Copilot branch prefix, cursor branch prefix | ai-commit-detection-forensics.md |
+| noreply@anthropic.com, noreply@aider.chat | ai-commit-detection-forensics.md |
+| cursoragent@cursor.com, bot@devin.ai | ai-commit-detection-forensics.md |
+| AI code stylometry, code perplexity | ai-commit-detection-forensics.md |
+| isvibecoded, VibeDetect, vibe detection | ai-commit-detection-forensics.md |
+| AI commit composite score, confidence | ai-commit-detection-forensics.md |
+| AI tool email registry, known emails | ai-commit-detection-forensics.md |
+| hallucinated imports, AI code hallucination | ai-commit-detection-forensics.md |
+| AI commit timing, autonomous agent patterns | ai-commit-detection-forensics.md |
+| AI PR patterns, AI diff patterns | ai-commit-detection-forensics.md |
+| Agent Trace JSON, agent-trace.dev | ai-commit-detection-forensics.md |
+| git-ai authorship, git notes AI | ai-commit-detection-forensics.md |
+| Binoculars detection, Fast-DetectGPT | ai-commit-detection-forensics.md |
+| Coding-Agent trailer, AI-assistant trailer | ai-commit-detection-forensics.md |
+| AIDev dataset, 33580 PRs, 932K PRs | ai-commit-detection-forensics.md |
+| multiline commit ratio, feature importance | ai-commit-detection-forensics.md |
+| per-tool commit signature, tool fingerprint | ai-commit-detection-forensics.md |
+| AI detection false positive, reliable signal | ai-commit-detection-forensics.md |
+| glide-mq, message queue, job queue | glide-mq.md |
+| valkey streams, valkey queue, redis queue | glide-mq.md |
+| bullmq alternative, bullmq migration | glide-mq.md |
+| FCALL, server functions, NAPI rust | glide-mq.md |
+| FlowProducer, DAG workflow, fan-out | glide-mq.md |
+| SKILL.md, skill authoring, skill format | skills-for-library-and-sdk-best-practices.md |
+| skill description, skill trigger, discovery | skills-for-library-and-sdk-best-practices.md |
+| progressive disclosure, token budget | skills-for-library-and-sdk-best-practices.md |
+| TanStack Intent, npm-agentskills | skills-for-library-and-sdk-best-practices.md |
+| SDK skill, library skill, npm skills | skills-for-library-and-sdk-best-practices.md |
+| RAG, retrieval augmented generation, indexing | rag-skill-indexing.md |
+| skill description, trigger optimization | rag-skill-indexing.md |
+| progressive disclosure RAG, context engineering | rag-skill-indexing.md |
+| XML vs markdown, structured references | rag-skill-indexing.md |
+| chunking strategy, chunk size, embedding | rag-skill-indexing.md |
+| semantic routing, keyword matching, hybrid | rag-skill-indexing.md |
+| Claude Code skill discovery, Cursor rules | rag-skill-indexing.md |
+| Copilot instructions, agent skills standard | rag-skill-indexing.md |
+| contextual retrieval, BM25, reranking | rag-skill-indexing.md |
+| knowledge file, reference file, skill router | rag-skill-indexing.md |
+| SKILL.md structure, 500 line limit, TOC | rag-skill-indexing.md |
+| context window, token budget, compaction | rag-skill-indexing.md |
+| codex plugin, .codex-plugin, plugin.json | codex-plugin-manifest.md |
+| codex manifest, plugin manifest validation | codex-plugin-manifest.md |
+| codex marketplace, marketplace.json | codex-plugin-manifest.md |
+| codex plugin discovery, plugin installation | codex-plugin-manifest.md |
+| PluginId, plugin@marketplace, plugin segment | codex-plugin-manifest.md |
+| codex defaultPrompt, brandColor, composerIcon | codex-plugin-manifest.md |
+| codex plugin path traversal, resolve_manifest_path | codex-plugin-manifest.md |
+| codex plugin skills namespace, plugin_name:skill | codex-plugin-manifest.md |
+| codex .mcp.json, .app.json, plugin components | codex-plugin-manifest.md |
+| codex plugin policy, install policy, auth policy | codex-plugin-manifest.md |
+| codex curated marketplace, openai-curated | codex-plugin-manifest.md |
+| codex plugin hooks limitation, hooks not supported | codex-plugin-manifest.md |
 | RESP, RESP2, RESP3, wire protocol | resp-mq-server-rust.md |
 | Redis server Rust, Redis replacement Rust | resp-mq-server-rust.md |
 | mini-redis, tokio redis server | resp-mq-server-rust.md |
