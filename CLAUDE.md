@@ -12,6 +12,10 @@
 | All-in-One Plus Modular Packages | all-in-one-plus-modular-packages.md | 40 | deep | 2026-02-21 |
 | GitHub Org Project Management (Multi-Repo OSS) | github-org-project-management.md | 15 | deep | 2026-02-21 |
 | GitHub Organization Structure Patterns | github-org-structure-patterns.md | 18 | deep | 2026-02-21 |
+| OSS Org Naming Patterns | oss-org-naming-patterns.md | 24 | medium | 2026-02-20 |
+| CLI Browser Automation for Agents | cli-browser-automation-agents.md | 32 | deep | 2026-02-20 |
+| Terminal Browsers & Agent Automation | terminal-browsers-agent-automation.md | 40 | deep | 2026-02-20 |
+| Web Session Persistence for CLI Agents | web-session-persistence-cli-agents.md | 42 | deep | 2026-02-20 |
 | Browser Agent Auth Flows (Slack, Notion, AWS) | browser-agent-auth-flows.md | training | deep | 2026-02-22 |
 | Social Platform Auth Flows (X, Reddit, Discord, LinkedIn) | social-platform-auth-flows.md | 35 | deep | 2026-02-22 |
 | Google & Microsoft Auth Flows for Browser Agents | google-microsoft-auth-flows.md | 28 | deep | 2026-02-22 |
@@ -26,6 +30,9 @@
 | AI Commit Detection Forensics | ai-commit-detection-forensics.md | 42 | deep | 2026-03-14 |
 | glide-mq (Message Queue on Valkey/Redis) | glide-mq.md | 12 | medium | 2026-03-19 |
 | Skills for Library/SDK - Best Practices | skills-for-library-and-sdk-best-practices.md | 16 | medium | 2026-03-19 |
+| RAG Skill Indexing for AI Agent Knowledge | rag-skill-indexing.md | 18 | deep | 2026-03-31 |
+| Codex CLI Plugin Manifest System | codex-plugin-manifest.md | 42 | deep | 2026-04-01 |
+| RESP MQ Server in Rust (Wire Protocol, Lua, Queue DS) | resp-mq-server-rust.md | 42 | deep | 2026-04-03 |
 
 ## Trigger Phrases
 
@@ -49,7 +56,7 @@ Use this knowledge when user asks about:
 - "Codex MCP" -> ai-cli-advanced-integration-patterns.md
 - "Crush OpenCode" -> ai-cli-advanced-integration-patterns.md
 - "Agent SDK hosting" -> ai-cli-advanced-integration-patterns.md
-- "A2A protocol" -> ai-cli-advanced-integration-patterns.md
+- "A2A in AI CLI integration" -> ai-cli-advanced-integration-patterns.md
 - "Cross-tool MCP" -> ai-cli-advanced-integration-patterns.md
 - "AI CLI server mode" -> ai-cli-advanced-integration-patterns.md
 - "Claude Code as service" -> ai-cli-advanced-integration-patterns.md
@@ -105,6 +112,33 @@ Use this knowledge when user asks about:
 - "GitHub org profile README" -> github-org-structure-patterns.md
 - "developer tool org layout" -> github-org-structure-patterns.md
 - "open source org patterns" -> github-org-structure-patterns.md
+- "OSS org naming" -> oss-org-naming-patterns.md
+- "developer tool org names" -> oss-org-naming-patterns.md
+- "org name ecosystem branding" -> oss-org-naming-patterns.md
+- "npm scope naming" -> oss-org-naming-patterns.md
+- "GitHub org name availability" -> oss-org-naming-patterns.md
+- "project naming conventions OSS" -> oss-org-naming-patterns.md
+- "naming open source ecosystem" -> oss-org-naming-patterns.md
+- "CLI browser automation" -> cli-browser-automation-agents.md
+- "headless browser agent CLI" -> cli-browser-automation-agents.md
+- "Puppeteer CLI agent" -> cli-browser-automation-agents.md
+- "Playwright CLI agent" -> cli-browser-automation-agents.md
+- "browser automation AI agent" -> cli-browser-automation-agents.md
+- "programmatic browser control" -> cli-browser-automation-agents.md
+- "web scraping AI agent" -> cli-browser-automation-agents.md
+- "terminal browser automation" -> terminal-browsers-agent-automation.md
+- "w3m lynx links automation" -> terminal-browsers-agent-automation.md
+- "Browsh agent scripting" -> terminal-browsers-agent-automation.md
+- "text browser AI agent" -> terminal-browsers-agent-automation.md
+- "elinks agent automation" -> terminal-browsers-agent-automation.md
+- "terminal browser scripting" -> terminal-browsers-agent-automation.md
+- "web session persistence CLI" -> web-session-persistence-cli-agents.md
+- "cookie persistence agent" -> web-session-persistence-cli-agents.md
+- "CLI agent cookie jar" -> web-session-persistence-cli-agents.md
+- "session storage CLI agent" -> web-session-persistence-cli-agents.md
+- "auth state reuse CLI" -> web-session-persistence-cli-agents.md
+- "web session cache agent" -> web-session-persistence-cli-agents.md
+- "persistent browser context CLI" -> web-session-persistence-cli-agents.md
 - "Slack login automation" -> browser-agent-auth-flows.md
 - "Notion auth flow" -> browser-agent-auth-flows.md
 - "AWS Console login" -> browser-agent-auth-flows.md
@@ -355,6 +389,86 @@ Use this knowledge when user asks about:
 - "progressive disclosure skill" -> skills-for-library-and-sdk-best-practices.md
 - "ship skills with npm" -> skills-for-library-and-sdk-best-practices.md
 - "TanStack Intent" -> skills-for-library-and-sdk-best-practices.md
+- "RAG skill indexing" -> rag-skill-indexing.md
+- "RAG chunking strategy" -> rag-skill-indexing.md
+- "skill description optimization" -> rag-skill-indexing.md
+- "progressive disclosure RAG" -> rag-skill-indexing.md
+- "context window optimization" -> rag-skill-indexing.md
+- "XML vs markdown AI retrieval" -> rag-skill-indexing.md
+- "skill trigger phrases" -> rag-skill-indexing.md
+- "SKILL.md structure best practices" -> rag-skill-indexing.md
+- "agent knowledge retrieval" -> rag-skill-indexing.md
+- "semantic routing triggers" -> rag-skill-indexing.md
+- "embedding vs keyword retrieval" -> rag-skill-indexing.md
+- "Claude Code skill discovery" -> rag-skill-indexing.md
+- "Cursor Copilot skill loading" -> rag-skill-indexing.md
+- "agent skills open standard" -> rag-skill-indexing.md
+- "context engineering" -> rag-skill-indexing.md
+- "knowledge file structure AI" -> rag-skill-indexing.md
+- "reference file organization" -> rag-skill-indexing.md
+- "description field optimization" -> rag-skill-indexing.md
+- "contextual retrieval" -> rag-skill-indexing.md
+- "Codex plugin.json" -> codex-plugin-manifest.md
+- "Codex plugin manifest" -> codex-plugin-manifest.md
+- ".codex-plugin directory" -> codex-plugin-manifest.md
+- "Codex CLI plugin system" -> codex-plugin-manifest.md
+- "Codex plugin validation" -> codex-plugin-manifest.md
+- "Codex marketplace.json" -> codex-plugin-manifest.md
+- "Codex plugin discovery" -> codex-plugin-manifest.md
+- "Codex plugin installation" -> codex-plugin-manifest.md
+- "Codex plugin paths" -> codex-plugin-manifest.md
+- "Codex defaultPrompt" -> codex-plugin-manifest.md
+- "Codex plugin interface" -> codex-plugin-manifest.md
+- "Codex PluginId format" -> codex-plugin-manifest.md
+- "Codex plugin skills namespace" -> codex-plugin-manifest.md
+- "Codex plugin MCP servers" -> codex-plugin-manifest.md
+- "Codex plugin app connectors" -> codex-plugin-manifest.md
+- "Codex curated marketplace" -> codex-plugin-manifest.md
+- "Codex plugin policy" -> codex-plugin-manifest.md
+- "Codex plugin feature flag" -> codex-plugin-manifest.md
+- "Codex plugin store cache" -> codex-plugin-manifest.md
+- "Codex plugin path traversal" -> codex-plugin-manifest.md
+- ".agents/plugins/marketplace.json" -> codex-plugin-manifest.md
+- "resolve_manifest_path" -> codex-plugin-manifest.md
+- "validate_plugin_segment" -> codex-plugin-manifest.md
+- "PluginManifestInterface" -> codex-plugin-manifest.md
+- "Codex plugin hooks limitation" -> codex-plugin-manifest.md
+- "Codex plugin startup sync" -> codex-plugin-manifest.md
+- "Codex plugin linter rules" -> codex-plugin-manifest.md
+- "RESP protocol Rust" -> resp-mq-server-rust.md
+- "Redis server Rust" -> resp-mq-server-rust.md
+- "RESP wire protocol" -> resp-mq-server-rust.md
+- "Redis compatible server" -> resp-mq-server-rust.md
+- "message queue server Rust" -> resp-mq-server-rust.md
+- "BullMQ Lua scripts" -> resp-mq-server-rust.md
+- "EVAL EVALSHA implementation" -> resp-mq-server-rust.md
+- "Lua embedding Rust mlua" -> resp-mq-server-rust.md
+- "redis.call Lua Rust" -> resp-mq-server-rust.md
+- "mini-redis architecture" -> resp-mq-server-rust.md
+- "DragonflyDB architecture" -> resp-mq-server-rust.md
+- "Garnet Redis replacement" -> resp-mq-server-rust.md
+- "Sidekiq Redis commands" -> resp-mq-server-rust.md
+- "Celery Redis transport" -> resp-mq-server-rust.md
+- "queue data structures Rust" -> resp-mq-server-rust.md
+- "skip list sorted set" -> resp-mq-server-rust.md
+- "time wheel delayed jobs" -> resp-mq-server-rust.md
+- "BRPOP LPUSH implementation" -> resp-mq-server-rust.md
+- "Redis AOF WAL Rust" -> resp-mq-server-rust.md
+- "Redis command subset MQ" -> resp-mq-server-rust.md
+- "Tokio TCP server RESP" -> resp-mq-server-rust.md
+- "shared-nothing Redis Rust" -> resp-mq-server-rust.md
+- "Redis replacement single binary" -> resp-mq-server-rust.md
+- "BullMQ compatibility server" -> resp-mq-server-rust.md
+- "Sidekiq compatibility server" -> resp-mq-server-rust.md
+- "Celery compatibility server" -> resp-mq-server-rust.md
+- "glide-mq server backend" -> resp-mq-server-rust.md
+- "redis-protocol crate" -> resp-mq-server-rust.md
+- "RESP2 RESP3 parsing" -> resp-mq-server-rust.md
+- "Redis Lua scripting Rust" -> resp-mq-server-rust.md
+- "queue persistence AOF" -> resp-mq-server-rust.md
+- "Redis benchmark methodology" -> resp-mq-server-rust.md
+- "io_uring Rust server" -> resp-mq-server-rust.md
+- "Kvrocks architecture" -> resp-mq-server-rust.md
 
 ## Quick Lookup
 
@@ -416,6 +530,17 @@ Use this knowledge when user asks about:
 | starter workflows, workflow-templates | github-org-structure-patterns.md |
 | github pages org site | github-org-structure-patterns.md |
 | verified domain github | github-org-structure-patterns.md |
+| OSS org naming, developer tool org names | oss-org-naming-patterns.md |
+| npm scope, GitHub org availability | oss-org-naming-patterns.md |
+| project naming convention, ecosystem branding | oss-org-naming-patterns.md |
+| CLI browser automation, headless agent | cli-browser-automation-agents.md |
+| Puppeteer agent, Playwright agent, AI browser | cli-browser-automation-agents.md |
+| programmatic browser control, web scraping agent | cli-browser-automation-agents.md |
+| terminal browser, w3m, lynx, links, elinks | terminal-browsers-agent-automation.md |
+| Browsh, text browser automation | terminal-browsers-agent-automation.md |
+| web session persistence CLI, cookie jar agent | web-session-persistence-cli-agents.md |
+| session storage CLI, auth state reuse | web-session-persistence-cli-agents.md |
+| persistent browser context, cookie serialization | web-session-persistence-cli-agents.md |
 | slack login, slack magic link, slack auth | browser-agent-auth-flows.md |
 | notion login, notion magic link, token_v2 | browser-agent-auth-flows.md |
 | aws console login, aws signin, IAM login | browser-agent-auth-flows.md |
@@ -576,6 +701,51 @@ Use this knowledge when user asks about:
 | progressive disclosure, token budget | skills-for-library-and-sdk-best-practices.md |
 | TanStack Intent, npm-agentskills | skills-for-library-and-sdk-best-practices.md |
 | SDK skill, library skill, npm skills | skills-for-library-and-sdk-best-practices.md |
+| RAG, retrieval augmented generation, indexing | rag-skill-indexing.md |
+| skill description, trigger optimization | rag-skill-indexing.md |
+| progressive disclosure RAG, context engineering | rag-skill-indexing.md |
+| XML vs markdown, structured references | rag-skill-indexing.md |
+| chunking strategy, chunk size, embedding | rag-skill-indexing.md |
+| semantic routing, keyword matching, hybrid | rag-skill-indexing.md |
+| Claude Code skill discovery, Cursor rules | rag-skill-indexing.md |
+| Copilot instructions, agent skills standard | rag-skill-indexing.md |
+| contextual retrieval, BM25, reranking | rag-skill-indexing.md |
+| knowledge file, reference file, skill router | rag-skill-indexing.md |
+| SKILL.md structure, 500 line limit, TOC | rag-skill-indexing.md |
+| context window, token budget, compaction | rag-skill-indexing.md |
+| codex plugin, .codex-plugin, plugin.json | codex-plugin-manifest.md |
+| codex manifest, plugin manifest validation | codex-plugin-manifest.md |
+| codex marketplace, marketplace.json | codex-plugin-manifest.md |
+| codex plugin discovery, plugin installation | codex-plugin-manifest.md |
+| PluginId, plugin@marketplace, plugin segment | codex-plugin-manifest.md |
+| codex defaultPrompt, brandColor, composerIcon | codex-plugin-manifest.md |
+| codex plugin path traversal, resolve_manifest_path | codex-plugin-manifest.md |
+| codex plugin skills namespace, plugin_name:skill | codex-plugin-manifest.md |
+| codex .mcp.json, .app.json, plugin components | codex-plugin-manifest.md |
+| codex plugin policy, install policy, auth policy | codex-plugin-manifest.md |
+| codex curated marketplace, openai-curated | codex-plugin-manifest.md |
+| codex plugin hooks limitation, hooks not supported | codex-plugin-manifest.md |
+| RESP, RESP2, RESP3, wire protocol | resp-mq-server-rust.md |
+| Redis server Rust, Redis replacement Rust | resp-mq-server-rust.md |
+| mini-redis, tokio redis server | resp-mq-server-rust.md |
+| BullMQ Lua scripts, EVAL EVALSHA | resp-mq-server-rust.md |
+| mlua, rlua, Lua embedding Rust | resp-mq-server-rust.md |
+| redis.call, redis.pcall, Lua API | resp-mq-server-rust.md |
+| DragonflyDB, Garnet, KeyDB, Kvrocks | resp-mq-server-rust.md |
+| Sidekiq Redis, Celery Redis, Kombu | resp-mq-server-rust.md |
+| queue data structures, skip list, time wheel | resp-mq-server-rust.md |
+| BRPOP, RPOPLPUSH, blocking operations | resp-mq-server-rust.md |
+| AOF, WAL, persistence queue | resp-mq-server-rust.md |
+| redis-benchmark, memtier_benchmark | resp-mq-server-rust.md |
+| shared-nothing, thread-per-core, sharding | resp-mq-server-rust.md |
+| io_uring, tokio-uring, glommio | resp-mq-server-rust.md |
+| redis-protocol crate, RESP parsing | resp-mq-server-rust.md |
+| TLS RESP, tokio-rustls server | resp-mq-server-rust.md |
+| DashMap, crossbeam-skiplist, parking_lot | resp-mq-server-rust.md |
+| bumpalo arena, slab allocator, bytes crate | resp-mq-server-rust.md |
+| MULTI EXEC, Redis transactions | resp-mq-server-rust.md |
+| Redis Pub/Sub, SUBSCRIBE PUBLISH | resp-mq-server-rust.md |
+| Redis streams, XADD XREADGROUP | resp-mq-server-rust.md |
 
 ## How to Use
 
