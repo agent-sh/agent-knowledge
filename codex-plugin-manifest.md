@@ -181,7 +181,7 @@ The `interface` object provides display metadata for the plugin marketplace/dire
     "brandColor": "string | null",
     "composerIcon": "./relative-path | null",
     "logo": "./relative-path | null",
-    "screenshots": ["./relative-path array"]
+    "screenshots": ["./screenshot-1.png", "./screenshot-2.png"]
   }
 }
 ```
@@ -581,6 +581,8 @@ type PluginAuthPolicy = "ON_INSTALL" | "ON_USE";
 | `screenshots` array required | Info | Defaults to empty array |
 
 ### Marketplace Rules
+
+Note: severity differs from Path Rules above. Plugin component paths (skills, mcpServers, apps) silently ignore invalid entries (Warning - plugin still installs). Marketplace source paths must be valid for install to proceed (Error - installation blocked).
 
 | Rule | Severity | Description |
 |------|----------|-------------|
