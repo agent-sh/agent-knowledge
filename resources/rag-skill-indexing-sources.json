@@ -1,0 +1,249 @@
+{
+  "topic": "RAG skill indexing for AI agent knowledge files",
+  "slug": "rag-skill-indexing",
+  "generated": "2026-03-31T00:00:00Z",
+  "depth": "deep",
+  "totalSources": 18,
+  "sources": [
+    {
+      "url": "https://platform.claude.com/docs/en/agents-and-tools/agent-skills/best-practices",
+      "title": "Skill Authoring Best Practices - Anthropic",
+      "qualityScore": 99,
+      "scores": { "authority": 10, "recency": 10, "depth": 10, "examples": 10, "uniqueness": 10 },
+      "keyInsights": [
+        "Context window is a public good - only add what the model doesn't already know",
+        "Description field is the gatekeeper for skill discovery - must include both what and when",
+        "Keep SKILL.md under 500 lines, use progressive disclosure for deeper content",
+        "Match degrees of freedom to task fragility (high/medium/low)",
+        "Avoid deeply nested references - keep one level deep from SKILL.md",
+        "Structure longer reference files with table of contents for partial reads",
+        "Build evaluations before writing documentation",
+        "Test with all models (Haiku/Sonnet/Opus) - effectiveness depends on underlying model"
+      ]
+    },
+    {
+      "url": "https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview",
+      "title": "Agent Skills Overview - Anthropic",
+      "qualityScore": 98,
+      "scores": { "authority": 10, "recency": 10, "depth": 10, "examples": 9, "uniqueness": 10 },
+      "keyInsights": [
+        "Three-tier progressive disclosure: metadata (~100 tokens) -> instructions (<5k tokens) -> resources (as needed)",
+        "Skills leverage filesystem-based architecture for on-demand loading",
+        "Metadata loaded at startup, instructions when triggered, resources when referenced",
+        "Scripts executed via bash without loading code into context - only output consumes tokens",
+        "No practical limit on bundled content - context penalty only when accessed"
+      ]
+    },
+    {
+      "url": "https://agentskills.io/specification",
+      "title": "Agent Skills Specification - Open Standard",
+      "qualityScore": 96,
+      "scores": { "authority": 10, "recency": 10, "depth": 9, "examples": 8, "uniqueness": 10 },
+      "keyInsights": [
+        "name: max 64 chars, lowercase + hyphens only, must match parent directory",
+        "description: max 1024 chars, must include what and when",
+        "Body content has no format restrictions - write whatever helps agents",
+        "Progressive disclosure: metadata ~100 tokens, instructions <5000 tokens recommended",
+        "File references should be one level deep from SKILL.md",
+        "Keep individual reference files focused - smaller files mean less context use"
+      ]
+    },
+    {
+      "url": "https://agentskills.io/client-implementation/adding-skills-support",
+      "title": "How to Add Skills Support to Your Agent - Agent Skills",
+      "qualityScore": 95,
+      "scores": { "authority": 10, "recency": 10, "depth": 10, "examples": 9, "uniqueness": 9 },
+      "keyInsights": [
+        "Catalog approach: name + description disclosed at startup (~50-100 tokens per skill)",
+        "Model-driven activation: model reads catalog, decides relevance, loads full content",
+        "Structured wrapping with XML tags helps distinguish skill content from conversation",
+        "Protect skill content from context compaction - losing instructions silently degrades performance",
+        "Deduplicate activations to avoid same instructions appearing multiple times",
+        "File-read activation vs dedicated tool activation - both work"
+      ]
+    },
+    {
+      "url": "https://code.claude.com/docs/en/skills",
+      "title": "Extend Claude with Skills - Claude Code Documentation",
+      "qualityScore": 94,
+      "scores": { "authority": 10, "recency": 10, "depth": 9, "examples": 9, "uniqueness": 8 },
+      "keyInsights": [
+        "Skills discovered from personal (~/.claude/skills/), project (.claude/skills/), and plugin directories",
+        "Automatic discovery from nested directories supports monorepo setups",
+        "Description front-loaded and truncated at 250 chars in skill listing",
+        "SLASH_COMMAND_TOOL_CHAR_BUDGET env var controls total description budget (default 1% of context)",
+        "disable-model-invocation: true removes skill from Claude context entirely",
+        "user-invocable: false hides from / menu but keeps in Claude context"
+      ]
+    },
+    {
+      "url": "https://code.claude.com/docs/en/memory",
+      "title": "How Claude Remembers Your Project - Claude Code Memory",
+      "qualityScore": 93,
+      "scores": { "authority": 10, "recency": 10, "depth": 9, "examples": 8, "uniqueness": 8 },
+      "keyInsights": [
+        "CLAUDE.md files loaded hierarchically: managed policy > project > user",
+        "Target under 200 lines per CLAUDE.md file for best adherence",
+        "Auto memory: first 200 lines or 25KB of MEMORY.md loaded at session start",
+        "@path/to/import syntax for referencing external files (up to 5 hops deep)",
+        ".claude/rules/ directory for path-specific conditional rules with glob patterns",
+        "HTML comments stripped from CLAUDE.md before injection - use for human-only notes"
+      ]
+    },
+    {
+      "url": "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices",
+      "title": "Prompting Best Practices - Anthropic",
+      "qualityScore": 97,
+      "scores": { "authority": 10, "recency": 10, "depth": 10, "examples": 10, "uniqueness": 9 },
+      "keyInsights": [
+        "XML tags help Claude parse complex prompts unambiguously - use for documents, context, instructions",
+        "Structure with <documents><document index='n'><source>...</source><document_content>...</document_content></document></documents>",
+        "Put longform data at the top of prompts, queries at the end (up to 30% quality improvement)",
+        "Ground responses in quotes from source documents to cut through noise",
+        "3-5 examples reliably steer output format, tone, and structure",
+        "Consistent, descriptive tag names reduce misinterpretation"
+      ]
+    },
+    {
+      "url": "https://platform.claude.com/docs/en/build-with-claude/context-windows",
+      "title": "Context Windows - Anthropic Documentation",
+      "qualityScore": 92,
+      "scores": { "authority": 10, "recency": 10, "depth": 9, "examples": 7, "uniqueness": 8 },
+      "keyInsights": [
+        "Claude Opus 4.6 and Sonnet 4.6: 1M-token context window",
+        "Other Claude models (Sonnet 4.5, Sonnet 4): 200k-token context window",
+        "Context rot: accuracy and recall degrade as token count grows",
+        "Curating what's in context is as important as how much space is available",
+        "Context awareness: model tracks remaining budget with <budget:token_budget> tags",
+        "Compaction provides server-side summarization for long conversations"
+      ]
+    },
+    {
+      "url": "https://agentskills.io/what-are-skills",
+      "title": "What Are Skills? - Agent Skills",
+      "qualityScore": 90,
+      "scores": { "authority": 10, "recency": 10, "depth": 7, "examples": 8, "uniqueness": 7 },
+      "keyInsights": [
+        "Skills use progressive disclosure: discovery -> activation -> execution",
+        "Self-documenting format makes skills easy to audit and improve",
+        "Portable: just files, easy to edit, version, and share",
+        "Extensible from pure text instructions to executable code with assets"
+      ]
+    },
+    {
+      "url": "https://agentskills.io",
+      "title": "Agent Skills Open Standard - Overview",
+      "qualityScore": 89,
+      "scores": { "authority": 10, "recency": 10, "depth": 6, "examples": 6, "uniqueness": 8 },
+      "keyInsights": [
+        "30+ AI tools support Agent Skills: Claude Code, Cursor, Copilot, Codex, Gemini CLI, JetBrains, VS Code, OpenHands, etc.",
+        "Open standard originally by Anthropic, now community-governed",
+        "Skills capture organizational knowledge in portable, version-controlled packages",
+        "Interoperability: same skill works across multiple agent products"
+      ]
+    },
+    {
+      "url": "https://www.anthropic.com/research/contextual-retrieval",
+      "title": "Contextual Retrieval - Anthropic Research",
+      "qualityScore": 94,
+      "scores": { "authority": 10, "recency": 8, "depth": 10, "examples": 8, "uniqueness": 10 },
+      "keyInsights": [
+        "Traditional RAG loses context when chunking - individual chunks lack surrounding information",
+        "Contextual Retrieval prepends chunk-specific context using a language model before embedding",
+        "Contextual Embeddings + Contextual BM25 reduces retrieval failures by 67%",
+        "Adding reranking on top achieves 49% fewer failures overall",
+        "BM25 (keyword matching) and embeddings (semantic) are complementary - hybrid is best",
+        "Optimal chunk sizes: 100-300 tokens for embedding, with 10-20% overlap"
+      ]
+    },
+    {
+      "url": "https://docs.cursor.com/context/rules",
+      "title": "Cursor Rules - Context Configuration",
+      "qualityScore": 85,
+      "scores": { "authority": 8, "recency": 9, "depth": 7, "examples": 7, "uniqueness": 7 },
+      "keyInsights": [
+        "Cursor supports .cursor/rules/ with MDC frontmatter including globs for path-specific activation",
+        "alwaysApply: true loads unconditionally, globs: pattern loads conditionally",
+        "Cursor also reads AGENTS.md and .cursorrules for backward compatibility",
+        "Cursor codebase indexing uses embeddings for semantic search over project files"
+      ]
+    },
+    {
+      "url": "https://docs.github.com/en/copilot/customizing-copilot/adding-custom-instructions-for-github-copilot",
+      "title": "Custom Instructions for GitHub Copilot",
+      "qualityScore": 84,
+      "scores": { "authority": 9, "recency": 9, "depth": 6, "examples": 7, "uniqueness": 6 },
+      "keyInsights": [
+        "Copilot reads .github/copilot-instructions.md for project-level instructions",
+        "Copilot also supports Agent Skills in .agents/skills/ and .github/skills/",
+        "Copilot uses semantic matching against skill descriptions for activation",
+        "VS Code Copilot has built-in codebase indexing for @workspace queries"
+      ]
+    },
+    {
+      "url": "https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents",
+      "title": "Effective Context Engineering for AI Agents - Anthropic Engineering",
+      "qualityScore": 96,
+      "scores": { "authority": 10, "recency": 10, "depth": 10, "examples": 9, "uniqueness": 10 },
+      "keyInsights": [
+        "Context engineering is the discipline of curating what goes into the context window",
+        "Quality of context matters more than quantity - context rot degrades with length",
+        "Progressive disclosure is the fundamental pattern: load what's needed when needed",
+        "Structured formats (XML, JSON) help models parse and locate information reliably",
+        "Compaction strategies should preserve high-signal content and drop low-signal content"
+      ]
+    },
+    {
+      "url": "https://claude.com/blog/equipping-agents-for-the-real-world-with-agent-skills",
+      "title": "Equipping Agents for the Real World with Agent Skills - Anthropic Engineering",
+      "qualityScore": 93,
+      "scores": { "authority": 10, "recency": 10, "depth": 9, "examples": 8, "uniqueness": 9 },
+      "keyInsights": [
+        "Skills solve the gap between general AI capability and domain-specific expertise",
+        "Progressive disclosure enables large skill libraries without upfront context cost",
+        "Description quality is the primary factor in correct skill activation",
+        "Filesystem-based architecture enables on-demand loading without token waste"
+      ]
+    },
+    {
+      "url": "https://arxiv.org/abs/2312.10997",
+      "title": "Retrieval-Augmented Generation for Large Language Models: A Survey",
+      "qualityScore": 88,
+      "scores": { "authority": 9, "recency": 7, "depth": 10, "examples": 7, "uniqueness": 8 },
+      "keyInsights": [
+        "Three RAG paradigms: Naive RAG, Advanced RAG, and Modular RAG",
+        "Chunk size profoundly affects retrieval quality - too small loses context, too large adds noise",
+        "Hybrid retrieval (dense + sparse) consistently outperforms either alone",
+        "Reranking stage critical for filtering noisy retrievals before generation",
+        "Metadata enrichment improves retrieval precision significantly"
+      ]
+    },
+    {
+      "url": "https://www.pinecone.io/learn/chunking-strategies/",
+      "title": "Chunking Strategies for RAG - Pinecone",
+      "qualityScore": 86,
+      "scores": { "authority": 8, "recency": 8, "depth": 9, "examples": 8, "uniqueness": 7 },
+      "keyInsights": [
+        "Fixed-size chunking: simple but can break mid-sentence/concept",
+        "Semantic chunking: groups by topic coherence, better retrieval quality",
+        "Recursive character splitting: tries larger breaks first then smaller",
+        "Overlap of 10-20% between chunks preserves boundary context",
+        "Markdown/HTML-aware chunking respects document structure",
+        "256-512 tokens is the sweet spot for most embedding models"
+      ]
+    },
+    {
+      "url": "https://research.google/blog/raptor-recursive-abstractive-processing-for-tree-organized-retrieval/",
+      "title": "RAPTOR: Recursive Abstractive Processing for Tree-Organized Retrieval - Google Research",
+      "qualityScore": 87,
+      "scores": { "authority": 9, "recency": 7, "depth": 9, "examples": 7, "uniqueness": 9 },
+      "keyInsights": [
+        "Hierarchical summarization creates multi-level retrieval trees",
+        "Leaf nodes are original chunks, higher nodes are summaries of clusters",
+        "Retrieval at different tree levels answers both specific and broad queries",
+        "Outperforms flat chunking approaches on complex, multi-hop questions",
+        "Particularly effective for knowledge bases with mixed granularity needs"
+      ]
+    }
+  ]
+}

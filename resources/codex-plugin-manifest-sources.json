@@ -1,0 +1,688 @@
+{
+  "topic": "Codex CLI Plugin Manifest System",
+  "slug": "codex-plugin-manifest",
+  "generated": "2026-04-01T00:00:00Z",
+  "depth": "deep",
+  "totalSources": 42,
+  "sources": [
+    {
+      "url": "https://github.com/openai/codex/blob/main/codex-rs/core/src/plugins/manifest.rs",
+      "title": "manifest.rs - Plugin manifest parsing and validation (full source)",
+      "qualityScore": 100,
+      "authority": 10,
+      "recency": 10,
+      "depth": 10,
+      "examples": 10,
+      "uniqueness": 10,
+      "keyInsights": [
+        "RawPluginManifest uses serde rename_all camelCase",
+        "Path fields are top-level strings, not nested under paths object",
+        "resolve_manifest_path requires ./ prefix, blocks .. traversal",
+        "Empty name falls back to directory name",
+        "MAX_DEFAULT_PROMPT_COUNT=3, MAX_DEFAULT_PROMPT_LEN=128",
+        "Interface omitted if all fields are empty/default",
+        "Asset paths use same validation as component paths",
+        "Whitespace normalization via split_whitespace().join(\" \")"
+      ]
+    },
+    {
+      "url": "https://github.com/openai/codex/blob/main/codex-rs/core/src/plugins/manager.rs",
+      "title": "manager.rs - Plugin lifecycle management",
+      "qualityScore": 95,
+      "authority": 10,
+      "recency": 10,
+      "depth": 10,
+      "examples": 8,
+      "uniqueness": 9,
+      "keyInsights": [
+        "PluginsManager orchestrates plugin lifecycle with caching",
+        "TTL-based caching for featured plugin IDs",
+        "Product-based access restrictions at admission time",
+        "MCP server deduplication across plugins",
+        "Skill path resolution with config-based disabling"
+      ]
+    },
+    {
+      "url": "https://github.com/openai/codex/blob/main/codex-rs/core/src/plugins/marketplace.rs",
+      "title": "marketplace.rs - Marketplace discovery and plugin resolution",
+      "qualityScore": 95,
+      "authority": 10,
+      "recency": 10,
+      "depth": 10,
+      "examples": 8,
+      "uniqueness": 9,
+      "keyInsights": [
+        "MarketplacePluginPolicy with installation and auth policies",
+        "Products array: missing=allow all, empty []=deny all",
+        "Local source paths require ./ prefix",
+        "Legacy installPolicy/authPolicy fields silently ignored",
+        "Marketplace discovery from home dir and git repo roots",
+        "First duplicate plugin entry wins"
+      ]
+    },
+    {
+      "url": "https://github.com/openai/codex/blob/main/codex-rs/core/src/plugins/store.rs",
+      "title": "store.rs - Plugin storage and installation",
+      "qualityScore": 90,
+      "authority": 10,
+      "recency": 10,
+      "depth": 9,
+      "examples": 7,
+      "uniqueness": 8,
+      "keyInsights": [
+        "Cache structure: plugins/cache/{marketplace}/{plugin}/{version}/",
+        "Atomic installation with staging directory and rollback",
+        "local version preferred over SHA versions",
+        "Manifest name must match marketplace plugin name",
+        "Path separator rejection in plugin/marketplace names"
+      ]
+    },
+    {
+      "url": "https://github.com/openai/codex/blob/main/codex-rs/plugin/src/plugin_id.rs",
+      "title": "plugin_id.rs - PluginId parsing and segment validation",
+      "qualityScore": 92,
+      "authority": 10,
+      "recency": 10,
+      "depth": 9,
+      "examples": 7,
+      "uniqueness": 9,
+      "keyInsights": [
+        "PluginId format: plugin_name@marketplace_name",
+        "Split on rightmost @ separator",
+        "validate_plugin_segment: non-empty, ASCII alphanumeric + hyphens + underscores",
+        "Both segments must pass validation"
+      ]
+    },
+    {
+      "url": "https://github.com/openai/codex/blob/main/codex-rs/plugin/src/lib.rs",
+      "title": "codex_plugin crate - Plugin types and capability summary",
+      "qualityScore": 88,
+      "authority": 10,
+      "recency": 10,
+      "depth": 8,
+      "examples": 6,
+      "uniqueness": 8,
+      "keyInsights": [
+        "PluginCapabilitySummary with config_name, display_name, has_skills, mcp_server_names, app_connector_ids",
+        "AppConnectorId is a newtype wrapper over String",
+        "PluginTelemetryMetadata for analytics"
+      ]
+    },
+    {
+      "url": "https://github.com/openai/codex/blob/main/codex-rs/plugin/src/load_outcome.rs",
+      "title": "load_outcome.rs - PluginLoadOutcome and LoadedPlugin structs",
+      "qualityScore": 90,
+      "authority": 10,
+      "recency": 10,
+      "depth": 9,
+      "examples": 7,
+      "uniqueness": 8,
+      "keyInsights": [
+        "LoadedPlugin tracks config_name, manifest_name, enabled, error, skill_roots, disabled_skill_paths",
+        "Plugin is_active requires enabled=true AND error=None",
+        "effective_skill_roots, effective_mcp_servers, effective_apps filter by active state",
+        "EffectiveSkillRoots trait for plugin outcome"
+      ]
+    },
+    {
+      "url": "https://github.com/openai/codex/blob/main/codex-rs/plugin/src/plugin_namespace.rs",
+      "title": "plugin_namespace.rs - Skill namespace resolution",
+      "qualityScore": 85,
+      "authority": 10,
+      "recency": 10,
+      "depth": 8,
+      "examples": 7,
+      "uniqueness": 7,
+      "keyInsights": [
+        "Walks up directory ancestors to find .codex-plugin/plugin.json",
+        "Extracts name field or falls back to directory name",
+        "Skills are namespaced as plugin_name:skill_name"
+      ]
+    },
+    {
+      "url": "https://github.com/openai/codex/blob/main/codex-rs/core/src/plugins/discoverable.rs",
+      "title": "discoverable.rs - Plugin discovery for tool suggestions",
+      "qualityScore": 82,
+      "authority": 10,
+      "recency": 10,
+      "depth": 7,
+      "examples": 6,
+      "uniqueness": 7,
+      "keyInsights": [
+        "Allowlist of 8 curated plugins: GitHub, Notion, Slack, Gmail, Google Calendar, Google Drive, Linear, Figma",
+        "Excludes already installed plugins from discovery",
+        "Sorted alphabetically by name then by ID"
+      ]
+    },
+    {
+      "url": "https://github.com/openai/codex/blob/main/codex-rs/core/src/plugins/injection.rs",
+      "title": "injection.rs - Plugin injection into agent context",
+      "qualityScore": 80,
+      "authority": 10,
+      "recency": 10,
+      "depth": 7,
+      "examples": 5,
+      "uniqueness": 7,
+      "keyInsights": [
+        "Builds DeveloperInstructions from mentioned plugins",
+        "Filters MCP servers by plugin display name",
+        "Locates enabled connectors matching plugin display name",
+        "Uses BTreeSet for sorted, deduplicated results"
+      ]
+    },
+    {
+      "url": "https://github.com/openai/codex/blob/main/codex-rs/core/src/plugins/mentions.rs",
+      "title": "mentions.rs - Plugin mention collection from user input",
+      "qualityScore": 78,
+      "authority": 10,
+      "recency": 10,
+      "depth": 7,
+      "examples": 5,
+      "uniqueness": 6,
+      "keyInsights": [
+        "Plugin mentions use @ sigil, tool mentions use $ sigil",
+        "Extracts from both structured Mention objects and linked text",
+        "App IDs extracted from app:// URI scheme",
+        "Plugin IDs extracted from plugin:// URI scheme"
+      ]
+    },
+    {
+      "url": "https://github.com/openai/codex/blob/main/codex-rs/core/src/plugins/remote.rs",
+      "title": "remote.rs - Remote plugin status fetching",
+      "qualityScore": 75,
+      "authority": 10,
+      "recency": 10,
+      "depth": 6,
+      "examples": 5,
+      "uniqueness": 6,
+      "keyInsights": [
+        "Requires ChatGPT authentication (not API key)",
+        "30-second timeout for requests",
+        "Featured plugins endpoint uses platform parameter",
+        "Enable/disable via POST to /plugins/{id}/{action}"
+      ]
+    },
+    {
+      "url": "https://github.com/openai/codex/blob/main/codex-rs/core/src/plugins/render.rs",
+      "title": "render.rs - Plugin instruction rendering",
+      "qualityScore": 78,
+      "authority": 10,
+      "recency": 10,
+      "depth": 7,
+      "examples": 5,
+      "uniqueness": 6,
+      "keyInsights": [
+        "Renders ## Plugins section with available plugin list",
+        "Per-plugin instructions list MCP servers and apps",
+        "Skills use plugin_name: prefix convention",
+        "Wrapped in XML tags for structured parsing"
+      ]
+    },
+    {
+      "url": "https://github.com/openai/codex/blob/main/codex-rs/core/src/plugins/startup_sync.rs",
+      "title": "startup_sync.rs - Startup plugin synchronization",
+      "qualityScore": 80,
+      "authority": 10,
+      "recency": 10,
+      "depth": 7,
+      "examples": 5,
+      "uniqueness": 7,
+      "keyInsights": [
+        "Git-first sync with HTTP fallback",
+        "Shallow clone depth=1 for efficiency",
+        "SHA-based caching in .tmp/plugins.sha",
+        "5-second prerequisite wait, 30-second operation timeout",
+        "Atomic rename with rollback capability",
+        "Marker file prevents duplicate syncs"
+      ]
+    },
+    {
+      "url": "https://github.com/openai/codex/blob/main/codex-rs/core/src/plugins/toggles.rs",
+      "title": "toggles.rs - Plugin enabled/disabled state tracking",
+      "qualityScore": 72,
+      "authority": 10,
+      "recency": 10,
+      "depth": 6,
+      "examples": 4,
+      "uniqueness": 6,
+      "keyInsights": [
+        "Three config write patterns: direct property, object, bulk",
+        "Later writes override earlier ones for same plugin",
+        "BTreeMap<String, bool> for deterministic ordering"
+      ]
+    },
+    {
+      "url": "https://github.com/openai/codex/blob/main/codex-rs/core/src/plugins/mod.rs",
+      "title": "mod.rs - Plugin module structure and public API",
+      "qualityScore": 75,
+      "authority": 10,
+      "recency": 10,
+      "depth": 6,
+      "examples": 3,
+      "uniqueness": 7,
+      "keyInsights": [
+        "11 internal modules: discoverable, injection, manager, manifest, marketplace, mentions, remote, render, startup_sync, store, toggles",
+        "Re-exports from codex_plugin: AppConnectorId, PluginId, PluginCapabilitySummary",
+        "OPENAI_CURATED_MARKETPLACE_NAME constant"
+      ]
+    },
+    {
+      "url": "https://github.com/openai/codex/blob/main/codex-rs/core/src/plugins/test_support.rs",
+      "title": "test_support.rs - Plugin test fixtures and helpers",
+      "qualityScore": 82,
+      "authority": 10,
+      "recency": 10,
+      "depth": 7,
+      "examples": 8,
+      "uniqueness": 6,
+      "keyInsights": [
+        "Standard test plugin has .codex-plugin/plugin.json, skills/SKILL.md, .mcp.json, .app.json",
+        "Test SHA constant for version validation",
+        "Marketplace fixture at .agents/plugins/marketplace.json",
+        "ConfigBuilder for loading test configurations"
+      ]
+    },
+    {
+      "url": "https://github.com/openai/codex/blob/main/codex-rs/core/src/plugins/marketplace_tests.rs",
+      "title": "marketplace_tests.rs - 16 marketplace validation tests",
+      "qualityScore": 92,
+      "authority": 10,
+      "recency": 10,
+      "depth": 9,
+      "examples": 10,
+      "uniqueness": 8,
+      "keyInsights": [
+        "Path traversal rejection for source paths",
+        "Display name parsing from interface",
+        "Error resilience for invalid marketplaces",
+        "Asset paths without ./ prefix silently excluded",
+        "Explicit empty products blocks all products",
+        "First duplicate entry wins",
+        "Product-based access control enforcement"
+      ]
+    },
+    {
+      "url": "https://github.com/openai/codex/blob/main/codex-rs/core/src/plugins/store_tests.rs",
+      "title": "store_tests.rs - 11 store validation tests",
+      "qualityScore": 88,
+      "authority": 10,
+      "recency": 10,
+      "depth": 8,
+      "examples": 9,
+      "uniqueness": 7,
+      "keyInsights": [
+        "Manifest name used for destination, not source dir name",
+        "local version preferred over hash versions",
+        "Path separator rejection in key segments",
+        "Manifest name must match marketplace plugin name"
+      ]
+    },
+    {
+      "url": "https://github.com/openai/codex/blob/main/codex-rs/core/src/plugins/manager_tests.rs",
+      "title": "manager_tests.rs - 36 comprehensive plugin management tests",
+      "qualityScore": 95,
+      "authority": 10,
+      "recency": 10,
+      "depth": 10,
+      "examples": 10,
+      "uniqueness": 9,
+      "keyInsights": [
+        "Custom component paths require ./ prefix",
+        "Description sanitization to single line",
+        "Description truncation at 1024 chars",
+        "Disabled plugins preserve metadata but contribute nothing",
+        "Plugin key format: sample@marketplace",
+        "Project config plugin settings ignored",
+        "Feature flag gates all plugin operations",
+        "Additive-only sync preserves existing plugins",
+        "App connector deduplication across plugins"
+      ]
+    },
+    {
+      "url": "https://github.com/openai/codex/blob/main/codex-rs/core/src/plugins/render_tests.rs",
+      "title": "render_tests.rs - Plugin rendering tests",
+      "qualityScore": 72,
+      "authority": 10,
+      "recency": 10,
+      "depth": 6,
+      "examples": 6,
+      "uniqueness": 5,
+      "keyInsights": [
+        "Empty plugins returns None",
+        "Wrapped in plugins_instructions XML tags",
+        "Skills prefixed with plugin_name:"
+      ]
+    },
+    {
+      "url": "https://github.com/openai/codex/blob/main/codex-rs/core/src/plugins/mentions_tests.rs",
+      "title": "mentions_tests.rs - Plugin mention handling tests",
+      "qualityScore": 75,
+      "authority": 10,
+      "recency": 10,
+      "depth": 6,
+      "examples": 7,
+      "uniqueness": 6,
+      "keyInsights": [
+        "Plugin mentions via plugin:// URI scheme",
+        "App mentions via app:// URI scheme",
+        "Deduplication of structured and linked mentions",
+        "Dollar-prefixed mentions excluded from plugin matches"
+      ]
+    },
+    {
+      "url": "https://github.com/openai/codex/blob/main/codex-rs/core/src/plugins/discoverable_tests.rs",
+      "title": "discoverable_tests.rs - Plugin discovery tests",
+      "qualityScore": 72,
+      "authority": 10,
+      "recency": 10,
+      "depth": 6,
+      "examples": 6,
+      "uniqueness": 5,
+      "keyInsights": [
+        "Description normalization in discovery results",
+        "Installed plugins omitted from discovery",
+        "Feature disabled returns empty"
+      ]
+    },
+    {
+      "url": "https://github.com/openai/codex/blob/main/codex-rs/core/src/plugins/startup_sync_tests.rs",
+      "title": "startup_sync_tests.rs - Startup sync tests",
+      "qualityScore": 78,
+      "authority": 10,
+      "recency": 10,
+      "depth": 7,
+      "examples": 6,
+      "uniqueness": 6,
+      "keyInsights": [
+        "SHA validation and comparison",
+        "Stale directory cleanup after 10 minutes",
+        "Git-first with HTTP fallback",
+        "Atomic activation with rollback"
+      ]
+    },
+    {
+      "url": "https://developers.openai.com/codex/plugins",
+      "title": "OpenAI - Codex Plugins Overview (Official Docs)",
+      "qualityScore": 90,
+      "authority": 10,
+      "recency": 10,
+      "depth": 7,
+      "examples": 6,
+      "uniqueness": 9,
+      "keyInsights": [
+        "Three component types: skills, apps, MCP servers",
+        "Install via /plugins command or Codex App directory",
+        "@prefix for explicit plugin mentions",
+        "Existing approval settings still apply after installation",
+        "Disable via enabled = false in config.toml",
+        "Apps may prompt for auth on setup or first use"
+      ]
+    },
+    {
+      "url": "https://developers.openai.com/codex/plugins/build",
+      "title": "OpenAI - Build Codex Plugins (Official Docs)",
+      "qualityScore": 95,
+      "authority": 10,
+      "recency": 10,
+      "depth": 9,
+      "examples": 9,
+      "uniqueness": 10,
+      "keyInsights": [
+        "$plugin-creator skill for scaffolding",
+        "Only plugin.json belongs in .codex-plugin/",
+        "Name must be stable kebab-case",
+        "Minimal manifest: name, version, description, skills",
+        "Complete manifest includes interface section for marketplace",
+        "Marketplace at .agents/plugins/marketplace.json",
+        "Source path resolves relative to marketplace location",
+        "Cache at ~/.codex/plugins/cache/$MARKETPLACE/$PLUGIN/local/",
+        "Restart required after changes"
+      ]
+    },
+    {
+      "url": "https://github.com/openai/codex/releases",
+      "title": "Codex CLI Releases - v0.117.0 Plugin Introduction",
+      "qualityScore": 85,
+      "authority": 10,
+      "recency": 10,
+      "depth": 7,
+      "examples": 5,
+      "uniqueness": 8,
+      "keyInsights": [
+        "v0.117.0 (March 26, 2026) introduced plugins as first-class workflow",
+        "Startup syncing of product-scoped plugins",
+        "/plugins command for discovery",
+        "MCP servers auto-install with plugin/install",
+        "Skill disable by name",
+        "Product-specific plugin filtering hardened"
+      ]
+    },
+    {
+      "url": "https://github.com/openai/codex/blob/main/codex-rs/app-server-protocol/schema/typescript/v2/PluginInterface.ts",
+      "title": "PluginInterface TypeScript type definition",
+      "qualityScore": 82,
+      "authority": 10,
+      "recency": 10,
+      "depth": 7,
+      "examples": 5,
+      "uniqueness": 7,
+      "keyInsights": [
+        "All string fields nullable except capabilities and screenshots arrays",
+        "defaultPrompt capped at 3 entries, 128 chars each",
+        "AbsolutePathBuf for resolved asset paths"
+      ]
+    },
+    {
+      "url": "https://github.com/openai/codex/blob/main/codex-rs/app-server-protocol/schema/typescript/v2/PluginSummary.ts",
+      "title": "PluginSummary TypeScript type definition",
+      "qualityScore": 78,
+      "authority": 10,
+      "recency": 10,
+      "depth": 6,
+      "examples": 5,
+      "uniqueness": 6,
+      "keyInsights": [
+        "Plugin summary includes id, name, source, installed, enabled, policies, interface"
+      ]
+    },
+    {
+      "url": "https://github.com/openai/codex/blob/main/codex-rs/app-server-protocol/schema/typescript/v2/PluginDetail.ts",
+      "title": "PluginDetail TypeScript type definition",
+      "qualityScore": 78,
+      "authority": 10,
+      "recency": 10,
+      "depth": 6,
+      "examples": 5,
+      "uniqueness": 6,
+      "keyInsights": [
+        "Full plugin detail includes skills array, apps array, mcpServers array"
+      ]
+    },
+    {
+      "url": "https://github.com/openai/codex/blob/main/codex-rs/app-server-protocol/schema/typescript/v2/PluginMarketplaceEntry.ts",
+      "title": "PluginMarketplaceEntry TypeScript type definition",
+      "qualityScore": 72,
+      "authority": 10,
+      "recency": 10,
+      "depth": 5,
+      "examples": 4,
+      "uniqueness": 5,
+      "keyInsights": [
+        "Marketplace entry has name, path, interface, plugins array"
+      ]
+    },
+    {
+      "url": "https://github.com/openai/codex/blob/main/codex-rs/app-server-protocol/schema/typescript/v2/PluginSource.ts",
+      "title": "PluginSource TypeScript type definition",
+      "qualityScore": 68,
+      "authority": 10,
+      "recency": 10,
+      "depth": 5,
+      "examples": 3,
+      "uniqueness": 5,
+      "keyInsights": [
+        "Only local source type currently: { type: 'local', path: AbsolutePathBuf }"
+      ]
+    },
+    {
+      "url": "https://github.com/openai/codex/blob/main/codex-rs/app-server-protocol/schema/typescript/v2/PluginAuthPolicy.ts",
+      "title": "PluginAuthPolicy TypeScript type definition",
+      "qualityScore": 65,
+      "authority": 10,
+      "recency": 10,
+      "depth": 4,
+      "examples": 3,
+      "uniqueness": 5,
+      "keyInsights": [
+        "Two values: ON_INSTALL or ON_USE"
+      ]
+    },
+    {
+      "url": "https://github.com/openai/codex/blob/main/codex-rs/app-server-protocol/schema/typescript/v2/PluginInstallPolicy.ts",
+      "title": "PluginInstallPolicy TypeScript type definition",
+      "qualityScore": 65,
+      "authority": 10,
+      "recency": 10,
+      "depth": 4,
+      "examples": 3,
+      "uniqueness": 5,
+      "keyInsights": [
+        "Three values: NOT_AVAILABLE, AVAILABLE, INSTALLED_BY_DEFAULT"
+      ]
+    },
+    {
+      "url": "https://github.com/openai/codex/blob/main/codex-rs/app-server-protocol/schema/typescript/v2/PluginInstallParams.ts",
+      "title": "PluginInstallParams TypeScript type definition",
+      "qualityScore": 62,
+      "authority": 10,
+      "recency": 10,
+      "depth": 4,
+      "examples": 3,
+      "uniqueness": 4,
+      "keyInsights": [
+        "Install requires marketplacePath and pluginName, optional forceRemoteSync"
+      ]
+    },
+    {
+      "url": "https://github.com/openai/codex/blob/main/codex-rs/app-server-protocol/schema/typescript/v2/PluginListParams.ts",
+      "title": "PluginListParams TypeScript type definition",
+      "qualityScore": 65,
+      "authority": 10,
+      "recency": 10,
+      "depth": 4,
+      "examples": 3,
+      "uniqueness": 5,
+      "keyInsights": [
+        "cwds parameter discovers repo marketplaces, optional forceRemoteSync"
+      ]
+    },
+    {
+      "url": "https://github.com/openai/codex/blob/main/codex-rs/app-server-protocol/schema/typescript/v2/PluginListResponse.ts",
+      "title": "PluginListResponse TypeScript type definition",
+      "qualityScore": 68,
+      "authority": 10,
+      "recency": 10,
+      "depth": 5,
+      "examples": 3,
+      "uniqueness": 5,
+      "keyInsights": [
+        "Response includes marketplaces, load errors, remote sync error, featured plugin IDs"
+      ]
+    },
+    {
+      "url": "https://github.com/openai/codex/pull/14993",
+      "title": "PR #14993 - Product-aware plugin policies and manifest naming cleanup",
+      "qualityScore": 82,
+      "authority": 9,
+      "recency": 10,
+      "depth": 8,
+      "examples": 5,
+      "uniqueness": 8,
+      "keyInsights": [
+        "Raw serde shapes vs resolved in-memory models separation",
+        "Legacy policy fields silently ignored",
+        "Default to AVAILABLE/ON_INSTALL for missing policies",
+        "Gradual migration path for existing marketplace entries"
+      ]
+    },
+    {
+      "url": "https://github.com/openai/codex/pull/13712",
+      "title": "PR #13712 - Curated plugin marketplace and metadata cleanup",
+      "qualityScore": 78,
+      "authority": 9,
+      "recency": 10,
+      "depth": 7,
+      "examples": 5,
+      "uniqueness": 7,
+      "keyInsights": [
+        "Optional skills and hooks fields in manifest (hooks not consumed)",
+        "Validated absolute paths for improved security",
+        "Plugin config restricted to user config layer only",
+        "Curated marketplace sync as background operation concern"
+      ]
+    },
+    {
+      "url": "https://github.com/openai/codex/pull/15606",
+      "title": "PR #15606 - Plugin display name priority and MCP tool refresh",
+      "qualityScore": 72,
+      "authority": 9,
+      "recency": 10,
+      "depth": 6,
+      "examples": 4,
+      "uniqueness": 6,
+      "keyInsights": [
+        "interface.displayName prioritized for plugin labels",
+        "Plugin provenance preserved through MCP tool refresh",
+        "App mention deduplication in TUI"
+      ]
+    },
+    {
+      "url": "https://github.com/openai/codex/issues/16430",
+      "title": "Issue #16430 - Plugin hooks not executed by runtime",
+      "qualityScore": 85,
+      "authority": 8,
+      "recency": 10,
+      "depth": 8,
+      "examples": 5,
+      "uniqueness": 9,
+      "keyInsights": [
+        "Plugin-local hooks.json not executed - only global hooks.json",
+        "manifest.rs parses skills, mcpServers, apps but NOT hooks",
+        "hooks/discovery.rs scans only config-layer directories",
+        "Documentation/examples misleadingly suggest plugin hooks work"
+      ]
+    },
+    {
+      "url": "https://github.com/openai/codex/blob/main/codex-rs/core/src/connectors.rs",
+      "title": "connectors.rs - App connector management module",
+      "qualityScore": 70,
+      "authority": 10,
+      "recency": 10,
+      "depth": 6,
+      "examples": 4,
+      "uniqueness": 5,
+      "keyInsights": [
+        "Apps loaded from MCP tools with caching",
+        "App tool policy controls enable/disable state",
+        "30-second timeout for connectors on startup",
+        "Blocked connector IDs include connector_openai_ prefix"
+      ]
+    },
+    {
+      "url": "https://github.com/openai/codex/blob/main/codex-rs/config/src/skills_config.rs",
+      "title": "skills_config.rs - Skills configuration types",
+      "qualityScore": 68,
+      "authority": 10,
+      "recency": 10,
+      "depth": 5,
+      "examples": 4,
+      "uniqueness": 5,
+      "keyInsights": [
+        "SkillsConfig with bundled toggle and individual SkillConfig entries",
+        "Path-based and name-based skill identification",
+        "deny_unknown_fields for strict validation",
+        "TOML-based configuration"
+      ]
+    }
+  ]
+}
