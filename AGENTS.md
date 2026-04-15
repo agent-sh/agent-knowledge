@@ -29,6 +29,7 @@
 | AI Agent Commits & Git Analysis Impact | ai-agent-commits-git-analysis-impact.md | 25 | medium | 2026-03-14 |
 | AI Commit Detection Forensics | ai-commit-detection-forensics.md | 42 | deep | 2026-03-14 |
 | glide-mq (Message Queue on Valkey/Redis) | glide-mq.md | 12 | medium | 2026-03-19 |
+| Bee-Queue API Reference (v2.0.0) | bee-queue-api.md | npm docs | reference | 2026-03-19 |
 | Skills for Library/SDK - Best Practices | skills-for-library-and-sdk-best-practices.md | 16 | medium | 2026-03-19 |
 | RAG Skill Indexing for AI Agent Knowledge | rag-skill-indexing.md | 18 | deep | 2026-03-31 |
 | Codex CLI Plugin Manifest System | codex-plugin-manifest.md | 42 | deep | 2026-04-01 |
@@ -382,6 +383,12 @@ Use this knowledge when user asks about:
 - "valkey streams queue" -> glide-mq.md
 - "bullmq alternative" -> glide-mq.md
 - "node.js job queue valkey" -> glide-mq.md
+- "bee-queue API" -> bee-queue-api.md
+- "bee-queue reference" -> bee-queue-api.md
+- "bee-queue migration" -> bee-queue-api.md
+- "bee-queue queue constructor" -> bee-queue-api.md
+- "bee-queue events" -> bee-queue-api.md
+- "bee-queue vs bullmq API" -> bee-queue-api.md
 - "SKILL.md best practices" -> skills-for-library-and-sdk-best-practices.md
 - "writing skills for library" -> skills-for-library-and-sdk-best-practices.md
 - "SDK skill design" -> skills-for-library-and-sdk-best-practices.md
@@ -696,6 +703,9 @@ Use this knowledge when user asks about:
 | bullmq alternative, bullmq migration | glide-mq.md |
 | FCALL, server functions, NAPI rust | glide-mq.md |
 | FlowProducer, DAG workflow, fan-out | glide-mq.md |
+| bee-queue API, bee-queue migration | bee-queue-api.md |
+| bee-queue Queue constructor, Job methods | bee-queue-api.md |
+| bee-queue stalled, delayed, retries | bee-queue-api.md |
 | SKILL.md, skill authoring, skill format | skills-for-library-and-sdk-best-practices.md |
 | skill description, skill trigger, discovery | skills-for-library-and-sdk-best-practices.md |
 | progressive disclosure, token budget | skills-for-library-and-sdk-best-practices.md |

@@ -1,0 +1,543 @@
+{
+  "topic": "Building a RESP-Compatible Message Queue Server in Rust",
+  "slug": "resp-mq-server-rust",
+  "generated": "2026-04-03T00:00:00Z",
+  "depth": "deep",
+  "totalSources": 42,
+  "sources": [
+    {
+      "url": "https://redis.io/docs/latest/develop/reference/protocol-spec/",
+      "title": "Redis RESP Protocol Specification",
+      "qualityScore": 98,
+      "scores": { "authority": 10, "recency": 10, "depth": 10, "examples": 8, "uniqueness": 10 },
+      "keyInsights": [
+        "RESP2 types: simple strings (+), errors (-), integers (:), bulk strings ($), arrays (*)",
+        "RESP3 adds: nulls (_), booleans (#), doubles (,), maps (%), sets (~), pushes (>)",
+        "All messages terminated with CRLF, binary-safe via length prefixes",
+        "HELLO command negotiates RESP2 vs RESP3",
+        "Pipelining sends multiple commands without waiting for responses"
+      ]
+    },
+    {
+      "url": "https://github.com/tokio-rs/mini-redis",
+      "title": "mini-redis - Tokio educational Redis server",
+      "qualityScore": 95,
+      "scores": { "authority": 10, "recency": 8, "depth": 9, "examples": 10, "uniqueness": 8 },
+      "keyInsights": [
+        "Task-per-connection model with tokio::spawn",
+        "std::sync::Mutex preferred over tokio::sync::Mutex for short critical sections",
+        "Semaphore-based connection limiting (250 max)",
+        "Frame enum: Simple, Error, Integer, Bulk, Null, Array",
+        "Cursor-based RESP parsing with check-then-parse pattern"
+      ]
+    },
+    {
+      "url": "https://docs.rs/redis-protocol/latest/redis_protocol/",
+      "title": "redis-protocol Rust crate",
+      "qualityScore": 88,
+      "scores": { "authority": 8, "recency": 8, "depth": 8, "examples": 9, "uniqueness": 8 },
+      "keyInsights": [
+        "Three frame interfaces: OwnedFrame, BytesFrame, RangeFrame/BorrowedFrame",
+        "Zero-copy parsing via BytesFrame with bytes crate",
+        "Supports both RESP2 and RESP3",
+        "int_as_bulkstring parameter for allocation-free integer encoding"
+      ]
+    },
+    {
+      "url": "https://github.com/taskforcesh/bullmq/tree/master/src/commands",
+      "title": "BullMQ Lua Scripts Directory (51 scripts)",
+      "qualityScore": 96,
+      "scores": { "authority": 10, "recency": 9, "depth": 10, "examples": 10, "uniqueness": 10 },
+      "keyInsights": [
+        "51 Lua scripts for all queue operations",
+        "Key scripts: addStandardJob, moveToActive, moveToFinished, retryJob",
+        "Uses RPOPLPUSH, XADD, ZADD, HSET, INCR, EXISTS, LREM, SREM",
+        "9-14 keys per script, complex multi-key atomic operations",
+        "Scripts handle deduplication, rate limiting, priorities, parent-child deps"
+      ]
+    },
+    {
+      "url": "https://github.com/taskforcesh/bullmq/blob/master/src/commands/moveToActive-11.lua",
+      "title": "BullMQ moveToActive Lua script",
+      "qualityScore": 92,
+      "scores": { "authority": 10, "recency": 9, "depth": 9, "examples": 10, "uniqueness": 8 },
+      "keyInsights": [
+        "RPOPLPUSH from wait to active list",
+        "Rate limit check via expireTime TTL",
+        "Promotes delayed jobs before fetching",
+        "Falls back to prioritized queue if standard empty",
+        "11 Redis keys accessed per invocation"
+      ]
+    },
+    {
+      "url": "https://github.com/taskforcesh/bullmq/blob/master/src/commands/moveToFinished-14.lua",
+      "title": "BullMQ moveToFinished Lua script",
+      "qualityScore": 92,
+      "scores": { "authority": 10, "recency": 9, "depth": 9, "examples": 10, "uniqueness": 8 },
+      "keyInsights": [
+        "14 keys accessed - most complex BullMQ script",
+        "Uses EXISTS, SCARD, ZCARD, LREM, HMGET, HSET, ZADD, XADD",
+        "Handles completed/failed sets with retention policies",
+        "Manages parent-child dependency resolution",
+        "Optionally fetches next job for processing"
+      ]
+    },
+    {
+      "url": "https://github.com/taskforcesh/bullmq/blob/master/src/commands/addStandardJob-9.lua",
+      "title": "BullMQ addStandardJob Lua script",
+      "qualityScore": 90,
+      "scores": { "authority": 10, "recency": 9, "depth": 8, "examples": 10, "uniqueness": 7 },
+      "keyInsights": [
+        "INCR for ID generation, EXISTS for parent validation",
+        "XADD for event emission, SADD for parent dependencies",
+        "RPUSH/LPUSH for FIFO/LIFO placement",
+        "Deduplication via deduplicateJob helper",
+        "9 Redis keys: wait, paused, meta, id, completed, delayed, active, events, marker"
+      ]
+    },
+    {
+      "url": "https://github.com/sidekiq/sidekiq/blob/main/lib/sidekiq/client.rb",
+      "title": "Sidekiq Client - Job Pushing",
+      "qualityScore": 85,
+      "scores": { "authority": 9, "recency": 8, "depth": 7, "examples": 8, "uniqueness": 8 },
+      "keyInsights": [
+        "LPUSH for immediate jobs to queue:{name}",
+        "SADD to queues set for queue discovery",
+        "ZADD to schedule sorted set for delayed jobs",
+        "Jobs are JSON: class, args, jid, queue, enqueued_at",
+        "Pipelined Redis operations, no Lua scripts"
+      ]
+    },
+    {
+      "url": "https://github.com/sidekiq/sidekiq/blob/main/lib/sidekiq/fetch.rb",
+      "title": "Sidekiq Fetch - Job Consumption",
+      "qualityScore": 84,
+      "scores": { "authority": 9, "recency": 8, "depth": 7, "examples": 8, "uniqueness": 7 },
+      "keyInsights": [
+        "BRPOP with 2-second timeout across multiple queues",
+        "Strict mode vs shuffled queue order for fairness",
+        "bulk_requeue for graceful shutdown job preservation",
+        "No Lua scripts - pure Redis commands"
+      ]
+    },
+    {
+      "url": "https://github.com/celery/celery/blob/main/celery/backends/redis.py",
+      "title": "Celery Redis Backend",
+      "qualityScore": 82,
+      "scores": { "authority": 8, "recency": 7, "depth": 7, "examples": 8, "uniqueness": 8 },
+      "keyInsights": [
+        "GET, MGET, DEL, INCRBY, EXPIRE, SET, SETEX for results",
+        "Pub/Sub for result notification (task ID as channel)",
+        "ZADD/ZRANGE for chord result ordering",
+        "No Lua scripts - pipelined commands instead"
+      ]
+    },
+    {
+      "url": "https://github.com/celery/kombu/blob/main/kombu/transport/redis.py",
+      "title": "Celery/Kombu Redis Transport",
+      "qualityScore": 88,
+      "scores": { "authority": 8, "recency": 7, "depth": 9, "examples": 8, "uniqueness": 9 },
+      "keyInsights": [
+        "LPUSH to insert, BRPOP to retrieve messages",
+        "Priority queues via separate keys per priority level",
+        "ZADD sorted sets for unacked message tracking",
+        "Visibility timeout: 3600s default with mutex-protected restoration",
+        "PSUBSCRIBE for fanout exchange patterns",
+        "No Lua scripts - Redis transactions for atomicity"
+      ]
+    },
+    {
+      "url": "https://docs.rs/mlua/latest/mlua/",
+      "title": "mlua - Lua bindings for Rust",
+      "qualityScore": 93,
+      "scores": { "authority": 9, "recency": 9, "depth": 9, "examples": 9, "uniqueness": 9 },
+      "keyInsights": [
+        "Supports Lua 5.1-5.5, LuaJIT, and Luau",
+        "create_function() registers Rust callbacks callable from Lua",
+        "Async support via create_async_function",
+        "Sandboxing via StdLib flags and set_memory_limit",
+        "IntoLua/FromLua traits for safe type conversion",
+        "Send + Sync when feature-gated"
+      ]
+    },
+    {
+      "url": "https://docs.rs/mlua/latest/mlua/struct.Lua.html",
+      "title": "mlua Lua struct API",
+      "qualityScore": 90,
+      "scores": { "authority": 9, "recency": 9, "depth": 9, "examples": 8, "uniqueness": 7 },
+      "keyInsights": [
+        "Lua::new_with(libs, options) for selective library loading",
+        "load().exec()/eval()/call() for script execution",
+        "create_table_from() for creating Lua tables from Rust iterators",
+        "UserData trait for exposing custom Rust types",
+        "scope() permits temporary non-static values"
+      ]
+    },
+    {
+      "url": "https://docs.rs/piccolo/latest/piccolo/",
+      "title": "piccolo - Pure Rust Lua VM",
+      "qualityScore": 55,
+      "scores": { "authority": 5, "recency": 5, "depth": 4, "examples": 3, "uniqueness": 8 },
+      "keyInsights": [
+        "Stackless Lua VM in pure Rust - no C dependency",
+        "v0.3.3 with only 10% documentation coverage",
+        "Single developer, experimental stage",
+        "Not production-ready for server embedding"
+      ]
+    },
+    {
+      "url": "https://redis.io/docs/latest/develop/interact/programmability/eval-intro/",
+      "title": "Redis Lua Scripting (EVAL/EVALSHA)",
+      "qualityScore": 95,
+      "scores": { "authority": 10, "recency": 9, "depth": 9, "examples": 9, "uniqueness": 9 },
+      "keyInsights": [
+        "EVAL executes script, EVALSHA executes by SHA1 hash",
+        "Scripts cached via SHA1 - 40 hex char identifier",
+        "redis.call() throws on error, redis.pcall() returns error as table",
+        "KEYS[] and ARGV[] arrays, numkeys boundary",
+        "Atomic execution - no other commands during script",
+        "SCRIPT LOAD, SCRIPT EXISTS, SCRIPT FLUSH for management"
+      ]
+    },
+    {
+      "url": "https://redis.io/docs/latest/develop/interact/programmability/lua-api/",
+      "title": "Redis Lua API Reference",
+      "qualityScore": 93,
+      "scores": { "authority": 10, "recency": 9, "depth": 9, "examples": 8, "uniqueness": 8 },
+      "keyInsights": [
+        "Type conversion: integer to number, bulk to string, nil to false",
+        "cjson and cmsgpack libraries available",
+        "redis.log() with LOG_DEBUG/NOTICE/WARNING",
+        "redis.sha1hex() for hashing",
+        "redis.error_reply()/status_reply() for return types"
+      ]
+    },
+    {
+      "url": "https://www.dragonflydb.io/blog/scaling-performance-redis-vs-dragonfly",
+      "title": "DragonflyDB Architecture - 25x Redis Throughput",
+      "qualityScore": 88,
+      "scores": { "authority": 8, "recency": 8, "depth": 8, "examples": 7, "uniqueness": 9 },
+      "keyInsights": [
+        "25x throughput over Redis with multi-threading",
+        "Drop-in Redis replacement, no code changes",
+        "Memory does not grow during snapshotting",
+        "proactor_threads configurable per CPU core",
+        "Inherently smaller memory usage for same dataset"
+      ]
+    },
+    {
+      "url": "https://github.com/dragonflydb/dragonfly/blob/main/src/server/main_service.cc",
+      "title": "DragonflyDB Server Architecture (source)",
+      "qualityScore": 90,
+      "scores": { "authority": 9, "recency": 9, "depth": 9, "examples": 8, "uniqueness": 10 },
+      "keyInsights": [
+        "Shared-nothing with ProactorPool and EngineShardSet",
+        "Fiber-based concurrency within each proactor thread",
+        "MultiCommandSquasher batches pipeline commands",
+        "LOCK_AHEAD for single-shard, GLOBAL for multi-shard ops",
+        "Deterministic key hashing for shard distribution",
+        "Thread-local ServerState prevents lock contention"
+      ]
+    },
+    {
+      "url": "https://microsoft.github.io/garnet/docs/welcome/features",
+      "title": "Microsoft Garnet Features",
+      "qualityScore": 85,
+      "scores": { "authority": 9, "recency": 9, "depth": 7, "examples": 5, "uniqueness": 8 },
+      "keyInsights": [
+        "RESP wire protocol compatible, works with unmodified Redis clients",
+        "Tsavorite storage engine with hybrid log-structured design",
+        "Lua scripting support plus C# extensibility",
+        "Sub-300us p99.9 latency with Accelerated Networking",
+        "Cluster mode with sharding, replication, failover"
+      ]
+    },
+    {
+      "url": "https://github.com/apache/kvrocks",
+      "title": "Apache Kvrocks - Redis on RocksDB",
+      "qualityScore": 82,
+      "scores": { "authority": 8, "recency": 8, "depth": 7, "examples": 5, "uniqueness": 8 },
+      "keyInsights": [
+        "Redis-compatible protocol on RocksDB storage",
+        "Supports Lua via LuaJIT or standard Lua",
+        "Centralized cluster management (not gossip-based)",
+        "Namespace isolation with per-namespace auth",
+        "MySQL-style binlog replication"
+      ]
+    },
+    {
+      "url": "https://github.com/tidwall/redcon.rs",
+      "title": "redcon.rs - Rust Redis server framework",
+      "qualityScore": 78,
+      "scores": { "authority": 6, "recency": 6, "depth": 7, "examples": 9, "uniqueness": 8 },
+      "keyInsights": [
+        "Multithreaded RESP server framework",
+        "Callback-based command handling",
+        "write_string/write_bulk/write_null/write_error API",
+        "Support for pipelining and telnet commands"
+      ]
+    },
+    {
+      "url": "https://github.com/tidwall/redcon",
+      "title": "redcon (Go) - Redis server framework",
+      "qualityScore": 80,
+      "scores": { "authority": 7, "recency": 7, "depth": 7, "examples": 9, "uniqueness": 7 },
+      "keyInsights": [
+        "2x+ throughput over Redis (2M+ SET/sec)",
+        "Three callbacks: command handler, accept/reject, disconnect",
+        "Pre-parsed Command objects with byte slice args",
+        "TLS support via ListenAndServeTLS"
+      ]
+    },
+    {
+      "url": "https://github.com/aembke/fred.rs",
+      "title": "fred.rs - Redis client for Rust",
+      "qualityScore": 78,
+      "scores": { "authority": 7, "recency": 8, "depth": 7, "examples": 7, "uniqueness": 6 },
+      "keyInsights": [
+        "Zero-copy frame parsing via custom protocol library",
+        "Round-robin and dynamic connection pooling",
+        "Automatic pipelining for throughput",
+        "SHA-1 feature for Lua script hashing"
+      ]
+    },
+    {
+      "url": "https://tokio.rs/tokio/tutorial/shared-state",
+      "title": "Tokio Shared State Patterns",
+      "qualityScore": 92,
+      "scores": { "authority": 10, "recency": 9, "depth": 9, "examples": 9, "uniqueness": 7 },
+      "keyInsights": [
+        "std::sync::Mutex fine for short critical sections without .await",
+        "DashMap for sophisticated sharded hash maps",
+        "Sharding: db[hash(key) % db.len()] reduces contention",
+        "Message passing alternative: dedicated state manager task",
+        "Never hold MutexGuard across .await points"
+      ]
+    },
+    {
+      "url": "https://tokio.rs/tokio/tutorial/channels",
+      "title": "Tokio Channel Patterns",
+      "qualityScore": 90,
+      "scores": { "authority": 10, "recency": 9, "depth": 8, "examples": 9, "uniqueness": 7 },
+      "keyInsights": [
+        "mpsc for commands, oneshot for responses",
+        "broadcast for pub/sub, watch for latest-value",
+        "Actor pattern: dedicated manager task with channel inbox",
+        "Enables command pipelining and better throughput"
+      ]
+    },
+    {
+      "url": "https://docs.rs/dashmap/latest/dashmap/",
+      "title": "DashMap - Concurrent HashMap",
+      "qualityScore": 82,
+      "scores": { "authority": 7, "recency": 8, "depth": 7, "examples": 7, "uniqueness": 7 },
+      "keyInsights": [
+        "Sharded concurrent HashMap, thread-safe",
+        "DashSet wrapper using () values",
+        "Entry API for efficient conditional inserts",
+        "Better than RwLock<HashMap> for frequent concurrent access"
+      ]
+    },
+    {
+      "url": "https://docs.rs/crossbeam-skiplist/latest/crossbeam_skiplist/",
+      "title": "crossbeam-skiplist - Concurrent Sorted Map",
+      "qualityScore": 85,
+      "scores": { "authority": 8, "recency": 8, "depth": 8, "examples": 7, "uniqueness": 9 },
+      "keyInsights": [
+        "Lock-free SkipMap and SkipSet (concurrent BTreeMap equivalent)",
+        "Mutating methods take &self (not &mut self)",
+        "Epoch-based memory reclamation prevents use-after-free",
+        "Excels with high write frequency; slower than BTree for reads"
+      ]
+    },
+    {
+      "url": "https://docs.rs/crossbeam-deque/latest/crossbeam_deque/",
+      "title": "crossbeam-deque - Work-Stealing Queues",
+      "qualityScore": 83,
+      "scores": { "authority": 8, "recency": 8, "depth": 7, "examples": 7, "uniqueness": 8 },
+      "keyInsights": [
+        "Injector (shared FIFO), Worker (thread-local), Stealer pattern",
+        "FIFO and LIFO worker modes",
+        "steal_batch_and_pop for efficient batch stealing",
+        "Ideal for work-stealing schedulers in multi-threaded servers"
+      ]
+    },
+    {
+      "url": "https://docs.rs/priority-queue/latest/priority_queue/",
+      "title": "priority-queue crate",
+      "qualityScore": 78,
+      "scores": { "authority": 6, "recency": 7, "depth": 7, "examples": 7, "uniqueness": 8 },
+      "keyInsights": [
+        "Heap-backed with HashMap index for O(log N) priority changes",
+        "DoublePriorityQueue for both min and max operations",
+        "O(1) peek, O(log N) insert/delete/change",
+        "Ideal for delayed job scheduling with rescheduling"
+      ]
+    },
+    {
+      "url": "https://docs.rs/bumpalo/latest/bumpalo/",
+      "title": "bumpalo - Arena Allocator",
+      "qualityScore": 80,
+      "scores": { "authority": 7, "recency": 8, "depth": 8, "examples": 8, "uniqueness": 7 },
+      "keyInsights": [
+        "Bump allocation: pointer arithmetic for O(1) alloc",
+        "Mass deallocation by resetting arena pointer",
+        "Ideal for phase-oriented allocations (request batches)",
+        "Bump is !Sync; bumpalo-herd for thread-safe pools"
+      ]
+    },
+    {
+      "url": "https://docs.rs/bytes/latest/bytes/",
+      "title": "bytes crate - Zero-Copy Buffers",
+      "qualityScore": 88,
+      "scores": { "authority": 9, "recency": 9, "depth": 7, "examples": 7, "uniqueness": 6 },
+      "keyInsights": [
+        "Bytes: immutable, reference-counted, zero-copy slicing",
+        "BytesMut: mutable buffer for construction",
+        "Buf/BufMut traits for structured read/write",
+        "Designed for networking - used throughout Tokio ecosystem"
+      ]
+    },
+    {
+      "url": "https://docs.rs/slab/latest/slab/",
+      "title": "slab - Pre-allocated Storage",
+      "qualityScore": 75,
+      "scores": { "authority": 7, "recency": 7, "depth": 7, "examples": 7, "uniqueness": 6 },
+      "keyInsights": [
+        "Pre-allocated uniform storage with key-based access",
+        "O(1) insert via vacant slot reuse",
+        "Keys reused after removal - minimal fragmentation",
+        "Ideal for connection management in servers"
+      ]
+    },
+    {
+      "url": "https://redis.io/docs/latest/operate/oss_and_stack/management/persistence/",
+      "title": "Redis Persistence (RDB + AOF)",
+      "qualityScore": 95,
+      "scores": { "authority": 10, "recency": 9, "depth": 10, "examples": 8, "uniqueness": 8 },
+      "keyInsights": [
+        "RDB: fork-based copy-on-write snapshots",
+        "AOF: append-only write-ahead log with fsync policies",
+        "fsync policies: always (max durability), everysec (default), no",
+        "AOF rewrite compacts log via fork",
+        "Redis 7.0+ multi-part AOF with manifest"
+      ]
+    },
+    {
+      "url": "https://redis.io/docs/latest/operate/oss_and_stack/management/optimization/benchmarks/",
+      "title": "Redis Benchmarking Methodology",
+      "qualityScore": 90,
+      "scores": { "authority": 10, "recency": 8, "depth": 9, "examples": 9, "uniqueness": 7 },
+      "keyInsights": [
+        "redis-benchmark: -c clients, -n requests, -P pipeline, -d payload size",
+        "8-10x throughput improvement with 16-command pipelining",
+        "Unix domain sockets 50% better than TCP loopback",
+        "memtier_benchmark as alternative tool"
+      ]
+    },
+    {
+      "url": "https://redis.io/docs/latest/develop/interact/transactions/",
+      "title": "Redis MULTI/EXEC Transactions",
+      "qualityScore": 90,
+      "scores": { "authority": 10, "recency": 9, "depth": 9, "examples": 8, "uniqueness": 7 },
+      "keyInsights": [
+        "MULTI queues commands, EXEC executes atomically",
+        "No rollback - failed commands do not abort transaction",
+        "WATCH for optimistic locking (CAS pattern)",
+        "Lua scripts preferred over MULTI/EXEC for complex logic"
+      ]
+    },
+    {
+      "url": "https://github.com/valkey-io/valkey/blob/unstable/src/server.h",
+      "title": "Valkey/Redis server.h - Core Data Structures",
+      "qualityScore": 88,
+      "scores": { "authority": 9, "recency": 9, "depth": 9, "examples": 6, "uniqueness": 10 },
+      "keyInsights": [
+        "7 object types: STRING, LIST, SET, ZSET, HASH, MODULE, STREAM",
+        "Database has keys, expires, blocking_keys, ready_keys, watched_keys",
+        "Client flags: blocked, authenticated, executing_command, repl_state",
+        "blockingState tracks btype, timeout, keys for BRPOP etc."
+      ]
+    },
+    {
+      "url": "https://github.com/valkey-io/valkey/blob/unstable/src/t_stream.c",
+      "title": "Valkey Stream Implementation",
+      "qualityScore": 88,
+      "scores": { "authority": 9, "recency": 9, "depth": 9, "examples": 7, "uniqueness": 9 },
+      "keyInsights": [
+        "Radix tree indexed by stream IDs containing listpacks",
+        "Consumer groups with group-level and consumer-level PELs",
+        "Delta-encoded IDs for space efficiency",
+        "streamNACK objects track delivery count and timestamp"
+      ]
+    },
+    {
+      "url": "https://docs.rs/tokio-uring/latest/tokio_uring/",
+      "title": "tokio-uring - io_uring for Tokio",
+      "qualityScore": 75,
+      "scores": { "authority": 7, "recency": 7, "depth": 6, "examples": 6, "uniqueness": 8 },
+      "keyInsights": [
+        "Requires Linux kernel 5.10+",
+        "Ownership-based buffer management",
+        "BufResult type for buffer-based operations",
+        "v0.5.0 - maturing but not stable"
+      ]
+    },
+    {
+      "url": "https://docs.rs/glommio/latest/glommio/",
+      "title": "Glommio - Thread-per-core Runtime",
+      "qualityScore": 82,
+      "scores": { "authority": 7, "recency": 7, "depth": 8, "examples": 7, "uniqueness": 9 },
+      "keyInsights": [
+        "Thread-per-core with dedicated io_uring per executor",
+        "Three ring types: main, latency, poll",
+        "No atomics needed - cooperative single-thread scheduling",
+        "Requires Linux 5.8+, 512+ KiB locked memory"
+      ]
+    },
+    {
+      "url": "https://without.boats/blog/io-uring/",
+      "title": "Notes on io-uring (withoutboats)",
+      "qualityScore": 80,
+      "scores": { "authority": 8, "recency": 6, "depth": 8, "examples": 5, "uniqueness": 9 },
+      "keyInsights": [
+        "Completion-based API vs readiness-based (epoll)",
+        "Kernel writes to buffer even if future cancelled",
+        "Kernel buffer ownership model preferred over zero-copy borrowed",
+        "Future of all IO on Linux"
+      ]
+    },
+    {
+      "url": "https://docs.rs/tokio-rustls/latest/tokio_rustls/",
+      "title": "tokio-rustls - TLS for Tokio",
+      "qualityScore": 78,
+      "scores": { "authority": 8, "recency": 8, "depth": 6, "examples": 7, "uniqueness": 6 },
+      "keyInsights": [
+        "TlsAcceptor wraps incoming TcpStream connections",
+        "LazyConfigAcceptor for per-connection certificate selection",
+        "TlsStream unified type for post-handshake I/O"
+      ]
+    },
+    {
+      "url": "https://docs.rs/sha1/latest/sha1/",
+      "title": "sha1 crate for EVALSHA hashing",
+      "qualityScore": 72,
+      "scores": { "authority": 7, "recency": 7, "depth": 5, "examples": 8, "uniqueness": 5 },
+      "keyInsights": [
+        "Sha1::digest(script_bytes) for one-shot hashing",
+        "40 hex char output matches Redis EVALSHA format"
+      ]
+    },
+    {
+      "url": "https://docs.rs/parking_lot/latest/parking_lot/",
+      "title": "parking_lot - Fast Synchronization Primitives",
+      "qualityScore": 80,
+      "scores": { "authority": 8, "recency": 8, "depth": 6, "examples": 6, "uniqueness": 6 },
+      "keyInsights": [
+        "Smaller, faster Mutex/RwLock than std::sync",
+        "FairMutex prevents thread starvation in high-concurrency",
+        "Const constructors for static initialization"
+      ]
+    }
+  ]
+}

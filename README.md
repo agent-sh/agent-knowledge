@@ -31,6 +31,7 @@ See `CLAUDE.md` / `AGENTS.md` for the full topic index with trigger phrases and 
 | AI Agent Commits & Git Analysis Impact | ai-agent-commits-git-analysis-impact.md |
 | AI Commit Detection Forensics | ai-commit-detection-forensics.md |
 | glide-mq (Message Queue on Valkey/Redis) | glide-mq.md |
+| Bee-Queue API Reference (v2.0.0) | bee-queue-api.md |
 | Skills for Library/SDK - Best Practices | skills-for-library-and-sdk-best-practices.md |
 | RAG Skill Indexing for AI Agent Knowledge | rag-skill-indexing.md |
 | Codex CLI Plugin Manifest System | codex-plugin-manifest.md |
