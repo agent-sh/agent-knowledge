@@ -763,12 +763,3 @@ Use this knowledge when user asks about:
 2. Read the relevant guide file
 3. Answer based on synthesized knowledge
 4. Cite the guide if user asks for sources
-
-## Validation scope
-
-Choose checks that cover the changed behavior. For CPU-only tooling, documentation
-and configuration changes, run the relevant CPU tests, static checks and configuration
-validation. Do not require a blanket GPU gate for those changes. Require GPU
-qualification when GPU, runtime or model behavior, or related claims, change.
-Preserve applicable native, model and hardware qualification gates. CPU checks do
-not qualify GPU behavior.
