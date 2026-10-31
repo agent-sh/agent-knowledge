@@ -43,7 +43,7 @@ These guides are designed for RAG (Retrieval-Augmented Generation). AI tools can
 
 ## Source Metadata
 
-Each guide has a corresponding `resources/<slug>-sources.json` with quality scores, URLs, and key insights per source.
+Most guides have a matching `resources/<slug>-sources.json` with quality scores, URLs, and key insights per source. Four have none: `ai-cli-advanced-integration-patterns`, `browser-agent-auth-flows`, `generic-auth-patterns-captcha-systems` and `bee-queue-api`.
 
 ## Contributing
 
